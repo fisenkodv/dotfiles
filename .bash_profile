@@ -18,6 +18,12 @@
 #   -------------------------------
 #   1.  ENVIRONMENT CONFIGURATION
 #   -------------------------------
+#   Load the shell dotfiles
+#   ------------------------------------------------------------
+
+for file in ~/.{bash_prompt}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
 
 #   Change Prompt
 #   ------------------------------------------------------------
@@ -42,8 +48,8 @@
 #   (this is all commented out as I use Mac Terminal Profiles)
 #   from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
 #   ------------------------------------------------------------
-   export CLICOLOR=1
-   export LSCOLORS=ExFxBxDxCxegedabagacad
+#    export CLICOLOR=1
+#    export LSCOLORS=ExFxBxDxCxegedabagacad
 
 
 #   -----------------------------
