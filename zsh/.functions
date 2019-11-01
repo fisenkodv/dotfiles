@@ -41,6 +41,12 @@ function dataurlc() {
   dataurl $1 | pbcopy
 }
 
+# Start an HTTP server from a directory, optionally specifying the port
+function server() {
+  sleep 1 && open "http://localhost:8080/" &
+  python -m SimpleHTTPServer 8080
+}
+
 function hr {
   word="$1"
   if [ ! $word ]; then
