@@ -3,7 +3,7 @@
 ## Prerequisite
 
 - [ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
-- [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) **ONLY** for `home` profile.
+- [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 ## Usage
 
