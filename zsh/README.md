@@ -13,6 +13,59 @@ sh ./install.sh --profile work
 
 ### Aliases
 
+| alias         | description |
+| :------------ | :---------- |
+| `..`          |             |
+| `...`         |             |
+| `....`        |             |
+| `.....`       |             |
+| `~=`          |             |
+| `--`          |             |
+| `dl`          |             |
+| `dt`          |             |
+| `p`           |             |
+| `g`           |             |
+| `gc`          |             |
+| `gp`          |             |
+| `h`           |             |
+| `l`           |             |
+| `ll`          |             |
+| `la`          |             |
+| `lsd`         |             |
+| `ls`          |             |
+| `sudo`        |             |
+| `gurl`        |             |
+| `week`        |             |
+| `timer`       |             |
+| `update`      |             |
+| `ip`          |             |
+| `ips`         |             |
+| `whois`       |             |
+| `flush`       |             |
+| `lscleanup`   |             |
+| `sniff`       |             |
+| `httpdump`    |             |
+| `hd`          |             |
+| `md5sum`      |             |
+| `sha1sum`     |             |
+| `c`           |             |
+| `cleanup`     |             |
+| `rot13`       |             |
+| `emptytrash`  |             |
+| `show`        |             |
+| `hide`        |             |
+| `hidedesktop` |             |
+| `showdesktop` |             |
+| `urlencode`   |             |
+| `mergepdf`    |             |
+| `gm`          |             |
+| `spotoff`     |             |
+| `spoton`      |             |
+| `badge`       |             |
+| `map`         |             |
+| `chromekill`  |             |
+| `poweroff`    |             |
+
 ### Functions
 
 | name      | description                                                                                                                                                                                                                                                        |
