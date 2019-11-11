@@ -11,6 +11,24 @@
 sh ./install.sh --profile work
 ```
 
+### Aliases
+
+### Functions
+
+| name      | description                                                                                                                                                                                                                                                        |
+| :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| listening |                                                                                                                                                                                                                                                                    |
+| mkd       | Create a new directory and enter it                                                                                                                                                                                                                                |
+| fs        | Determine size of a file or total size of a directory                                                                                                                                                                                                              |
+| dataurl   | Create a data URL from a file                                                                                                                                                                                                                                      |
+| dataurlc  | Create a data URL from a file and copy it to the clipboard                                                                                                                                                                                                         |
+| server    | Start an HTTP server from a directory, optionally specifying the port                                                                                                                                                                                              |
+| hr        | Print line                                                                                                                                                                                                                                                         |
+| tre       | `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git` directory, listing directories first. The output gets piped into `less` with options to preserve color and line numbers, unless the output is small enough for one screen |
+| clone     | Git clone                                                                                                                                                                                                                                                          |
+| gt        | Git graph log                                                                                                                                                                                                                                                      |
+
+
 ## Note
 
 `.zsh_prompt` for `home` and `work` defines `ZSH` export:
