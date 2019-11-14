@@ -1,0 +1,20 @@
+function aliases() {
+
+}
+
+function functions() {
+  bold=$(tput bold)
+  normal=$(tput sgr0)
+
+  echo "Existing functions:"
+  echo "  ${bold}listening${normal} - Print open ports";
+  echo "  ${bold}mkd${normal} - Create a new directory and enter it ";
+  echo "  ${bold}fs${normal} - Determine size of a file or total size of a directory ";
+  echo "  ${bold}dataurl${normal} - Create a data URL from a file ";
+  echo "  ${bold}dataurlc${normal} - Create a data URL from a file and copy it to the clipboard";
+  echo "  ${bold}server${normal} - Start an HTTP server from a directory, optionally specifying the port ";
+  echo "  ${bold}hr${normal} - Print line";
+  echo "  ${bold}tre${normal} - 'tre' is a shorthand for 'tree' with hidden files and color enabled, ignoring the '.git' directory, listing directories first. The output gets piped into 'less' with options to preserve color and line numbers, unless the output is small enough for one screen";
+  echo "  ${bold}clone${normal} - Git clone";
+  echo "  ${bold}gt${normal} - Git graph log";
+}
