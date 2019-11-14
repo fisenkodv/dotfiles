@@ -70,7 +70,7 @@ sh ./install.sh --profile work
 
 | name      | description                                                                                                                                                                                                                                                        |
 | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| listening |                                                                                                                                                                                                                                                                    |
+| listening | Print open ports                                                                                                                                                                                                                                                   |
 | mkd       | Create a new directory and enter it                                                                                                                                                                                                                                |
 | fs        | Determine size of a file or total size of a directory                                                                                                                                                                                                              |
 | dataurl   | Create a data URL from a file                                                                                                                                                                                                                                      |
@@ -81,10 +81,10 @@ sh ./install.sh --profile work
 | clone     | Git clone                                                                                                                                                                                                                                                          |
 | gt        | Git graph log                                                                                                                                                                                                                                                      |
 
-
 ## Note
 
 `.zsh_prompt` for `home` and `work` defines `ZSH` export:
+
 - https://github.com/fisenkodv/dotfiles/blob/c5f764db84ce92eaf81d749d916134f0ea29a848/zsh/home/.zsh_prompt#L5
 - https://github.com/fisenkodv/dotfiles/blob/c5f764db84ce92eaf81d749d916134f0ea29a848/zsh/work/.zsh_prompt#L5
 

@@ -9,7 +9,7 @@ usage() {
 install() {
   target="$HOME/"
   cp "./$profile/.zsh_prompt" "$target"
-  for file in .{path,zshrc,exports,aliases,custom_aliases,functions,extra}; do
+  for file in .{path,zshrc,exports,aliases,custom_aliases,functions,extra,help}; do
     echo "cp "$file" "$target""
     [ -r "$file" ] && [ -f "$file" ] && cp "$file" "$target"
   done
