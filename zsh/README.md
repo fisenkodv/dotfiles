@@ -13,58 +13,58 @@ sh ./install.sh --profile work
 
 ### Aliases
 
-| alias         | description |
-| :------------ | :---------- |
-| `..`          |             |
-| `...`         |             |
-| `....`        |             |
-| `.....`       |             |
-| `~=`          |             |
-| `--`          |             |
-| `dl`          |             |
-| `dt`          |             |
-| `p`           |             |
-| `g`           |             |
-| `gc`          |             |
-| `gp`          |             |
-| `h`           |             |
-| `l`           |             |
-| `ll`          |             |
-| `la`          |             |
-| `lsd`         |             |
-| `ls`          |             |
-| `sudo`        |             |
-| `gurl`        |             |
-| `week`        |             |
-| `timer`       |             |
-| `update`      |             |
-| `ip`          |             |
-| `ips`         |             |
-| `whois`       |             |
-| `flush`       |             |
-| `lscleanup`   |             |
-| `sniff`       |             |
-| `httpdump`    |             |
-| `hd`          |             |
-| `md5sum`      |             |
-| `sha1sum`     |             |
-| `c`           |             |
-| `cleanup`     |             |
-| `rot13`       |             |
-| `emptytrash`  |             |
-| `show`        |             |
-| `hide`        |             |
-| `hidedesktop` |             |
-| `showdesktop` |             |
-| `urlencode`   |             |
-| `mergepdf`    |             |
-| `gm`          |             |
-| `spotoff`     |             |
-| `spoton`      |             |
-| `badge`       |             |
-| `map`         |             |
-| `chromekill`  |             |
-| `poweroff`    |             |
+| alias         | description                                                                                                           |
+| :------------ | :-------------------------------------------------------------------------------------------------------------------- |
+| `..`          | Easier navigation                                                                                                     |
+| `...`         | Easier navigation                                                                                                     |
+| `....`        | Easier navigation                                                                                                     |
+| `.....`       | Easier navigation                                                                                                     |
+| `~=`          | Easier navigation                                                                                                     |
+| `-`           | Easier navigation                                                                                                     |
+| `dl`          | Shortcut: Download                                                                                                    |
+| `dt`          | Shortcut: Desktop                                                                                                     |
+| `p`           | Shortcut: Projects                                                                                                    |
+| `g`           | Shortcut: git                                                                                                         |
+| `gc`          | Shortcut: git commit                                                                                                  |
+| `gp`          | Shortcut: git push                                                                                                    |
+| `h`           | Shortcut: history                                                                                                     |
+| `l`           | List all files colorized in long format                                                                               |
+| `ll`          | List all files colorized in long format                                                                               |
+| `la`          | List all files colorized in long format, including dot files                                                          |
+| `lsd`         | List only directories                                                                                                 |
+| `ls`          | Always use color output for `ls`                                                                                      |
+| `sudo`        | Enable aliases to be sudo’ed                                                                                          |
+| `gurl`        | Gzip-enabled `curl`                                                                                                   |
+| `week`        | Get week number                                                                                                       |
+| `timer`       | Stopwatch                                                                                                             |
+| `update`      | Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages                |
+| `ip`          | IP addresses                                                                                                          |
+| `ips`         | IP addresses                                                                                                          |
+| `whois`       | Enhanced WHOIS lookups                                                                                                |
+| `flush`       | Flush Directory Service cache                                                                                         |
+| `lscleanup`   | Clean up LaunchServices to remove duplicates in the “Open With” menu                                                  |
+| `sniff`       | View HTTP traffic                                                                                                     |
+| `httpdump`    |                                                                                                                       |
+| `hd`          | Canonical hex dump; some systems have this symlinked                                                                  |
+| `md5sum`      | OS X has no `md5sum`, so use `md5` as a fallback                                                                      |
+| `sha1sum`     | OS X has no `sha1sum`, so use `shasum` as a fallback                                                                  |
+| `c`           | Trim new lines and copy to clipboard                                                                                  |
+| `cleanup`     | Recursively delete `.DS_Store` files                                                                                  |
+| `rot13`       | ROT13-encode text. Works for decoding, too!                                                                           |
+| `emptytrash`  | Empty the Trash on all mounted volumes and the main HDD                                                               |
+| `show`        | Show hidden files in Finder                                                                                           |
+| `hide`        | Hide hidden files in Finder                                                                                           |
+| `hidedesktop` | Hide all desktop icons (useful when presenting)                                                                       |
+| `showdesktop` | Show all desktop icons (useful when presenting)                                                                       |
+| `urlencode`   | URL-encode strings                                                                                                    |
+| `mergepdf`    | Merge PDF files, 'mergepdf -o output.pdf input{1,2,3}.pdf'                                                            |
+| `gm`          | Merge conflict                                                                                                        |
+| `spotoff`     | Disable Spotlight                                                                                                     |
+| `spoton`      | Enable Spotlight                                                                                                      |
+| `badge`       | Ring the terminal bell, and put a badge on Terminal.app’s Dock icon                                                   |
+| `map`         | Intuitive map function. For example, to list all directories that contain a certain file: find . -name .gitattributes | map dirname |
+| `chromekill`  | Kill all the tabs in Chrome to free up memory                                                                         |
+| `poweroff`    | Power off                                                                                                             |
 
 ### Functions
 
