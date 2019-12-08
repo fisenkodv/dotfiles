@@ -80,7 +80,7 @@ sh ./install.sh --profile work
 | tre       | `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git` directory, listing directories first. The output gets piped into `less` with options to preserve color and line numbers, unless the output is small enough for one screen |
 | clone     | Git clone                                                                                                                                                                                                                                                          |
 | gt        | Git graph log                                                                                                                                                                                                                                                      |
-| weather   | Get weather info                                                                                                                                                                                                                                                   |
+| weather   | Get weather info, e.g. `weather nyc`                                                                                                                                                                                                                               |
 
 ## Note
 
