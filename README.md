@@ -1,6 +1,6 @@
 # Dotfiles
 
-TODO: Add description
+[ZSH](/zsh/README.md)
 
 ## Links
 
