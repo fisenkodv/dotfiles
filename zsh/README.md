@@ -57,7 +57,7 @@ sh ./install.sh --profile work
 | `hidedesktop` | Hide all desktop icons (useful when presenting)                                                                       |
 | `showdesktop` | Show all desktop icons (useful when presenting)                                                                       |
 | `urlencode`   | URL-encode strings                                                                                                    |
-| `mergepdf`    | Merge PDF files, 'mergepdf -o output.pdf input{1,2,3}.pdf'                                                            |
+| `mergepdf`    | Merge PDF files, `mergepdf -o output.pdf input{1,2,3}.pdf`                                                            |
 | `gm`          | Merge conflict                                                                                                        |
 | `spotoff`     | Disable Spotlight                                                                                                     |
 | `spoton`      | Enable Spotlight                                                                                                      |
