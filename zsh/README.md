@@ -24,10 +24,10 @@ sh ./install.sh --profile work
 | `dl`          | Shortcut: Download                                                                                                    |
 | `dt`          | Shortcut: Desktop                                                                                                     |
 | `p`           | Shortcut: Projects                                                                                                    |
-| `g`           | Shortcut: git                                                                                                         |
-| `gc`          | Shortcut: git commit                                                                                                  |
-| `gp`          | Shortcut: git push                                                                                                    |
-| `h`           | Shortcut: history                                                                                                     |
+| `g`           | Shortcut: `git`                                                                                                     |
+| `gc`          | Shortcut: `git commit`                                                                                                  |
+| `gp`          | Shortcut: `git push`                                                                                                    |
+| `h`           | Shortcut: `history`                                                                                                     |
 | `l`           | List all files colorized in long format                                                                               |
 | `ll`          | List all files colorized in long format                                                                               |
 | `la`          | List all files colorized in long format, including dot files                                                          |
