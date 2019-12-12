@@ -19,7 +19,7 @@ sh ./install.sh --profile work
 | `...`         | Easier navigation                                                                                                     |
 | `....`        | Easier navigation                                                                                                     |
 | `.....`       | Easier navigation                                                                                                     |
-| `~=`          | Easier navigation                                                                                                     |
+| `~`          | Easier navigation                                                                                                     |
 | `-`           | Easier navigation                                                                                                     |
 | `dl`          | Shortcut: Download                                                                                                    |
 | `dt`          | Shortcut: Desktop                                                                                                     |
