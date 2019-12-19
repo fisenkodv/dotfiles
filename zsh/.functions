@@ -77,4 +77,4 @@ function gt() {
 }
 
 # Weather
-function weather() { curl http://wttr.in/$1; }
+function weather() { curl https://wttr.in/$1\?mM }
