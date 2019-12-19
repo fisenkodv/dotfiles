@@ -8,8 +8,8 @@ export ZSH="/Users/fisenkodv/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-#ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Reload the plugin to highlight the commands each time Iterm2 starts 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source  $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### VISUAL CUSTOMISATION ### 
 
@@ -132,7 +132,7 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
 # Add a new line after the global prompt 
 # POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-# Colorise the top Tabs of Iterm2 with the same color as background
+# Colorize the top Tabs of Iterm2 with the same color as background
 # Just change the 18/26/33 wich are the rgb values 
 #echo -e "\033]6;1;bg;red;brightness;18\a"
 #echo -e "\033]6;1;bg;green;brightness;26\a"
