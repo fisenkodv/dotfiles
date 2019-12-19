@@ -19,15 +19,15 @@ sh ./install.sh --profile work
 | `...`         | Easier navigation                                                                                                     |
 | `....`        | Easier navigation                                                                                                     |
 | `.....`       | Easier navigation                                                                                                     |
-| `~=`          | Easier navigation                                                                                                     |
+| `~`          | Easier navigation                                                                                                     |
 | `-`           | Easier navigation                                                                                                     |
 | `dl`          | Shortcut: Download                                                                                                    |
 | `dt`          | Shortcut: Desktop                                                                                                     |
 | `p`           | Shortcut: Projects                                                                                                    |
-| `g`           | Shortcut: git                                                                                                         |
-| `gc`          | Shortcut: git commit                                                                                                  |
-| `gp`          | Shortcut: git push                                                                                                    |
-| `h`           | Shortcut: history                                                                                                     |
+| `g`           | Shortcut: `git`                                                                                                     |
+| `gc`          | Shortcut: `git commit`                                                                                                  |
+| `gp`          | Shortcut: `git push`                                                                                                    |
+| `h`           | Shortcut: `history`                                                                                                     |
 | `l`           | List all files colorized in long format                                                                               |
 | `ll`          | List all files colorized in long format                                                                               |
 | `la`          | List all files colorized in long format, including dot files                                                          |
@@ -57,7 +57,7 @@ sh ./install.sh --profile work
 | `hidedesktop` | Hide all desktop icons (useful when presenting)                                                                       |
 | `showdesktop` | Show all desktop icons (useful when presenting)                                                                       |
 | `urlencode`   | URL-encode strings                                                                                                    |
-| `mergepdf`    | Merge PDF files, 'mergepdf -o output.pdf input{1,2,3}.pdf'                                                            |
+| `mergepdf`    | Merge PDF files, `mergepdf -o output.pdf input{1,2,3}.pdf`                                                            |
 | `gm`          | Merge conflict                                                                                                        |
 | `spotoff`     | Disable Spotlight                                                                                                     |
 | `spoton`      | Enable Spotlight                                                                                                      |
@@ -80,7 +80,7 @@ sh ./install.sh --profile work
 | tre       | `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git` directory, listing directories first. The output gets piped into `less` with options to preserve color and line numbers, unless the output is small enough for one screen |
 | clone     | Git clone                                                                                                                                                                                                                                                          |
 | gt        | Git graph log                                                                                                                                                                                                                                                      |
-| weather   | Get weather info                                                                                                                                                                                                                                                   |
+| weather   | Get weather info, e.g. `weather nyc`                                                                                                                                                                                                                               |
 
 ## Note
 
