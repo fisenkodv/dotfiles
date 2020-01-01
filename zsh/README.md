@@ -91,4 +91,4 @@ sh ./install.sh --profile work
 - https://github.com/fisenkodv/dotfiles/blob/c5f764db84ce92eaf81d749d916134f0ea29a848/zsh/home/.zsh_prompt#L5
 - https://github.com/fisenkodv/dotfiles/blob/c5f764db84ce92eaf81d749d916134f0ea29a848/zsh/work/.zsh_prompt#L5
 
-that line needs to be updated accordingly if need.
+A line for the profile needs to be updated.
