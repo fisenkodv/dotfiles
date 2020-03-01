@@ -1,0 +1,32 @@
+# UPDATED: 2017.10.13
+
+#########
+# MONGO #
+#########
+
+  # BASIC COMMAND ALIASES
+    alias 'mongo-start'='sudo service mongod start'
+    alias 'mongo-stop'='sudo service mongod stop'
+    alias 'mongo-restart'='sudo service mongod restart'
+
+  # START MONGO USING CURRENT PROJECT LOCAL MONGODB STORAGE DIR
+    alias 'mongo-dir-start'='mongod --dbpath ./mongodb'
+
+##########
+#  HELP  #
+##########
+
+  # COMMAND LIST
+    f_lc_mongo() {
+      printf "\n"
+      printf "${LIGHTRED}-- MONGO ALIAS COMMANDS --${NC}"
+      printf "\n"
+        printf "\n${LIGHTCYAN} mongo-start         ${NC} : mongo service - start"
+        printf "\n${LIGHTCYAN} mongo-stop          ${NC} : mongo service - stop"
+        printf "\n${LIGHTCYAN} mongo-restart       ${NC} : mongo service - restart"
+      printf "\n"
+        printf "\n${LIGHTCYAN} mongo-dir-start     ${NC} : starts mongo dbPath in current dir"
+      printf "\n"
+      printf "\n"
+    }
+    alias 'lc_mongo'=f_lc_mongo

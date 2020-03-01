@@ -1,0 +1,119 @@
+# UPDATED: 2018.12.10
+
+#############
+#  DOCKER  #
+#############
+
+  # docker
+    f_docker_container-stop() {
+      if [ ! $@ ]; then
+        lred-message-space "-- container name must be supplied to stop"
+        return
+      fi
+
+      message-double-color $LIGHTCYAN $YELLOW $NC "$DOUBLESPACE" "-- stopping docker container" " " $1
+
+      docker stop $1
+    }
+    f_docker_container-remove() {
+      if [ ! $@ ]; then
+        lred-message-space "-- container name must be supplied to remove"
+        return
+      fi
+
+      message-double-color $LIGHTCYAN $YELLOW $NC "$DOUBLESPACE" "-- removing docker container" " " $1
+
+      docker rm -f $@
+    }
+    alias 'd-c-l'='docker ps -a'
+    alias 'd-c-s'=f_docker_container-stop
+    alias 'd-c-sa'='f_docker_container-stop $(docker ps -a -q)'
+    alias 'd-c-r'=f_docker_container-remove
+    alias 'd-c-ra'='f_docker_container-remove $(docker ps -a -q)'
+
+    f_docker_image-list() {
+      message-double-color $LIGHTCYAN $YELLOW $NC "$DOUBLESPACE" "-- showing all containers"
+
+      docker image ls -a
+    }
+    f_docker_image-remove() {
+      if [ $# -eq 1 ]; then
+        message-double-color $LIGHTCYAN $YELLOW $NC "$DOUBLESPACE" "-- removing docker image" " " "$*"
+      elif [ $# -ge 2 ]; then
+        message-double-color $LIGHTCYAN $YELLOW $NC "$DOUBLESPACE" "-- removing docker images" " " "$*"
+      else
+        lred-message-space "-- image name(s) must be supplied to remove or image doesn't exist"
+        return
+      fi
+
+      docker rmi -f $*
+      printf "\n"
+    }
+    alias 'd-i-l'=f_docker_image-list
+    alias 'd-i-r'=f_docker_image-remove
+    alias 'd-i-ra'='f_docker_image-remove $(docker images -aq)'
+
+    alias 'd-s-p'='docker system prune -af --volumes'
+
+  # DOCKER COMPOSE COMMANDS
+    f_docker_docker-compose() {
+      docker-compose $@
+    }
+    alias 'dc'=f_docker_docker-compose
+    alias 'dc-c'='docker-compose config'
+    alias 'dc-p'='docker-compose pull'
+    alias 'dc-pp'='docker-compose pull --parallel'
+    alias 'dc-b'='docker-compose build'
+    alias 'dc-d'='docker-compose down'
+    alias 'dc-u'='docker-compose up -d'
+    alias 'dc-l'='docker-compose logs -f'
+    alias 'dc-k'='docker-compose kill -s SIGINT'
+    f_docker_docker-compose-all() {
+      local CURRENT_STEP=0
+
+      f_step "docker-compose pull"
+      dc-p | INDENT
+      ((++CURRENT_STEP))
+      f_step "docker-compose up"
+      dc-u | INDENT
+      ((++CURRENT_STEP))
+      f_step "docker system prune"
+      d-s-p | INDENT
+    }
+    alias 'dc-a'=f_docker_docker-compose-all
+
+##########
+#  HELP  #
+##########
+
+  # COMMAND LIST
+    f_lc_docker() {
+      printf "\n"
+      printf "${LIGHTRED}-- DOCKER ALIAS COMMANDS --${NC}"
+      printf "\n"
+        printf "\n${LIGHTCYAN} dc [command]                 ${NC} : docker-compose"
+        printf "\n${LIGHTCYAN} dc-c                         ${NC} : docker-compose config"
+        printf "\n${LIGHTCYAN} dc-p                         ${NC} : docker-compose pull"
+        printf "\n${LIGHTCYAN} dc-pp                        ${NC} : docker-compose pull parallel"
+        printf "\n${LIGHTCYAN} dc-b                         ${NC} : docker-compose build"
+        printf "\n${LIGHTCYAN} dc-d                         ${NC} : docker-compose down"
+        printf "\n${LIGHTCYAN} dc-u                         ${NC} : docker-compose up -d"
+        printf "\n${LIGHTCYAN} dc-l                         ${NC} : docker-compose logs -f"
+        printf "\n${LIGHTCYAN} dc-k                         ${NC} : docker-compose kill all (dangerous)"
+        printf "\n${LIGHTCYAN} dc-a                         ${NC} : docker-compose down + up + prune"
+      printf "\n"
+        printf "\n${LIGHTCYAN} d-c-l                        ${NC} : docker list all containers"
+        printf "\n${LIGHTCYAN} d-c-s [id]                   ${NC} : docker stop container"
+        printf "\n${LIGHTCYAN} d-c-sa                       ${NC} : docker stop all container"
+        printf "\n${LIGHTCYAN} d-c-r [id]                   ${NC} : docker stop and remove container"
+        printf "\n${LIGHTCYAN} d-c-ra                       ${NC} : docker remove all containers"
+      printf "\n"
+        printf "\n${LIGHTCYAN} d-i-l                        ${NC} : docker list all images, local: default"
+        printf "\n${LIGHTCYAN} d-i-r [id]                   ${NC} : docker remove image"
+        printf "\n${LIGHTCYAN} d-i-ra                       ${NC} : docker remove all image"
+      printf "\n"
+        printf "\n${LIGHTCYAN} d-s-p                        ${NC} : docker system prune images, containers, volumes"
+      printf "\n"
+      printf "\n"
+    }
+    alias 'lc_docker'=f_lc_docker

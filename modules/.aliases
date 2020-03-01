@@ -1,3 +1,4 @@
+alias 'perms'='stat -f "%A %a %N" *'
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."

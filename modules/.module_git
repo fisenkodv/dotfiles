@@ -1,0 +1,18 @@
+# Git aliases and functions
+
+alias g="git"
+alias gs="git status"
+alias gc="git commit -am"
+alias gp="git push origin"
+alias 'count-lines'='git ls-files | xargs wc -l'
+
+# COMMAND LIST
+  f_lc_git() {
+    printf "\n"
+    printf "${LIGHTRED}-- GIT ALIAS COMMANDS --${NC}"
+    printf "\n"
+      printf "\n${LIGHTCYAN} count-lines     ${NC} : count # of lines in repo"
+    printf "\n"
+    printf "\n"
+  }
+  alias 'lc_git'=f_lc_git
