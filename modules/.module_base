@@ -123,7 +123,7 @@ alias 'message-double-color'=base::print_double-color
 base::check_os() {
   if [ ! "$1" ]; then
     red-message-space "ERROR: base::check_os needs os"
-    return;
+    return
   fi
 
   local OS_STR=""
@@ -161,7 +161,7 @@ base::list_commands() {
   printf "\n"
   printf "${LIGHTRED}-- BASE ALIAS COMMANDS --${NC}"
   printf "\n"
-    printf "\n${LIGHTCYAN} zsh-e                          ${NC} : .zshrc edit"
+  printf "\n${LIGHTCYAN} zsh-e                          ${NC} : .zshrc edit"
   printf "\n"
   printf "\n"
 }

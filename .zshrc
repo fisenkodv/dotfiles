@@ -34,4 +34,4 @@ list_commands() {
   fi
 }
 
-alias 'lc'=list_commands
+alias ''=list_commands

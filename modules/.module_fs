@@ -1,76 +1,41 @@
-# UPDATED: 2018.02.28
+# File System aliases and functions
 
-#############################
-#  COMPLEX COMMAND ALIASES  #
-#############################
-# DIRECTORY SWITCHER
-  f_switch-dirs() {
-    if [ ! "$1" ]; then
-      red-message-space "ERROR: f_switch_dirs directory not specified"
-      return;
-    fi
+# COMMANDS
+fs::ll() {
+  local LL_STR="ls -la"
 
-    if [ ! "$2" ]; then
-      red-message-space "ERROR: f_switch_dirs description not specified"
-      return;
-    fi
+  if [[ $(base::check_os linux) = "true" ]]; then
+    LL_STR+=" --color=auto --group-directories-first"
+  elif [[ $(base::check_os mac) = "true" ]]; then
+    LL_STR+="Gf"
+  fi
 
-    local FULL_PATH=$(eval echo $1)
+  printf "\n"
+  $LL_STR $@
+  printf "\n"
+}
+alias 'll'=fs::ll
+alias 'perms'='stat -f "%A %a %N" *'
 
-    if [[ ! -e $FULL_PATH ]]; then
-      red-message-space "ERROR: directory does not exist"
-      return;
-    fi
+alias '..'='cd ..'
+alias '...'='cd ../..'
+alias '....'='cd ../../..'
+alias '~'='cd ~'
+alias '--'='cd -'
+alias 'dl'="cd ~/Downloads"
+alias 'dt'="cd ~/Desktop"
+alias 'p'="cd ~/Projects"
 
-    cyan-message-space "-- switching to $2 dir"
-
-    cd $FULL_PATH
-  }
-  # COMMANDS
-    f_cc_ll() {
-      local LL_STR="ls -la"
-
-      if [[ $(f_check-os linux) = "true" ]]; then
-        LL_STR+=" --color=auto --group-directories-first"
-      elif [[ $(f_check-os mac) = "true" ]]; then
-        LL_STR+="Gf"
-      fi
-
-      printf "\n"
-      $LL_STR $@
-      printf "\n"
-    }
-    alias 'll'=f_cc_ll
-    alias 'perms'='stat -f "%A %a %N" *'
-    alias '...'='cd ..'
-
-  # ADD FUNCTIONALITY TO CHANGE DIRECTORY COMMAND
-    cd() {
-      builtin cd "$@"
-
-      if [[ ${BASH_MODULES[*]} =~ .*nvm.* ]] && [[ $(nvm version) ]]; then
-        f_nvm_check-nvmrc
-      fi
-
-      if [[ ${BASH_MODULES[*]} =~ .*python.* ]]; then
-        f_env_python_source-py-virtual-env
-      fi
-    }
-
-##########
-#  HELP  #
-##########
-
-  # COMMAND LIST
-    f_lc_complex_commands() {
-      printf "\n"
-      printf "${LIGHTRED}-- COMPLEX ALIAS COMMANDS --${NC}"
-      printf "\n"
-        printf "\n${LIGHTCYAN} ll        ${NC} : list all files"
-        printf "\n${LIGHTCYAN} perms     ${NC} : permissions for file"
-        printf "\n${LIGHTCYAN} ..        ${NC} : up one directory"
-        printf "\n${LIGHTCYAN} cd        ${NC} : changes directory while looking for python virtualenv and .nvmrc"
-      printf "\n"
-      printf "\n"
-    }
-    alias 'lc_complex_commands'=f_lc_complex_commands
+# COMMAND LIST
+fs::list_commands() {
+  printf "\n"
+  printf "${LIGHTRED}-- COMPLEX ALIAS COMMANDS --${NC}"
+  printf "\n"
+  printf "\n${LIGHTCYAN} ll        ${NC} : list all files"
+  printf "\n${LIGHTCYAN} perms     ${NC} : permissions for file"
+  printf "\n${LIGHTCYAN} ..        ${NC} : up one directory"
+  printf "\n${LIGHTCYAN} cd        ${NC} : changes directory while looking for python virtualenv and .nvmrc"
+  printf "\n"
+  printf "\n"
+}
+alias 'list_commands_fs'=fs::list_commands
