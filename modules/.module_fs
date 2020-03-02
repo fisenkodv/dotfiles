@@ -14,7 +14,7 @@ fs::ll() {
   $LL_STR $@
   printf "\n"
 }
-alias 'll'='fs::ll'
+alias 'll'=fs::ll
 
 fs::mkd() {
   mkdir -p "$@" && cd "$@"
@@ -45,7 +45,7 @@ alias '..'='cd ..'
 alias '...'='cd ../..'
 alias '....'='cd ../../..'
 alias '~'='cd ~'
-alias '--'='cd -'
+#alias '-'='cd -'
 
 alias 'dl'="cd ~/Downloads"
 alias 'dt'="cd ~/Desktop"

@@ -7,22 +7,22 @@ BASH_MODULES=(
   'fs'
   'net'
   'utils'
+  'prompt'
 )
 
 core::load_modules() {
   local full_path=$(eval echo $BASH_MODULE_DIR)
-  printf $full_path
 
-  for index in ${!BASH_MODULES[@]}; do
-    if [ -f $full_path/.module_${BASH_MODULES[index]}]; then
-      source $full_path/.module_${BASH_MODULES[index]}
+  for index in ${BASH_MODULES[@]}; do
+    if [ -f $full_path/.module_${index} ]; then
+      source $full_path/.module_${index}
       printf "%b%s%s%s%b%s%b" \
             "\e[0m" \
             "  " \
             "loading bash module..." \
             "  " \
             "\e[1;36m" \
-            "${BASH_MODULES[index]}" \
+            "${index}" \
             "\n"
     fi
   done
