@@ -1,0 +1,20 @@
+# Prompt module
+
+OH_MY_ZSH="~/.oh-my-zsh/oh-my-zsh.sh"
+ZSH_THEME="robbyrussell"
+plugins=(
+  git
+  git-flow
+  zsh-autosuggestions
+  node
+  osx
+  sudo
+  docker
+)
+source $(eval echo $OH_MY_ZSH)
+
+# COMMAND LIST
+prompt::list_commands() {
+  return
+}
+alias 'list_commands_prompt'=prompt::list_commands

@@ -1,23 +1,36 @@
 #!/bin/bash
 
-BASH_MODULE_DIR = '~/.dotfiles/modules'
-BASH_MODULES = (
+BASH_MODULE_DIR='~/modules'
+BASH_MODULES=(
   'base'
   'git'
+  'fs'
+  'net'
+  'utils'
 )
 
-load_modules() {
-  local full_path = $(eval echo $BASH_MODULE_DIR)
+core::load_modules() {
+  local full_path=$(eval echo $BASH_MODULE_DIR)
+  printf $full_path
 
   for index in ${!BASH_MODULES[@]}; do
-    if [ -f full_path/.${BASH_MODULES[index]}]; then
-      source full_path/.${BASH_MODULES[index]}
+    if [ -f $full_path/.module_${BASH_MODULES[index]}]; then
+      source $full_path/.module_${BASH_MODULES[index]}
+      printf "%b%s%s%s%b%s%b" \
+            "\e[0m" \
+            "  " \
+            "loading bash module..." \
+            "  " \
+            "\e[1;36m" \
+            "${BASH_MODULES[index]}" \
+            "\n"
+    fi
   done
 }
 
-load_modules()
+core::load_modules
 
-list_commands() {
+core::list_commands() {
   local full_path = $(eval echo $BASH_MODULE_DIR)
 
   if [ ! $@ ]; then
@@ -34,4 +47,4 @@ list_commands() {
   fi
 }
 
-alias ''=list_commands
+alias 'dotfiles'='core::list_commands'

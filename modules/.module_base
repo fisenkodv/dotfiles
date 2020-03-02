@@ -73,9 +73,9 @@ base::space_exec() {
 base::space_eval() {
   eval $1 | sed "s/^/${DOUBLESPACE}/"
 }
-alias 'SPACE'=base::space
-alias 'SPACE-EXEC'=base::space_exec
-alias 'SPACE-EVAL'=base::space_eval
+alias 'SPACE'='base::space'
+alias 'SPACE-EXEC'='base::space_exec'
+alias 'SPACE-EVAL'='base::space_eval'
 
 # UTILITY - MESSAAGE OUTPUTTER
 
@@ -117,12 +117,12 @@ base::print_double-color() {
     "$7" \
     $3
 }
-alias 'message-double-color'=base::print_double-color
+alias 'message-double-color'='base::print_double-color'
 
 # UTILITY
 base::check_os() {
   if [ ! "$1" ]; then
-    red-message-space "ERROR: base::check_os needs os"
+    base::red-message-space "ERROR: base::check_os needs os"
     return
   fi
 
@@ -151,18 +151,29 @@ base::step() {
   printf ${NC}
 }
 
+base::hr() {
+  local word="$1"
+  if [ ! $word ]; then
+    word="-"
+  fi
+  line=''
+  columns="$(tput cols)"
+  while [[ ${#line} -lt $columns ]]; do
+    line="$line$word"
+  done
+  echo "$GREEN${line:0:$columns}$NC"
+}
+
 # ZSH
 alias 'zsh-e'='nano ~/.zshrc'
-
-# HELP  #
 
 # COMMAND LIST
 base::list_commands() {
   printf "\n"
   printf "${LIGHTRED}-- BASE ALIAS COMMANDS --${NC}"
   printf "\n"
-  printf "\n${LIGHTCYAN} zsh-e                          ${NC} : .zshrc edit"
+  printf "\n${LIGHTCYAN} zsh-e           ${NC} : .zshrc edit"
   printf "\n"
   printf "\n"
 }
-alias 'list_commands_base'=base::list_commands
+alias 'list_commands_base'='base::list_commands'
