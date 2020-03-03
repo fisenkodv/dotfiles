@@ -1,0 +1,17 @@
+# Different utilities
+
+utils::weather() {
+  curl https://wttr.in/$1\?mM
+}
+alias weather=utils::weather
+
+# COMMAND LIST
+utils::list_commands() {
+  printf "\n"
+  printf "${LIGHTRED}UTILS ALIAS COMMANDS${NC}"
+  printf "\n"
+  printf "\n${LIGHTCYAN} weather    ${NC} : get weather"
+  printf "\n"
+  printf "\n"
+}
+alias list_commands_utils=utils::list_commands

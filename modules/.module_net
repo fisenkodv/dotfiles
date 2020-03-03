@@ -1,0 +1,42 @@
+# Network aliases and functions
+
+# IP addresses
+alias 'ip'="dig +short myip.opendns.com @resolver1.opendns.com"
+alias 'ips'="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+net::listening() {
+    if [ $# -eq 0 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P
+    elif [ $# -eq 1 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color $1
+    else
+        yellow-message "Usage: listening [pattern]"
+    fi
+}
+alias 'listening'=net::listening
+
+net::server() {
+  local port=8080
+  if [ "$1" ]; then
+    port=$1
+  fi
+
+  sleep 1 && open "http://localhost:${port}/" &
+  python -m SimpleHTTPServer 8080
+}
+alias 'server'=net::server
+
+
+# COMMAND LIST
+net::list_commands() {
+  printf "\n"
+  printf "${LIGHTRED}NETWORK ALIAS COMMANDS${NC}"
+  printf "\n"
+  printf "\n${LIGHTCYAN} ip          ${NC} : get current IP"
+  printf "\n${LIGHTCYAN} ips         ${NC} : get all IPs"
+  printf "\n${LIGHTCYAN} listening   ${NC} : get open ports"
+  printf "\n${LIGHTCYAN} server      ${NC} : start HTTP server"
+  printf "\n"
+  printf "\n"
+}
+alias 'list_commands_net'=net::list_commands

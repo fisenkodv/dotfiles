@@ -1,0 +1,75 @@
+# File System aliases and functions
+
+# COMMANDS
+fs::ll() {
+  local LL_STR="ls -la"
+
+  if [[ $(base::check_os linux) = "true" ]]; then
+    LL_STR+=" --color=auto --group-directories-first"
+  elif [[ $(base::check_os mac) = "true" ]]; then
+    LL_STR+="Gf"
+  fi
+
+  printf "\n"
+  $LL_STR $@
+  printf "\n"
+}
+alias 'll'=fs::ll
+
+fs::mkd() {
+  mkdir -p "$@" && cd "$@"
+}
+alias 'mkd'=fs::mkd
+
+fs::fs() {
+  if du -b /dev/null > /dev/null 2>&1; then
+    local arg=-sbh
+  else
+    local arg=-sh
+  fi
+  if [[ -n "$@" ]]; then
+    du $arg -- "$@"
+  else
+    du $arg .[^.]* *
+  fi
+}
+alias 'fs'=fs::fs
+
+fs::tre() {
+  tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+alias 'tre'=fs::tre
+
+alias 'perms'='stat -f "%A %a %N" *'
+alias '..'='cd ..'
+alias '...'='cd ../..'
+alias '....'='cd ../../..'
+alias '~'='cd ~'
+#alias '-'='cd -'
+
+alias 'dl'='cd ~/Downloads'
+alias 'dt'='cd ~/Desktop'
+alias 'p'='cd ~/Projects'
+
+# COMMAND LIST
+fs::list_commands() {
+  printf "\n"
+  printf "${LIGHTRED}FILE SYSTEM ALIAS COMMANDS:${NC}"
+  printf "\n"
+  printf "\n${LIGHTCYAN} ll        ${NC} : list all files"
+  printf "\n${LIGHTCYAN} mkd       ${NC} : create a new directory and enter it"
+  printf "\n${LIGHTCYAN} fs        ${NC} : determine size of a file or total size of a directory"
+  printf "\n${LIGHTCYAN} tre       ${NC} : show directory tree"
+  printf "\n${LIGHTCYAN} perms     ${NC} : permissions for file"
+  printf "\n${LIGHTCYAN} ..        ${NC} : up one directory"
+  printf "\n${LIGHTCYAN} ...       ${NC} : up two directories"
+  printf "\n${LIGHTCYAN} ....      ${NC} : up three directories"
+  printf "\n${LIGHTCYAN} ~         ${NC} : go to the home directory"
+  printf "\n${LIGHTCYAN} --        ${NC} : go to the previous directory"
+  printf "\n${LIGHTCYAN} dl        ${NC} : go to the Downloads directory"
+  printf "\n${LIGHTCYAN} dt        ${NC} : go to the Desktop directory"
+  printf "\n${LIGHTCYAN} p         ${NC} : go to the Projects directory"
+  printf "\n"
+  printf "\n"
+}
+alias 'list_commands_fs'=fs::list_commands

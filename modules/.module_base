@@ -1,0 +1,179 @@
+#!/bin/bash
+
+# COLOR VARIABLES (http://ascii-table.com/ansi-escape-sequences.php)
+
+NC='\e[0m'
+BLACK='\e[0;30m'
+WHITE='\e[1;37m'
+YELLOW='\e[1;33m'
+BROWNORANGE='\e[0;33m'
+RED='\e[0;31m'
+LIGHTRED='\e[1;31m'
+GREEN='\e[0;32m'
+LIGHTGREEN='\e[1;32m'
+BLUE='\e[0;34m'
+LIGHTBLUE='\e[1;34m'
+PURPLE='\e[0;35m'
+LIGHTPURPLE='\e[1;35m'
+CYAN='\e[0;36m'
+LIGHTCYAN='\e[1;36m'
+LIGHTGRAY='\e[0;37m'
+DARKGRAY='\e[1;37m'
+
+# SPACING VARIABLES
+TAB=$'\t'
+DOUBLESPACE=$'  '
+
+# COLOR FUNCTIONS
+base::color_nc() { printf ${NC}; }
+base::color_black() { printf ${BLACK}; }
+base::color_white() { printf ${WHITE}; }
+base::color_yellow() { printf ${YELLOW}; }
+base::color_brownorange() { printf ${BROWNORANGE}; }
+base::color_red() { printf ${RED}; }
+base::color_lightred() { printf ${LIGHTRED}; }
+base::color_green() { printf ${GREEN}; }
+base::color_lightgreen() { printf ${LIGHTGREEN}; }
+base::color_blue() { printf ${BLUE}; }
+base::color_lightblue() { printf ${LIGHTBLUE}; }
+base::color_purple() { printf ${PURPLE}; }
+base::color_lightpurple() { printf ${LIGHTPURPLE}; }
+base::color_cyan() { printf ${CYAN}; }
+base::color_lightcyan() { printf ${LIGHTCYAN}; }
+base::color_lightgray() { printf ${LIGHTGRAY}; }
+base::color_darkgray() { printf ${DARKGRAY}; }
+
+# UTILITY - LINE INDENTER/PADDING
+
+## INDENTER BEFORE EACH LINE
+base::indent() {
+  while read data; do
+    echo $data | sed "s/^/${TAB}/"
+  done
+}
+base::indent_exec() {
+  exec $1 2>&1 | sed "s/^/${TAB}/"
+}
+base::indent_eval() {
+  eval $1 | sed "s/^/${TAB}/"
+}
+alias 'INDENT'=base::indent
+alias 'INDENT-EXEC'=base::indent_exec
+alias 'INDENT-EVAL'=base::indent_eval
+
+# DOUBLE SPACE BEFORE EACH LINE
+base::space() {
+  while read data; do
+    echo $data | sed "s/^/${DOUBLESPACE}/"
+  done
+}
+base::space_exec() {
+  exec $1 2>&1 | sed "s/^/${DOUBLESPACE}/"
+}
+base::space_eval() {
+  eval $1 | sed "s/^/${DOUBLESPACE}/"
+}
+alias 'SPACE'='base::space'
+alias 'SPACE-EXEC'='base::space_exec'
+alias 'SPACE-EVAL'='base::space_eval'
+
+# UTILITY - MESSAAGE OUTPUTTER
+
+## MESSAGE OUTPUTTING
+# Arguments: color, color, left pad, message
+base::print_with_pads() {
+  printf "%s%b%s%b\n" \
+    "$3" \
+    $1 \
+    "$4" \
+    $2
+}
+
+# Arguments: color, color, message
+base::print_without_pad() {
+  printf "%b%s%b\n" \
+    $1 \
+    "$3" \
+    $2
+}
+
+alias 'red-message'='base::print_without_pad $LIGHTRED $NC'
+alias 'red-message-space'='base::print_with_pads $LIGHTRED $NC "${DOUBLESPACE}"'
+alias 'cyan-message'='base::print_without_pad $LIGHTCYAN $NC'
+alias 'cyan-message-space'='base::print_with_pads $LIGHTCYAN $NC "${DOUBLESPACE}"'
+alias 'green-message'='base::print_without_pad $LIGHTGREEN $NC'
+alias 'green-message-space'='base::print_with_pads $LIGHTGREEM $NC "${DOUBLESPACE}"'
+alias 'yellow-message'='base::print_without_pad $YELLOW $NC'
+alias 'yellow-message-space'='base::print_with_pads $YELLOW $NC "${DOUBLESPACE}"'
+
+# Arguments: color, color, color, left pad, message, pad, message
+base::print_double-color() {
+  printf "%s%b%s%b%b%s%b\n" \
+    "$4" \
+    $1 \
+    "$5" \
+    "$6" \
+    $2 \
+    "$7" \
+    $3
+}
+alias 'message-double-color'='base::print_double-color'
+
+# UTILITY
+base::check_os() {
+  if [ ! "$1" ]; then
+    base::red-message-space "ERROR: base::check_os needs os"
+    return
+  fi
+
+  local OS_STR=""
+
+  if [ $1 = "mac" ]; then
+    OS_STR="Darwin"
+  elif [ $1 = "linux" ]; then
+    OS_STR="Linux"
+  fi
+
+  local OS_MATCH=false
+
+  if [[ $(uname -a | grep $OS_STR) ]]; then
+    OS_MATCH=true
+  fi
+
+  echo $OS_MATCH
+}
+
+base::step() {
+  printf ${LIGHTPURPLE}
+  printf "\n"
+  echo "[ $CURRENT_STEP ] $1"
+  printf "\n"
+  printf ${NC}
+}
+
+base::hr() {
+  local word="$1"
+  if [ ! $word ]; then
+    word="-"
+  fi
+  line=''
+  columns="$(tput cols)"
+  while [[ ${#line} -lt $columns ]]; do
+    line="$line$word"
+  done
+  echo "$GREEN${line:0:$columns}$NC"
+}
+
+# ZSH
+alias 'zsh-e'='nano ~/.zshrc'
+
+# COMMAND LIST
+base::list_commands() {
+  printf "\n"
+  printf "${LIGHTRED}BASE ALIAS COMMANDS:${NC}"
+  printf "\n"
+  printf "\n${LIGHTCYAN} zsh-e           ${NC} : .zshrc edit"
+  printf "\n"
+  printf "\n"
+}
+alias 'list_commands_base'=base::list_commands

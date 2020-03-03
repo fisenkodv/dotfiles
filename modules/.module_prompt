@@ -1,0 +1,21 @@
+# Prompt module
+
+export ZSH=$(eval echo '~/.oh-my-zsh')
+
+ZSH_THEME="robbyrussell"
+plugins=(
+  git
+  git-flow
+  zsh-autosuggestions
+  node
+  osx
+  sudo
+  docker
+)
+source $(eval echo ${ZSH}"/oh-my-zsh.sh")
+
+# COMMAND LIST
+prompt::list_commands() {
+  return
+}
+alias 'list_commands_prompt'=prompt::list_commands
