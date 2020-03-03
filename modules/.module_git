@@ -3,7 +3,7 @@
 alias gs='git status'
 alias gc='git commit -am'
 alias gp='git push origin'
-alias 'count-lines'='git ls-files | xargs wc -l'
+alias gls='git ls-files | xargs wc -l'
 
 git::gt() {
   git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -13,7 +13,7 @@ alias 'gt'=git::gt
 # COMMAND LIST
 git::list_commands() {
   printf "\n"
-  printf "${LIGHTRED}-- GIT ALIAS COMMANDS --${NC}"
+  printf "${LIGHTRED}GIT ALIAS COMMANDS${NC}"
   printf "\n"
   printf "\n${LIGHTCYAN} gs              ${NC} : git status"
   printf "\n${LIGHTCYAN} gc              ${NC} : git commit"

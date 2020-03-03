@@ -13,7 +13,7 @@ net::listening() {
         yellow-message "Usage: listening [pattern]"
     fi
 }
-alias 'listening'="net::listening"
+alias 'listening'=net::listening
 
 net::server() {
   local port=8080
@@ -24,13 +24,13 @@ net::server() {
   sleep 1 && open "http://localhost:${port}/" &
   python -m SimpleHTTPServer 8080
 }
-alias 'server'="net::server"
+alias 'server'=net::server
 
 
 # COMMAND LIST
 net::list_commands() {
   printf "\n"
-  printf "${LIGHTRED}-- NETWORK ALIAS COMMANDS --${NC}"
+  printf "${LIGHTRED}NETWORK ALIAS COMMANDS${NC}"
   printf "\n"
   printf "\n${LIGHTCYAN} ip          ${NC} : get current IP"
   printf "\n${LIGHTCYAN} ips         ${NC} : get all IPs"
@@ -39,4 +39,4 @@ net::list_commands() {
   printf "\n"
   printf "\n"
 }
-alias 'list_commands_net'='net::list_commands'
+alias 'list_commands_net'=net::list_commands

@@ -33,12 +33,12 @@ fs::fs() {
     du $arg .[^.]* *
   fi
 }
-alias 'fs'='fs::fs'
+alias 'fs'=fs::fs
 
 fs::tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
-alias 'tre'='fs::tre'
+alias 'tre'=fs::tre
 
 alias 'perms'='stat -f "%A %a %N" *'
 alias '..'='cd ..'
@@ -47,9 +47,9 @@ alias '....'='cd ../../..'
 alias '~'='cd ~'
 #alias '-'='cd -'
 
-alias 'dl'="cd ~/Downloads"
-alias 'dt'="cd ~/Desktop"
-alias 'p'="cd ~/Projects"
+alias 'dl'='cd ~/Downloads'
+alias 'dt'='cd ~/Desktop'
+alias 'p'='cd ~/Projects'
 
 # COMMAND LIST
 fs::list_commands() {
