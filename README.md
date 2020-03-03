@@ -1,6 +1,6 @@
 # Dotfiles
 
-![Dotfiles](https://github.com/fisenkodv/dotfiles/blob/master/assets/images/main.png)
+![Dotfiles](https://github.com/fisenkodv/dotfiles/blob/master/assets/main.png)
 
 ## Prerequisite
 
