@@ -1,5 +1,7 @@
 # Dotfiles
 
+![Dotfiles](https://github.com/fisenkodv/dotfiles/blob/master/assets/images/main.png)
+
 ## Prerequisite
 
 - [ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
