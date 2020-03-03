@@ -1,6 +1,7 @@
 # Prompt module
 
-OH_MY_ZSH="~/.oh-my-zsh/oh-my-zsh.sh"
+export ZSH=$(eval echo '~/.oh-my-zsh')
+
 ZSH_THEME="robbyrussell"
 plugins=(
   git
@@ -11,7 +12,7 @@ plugins=(
   sudo
   docker
 )
-source $(eval echo $OH_MY_ZSH)
+source $(eval echo ${ZSH}"/oh-my-zsh.sh")
 
 # COMMAND LIST
 prompt::list_commands() {

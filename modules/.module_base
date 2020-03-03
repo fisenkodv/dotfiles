@@ -170,10 +170,10 @@ alias 'zsh-e'='nano ~/.zshrc'
 # COMMAND LIST
 base::list_commands() {
   printf "\n"
-  printf "${LIGHTRED}-- BASE ALIAS COMMANDS --${NC}"
+  printf "${LIGHTRED}BASE ALIAS COMMANDS:${NC}"
   printf "\n"
   printf "\n${LIGHTCYAN} zsh-e           ${NC} : .zshrc edit"
   printf "\n"
   printf "\n"
 }
-alias 'list_commands_base'='base::list_commands'
+alias 'list_commands_base'=base::list_commands

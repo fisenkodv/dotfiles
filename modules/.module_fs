@@ -54,7 +54,7 @@ alias 'p'="cd ~/Projects"
 # COMMAND LIST
 fs::list_commands() {
   printf "\n"
-  printf "${LIGHTRED}-- FILE SYSTEM ALIAS COMMANDS --${NC}"
+  printf "${LIGHTRED}FILE SYSTEM ALIAS COMMANDS:${NC}"
   printf "\n"
   printf "\n${LIGHTCYAN} ll        ${NC} : list all files"
   printf "\n${LIGHTCYAN} mkd       ${NC} : create a new directory and enter it"
