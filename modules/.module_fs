@@ -28,9 +28,9 @@ fs::fs() {
     local arg=-sh
   fi
   if [[ -n "$@" ]]; then
-    du $arg -- "$@"
+    du $arg -- "$@" | sort -h
   else
-    du $arg .[^.]* *
+    du $arg .[^.]* * | sort -h
   fi
 }
 alias 'fs'=fs::fs
