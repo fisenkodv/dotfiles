@@ -14,3 +14,7 @@
 ```bash
 cp -r .zshrc modules ~/
 ```
+
+## License
+
+MIT
