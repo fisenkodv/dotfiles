@@ -10,6 +10,47 @@ git::gt() {
 }
 alias 'gt'=git::gt
 
+# Semantic Commit Messages
+git::samantic() {
+  if [ ! "$1" ]; then
+    base::red-message-space "ERROR: message type is expected"
+    return
+  fi
+  if [ ! "$2" ]; then
+    base::red-message-space "ERROR: message is expected"
+    return
+  fi
+  git commit -am "$1: $2"
+}
+git::chore() {
+  git::samantic "chore" $1
+}
+git::feat() {
+  git::samantic "feat" $1
+}
+git::fix() {
+  git::samantic "fix" $1
+}
+git::docs() {
+  git::samantic "docs" $1
+}
+git::style() {
+  git::samantic "style" $1
+}
+git::refactor() {
+  git::samantic "refactor" $1
+}
+git::test() {
+  git::samantic "test" $1
+}
+alias 'gchore'=git::chore
+alias 'gfeat'=git::feat
+alias 'gfix'=git::fi
+alias 'gdocs'=git::chore
+alias 'gstyle'=git::style
+alias 'grefactor'=git::refactor
+alias 'gtest'=git::test
+
 # COMMAND LIST
 git::list_commands() {
   printf "\n"
@@ -17,6 +58,13 @@ git::list_commands() {
   printf "\n"
   printf "\n${LIGHTCYAN} gs              ${NC} : git status"
   printf "\n${LIGHTCYAN} gc              ${NC} : git commit"
+  printf "\n${LIGHTCYAN} gchore          ${NC} : git commit -m 'chore: MSG'"
+  printf "\n${LIGHTCYAN} gfeat           ${NC} : git commit -m 'feat: MSG'"
+  printf "\n${LIGHTCYAN} gfix            ${NC} : git commit -m 'fix: MSG'"
+  printf "\n${LIGHTCYAN} gdocs           ${NC} : git commit -m 'docs: MSG'"
+  printf "\n${LIGHTCYAN} gstyle          ${NC} : git commit -m 'style: MSG'"
+  printf "\n${LIGHTCYAN} grefactor       ${NC} : git commit -m 'refactor: MSG'"
+  printf "\n${LIGHTCYAN} gtest           ${NC} : git commit -m 'test: MSG'"
   printf "\n${LIGHTCYAN} gp              ${NC} : git push"
   printf "\n${LIGHTCYAN} count-lines     ${NC} : count # of lines in repo"
   printf "\n${LIGHTCYAN} gt              ${NC} : show git tree"

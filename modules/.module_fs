@@ -11,7 +11,7 @@ fs::ll() {
   fi
 
   printf "\n"
-  $LL_STR $@
+  eval $LL_STR $@
   printf "\n"
 }
 alias 'll'=fs::ll

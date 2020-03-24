@@ -2,12 +2,12 @@
 
 BASH_MODULE_DIR='~/modules'
 BASH_MODULES=(
+  'prompt'
   'base'
   'git'
   'fs'
   'net'
   'utils'
-  'prompt'
 )
 
 core::load_modules() {
