@@ -8,6 +8,7 @@ BASH_MODULES=(
   'fs'
   'net'
   'utils'
+  'docker'
 )
 
 core::load_modules() {
