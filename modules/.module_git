@@ -45,7 +45,7 @@ git::test() {
 }
 alias 'gchore'=git::chore
 alias 'gfeat'=git::feat
-alias 'gfix'=git::fi
+alias 'gfix'=git::fix
 alias 'gdocs'=git::chore
 alias 'gstyle'=git::style
 alias 'grefactor'=git::refactor
