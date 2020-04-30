@@ -12,7 +12,10 @@
 ## Intallation
 
 ```bash
+git clone https://github.com/fisenkodv/dotfiles.git
+cd dotfiles
 cp -r .zshrc modules ~/
+source ~/.zshrc
 ```
 
 ## License
