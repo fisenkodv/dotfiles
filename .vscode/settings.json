@@ -1,5 +1,8 @@
 {
   "files.associations": {
     ".module_*": "shellscript"
-  }
+  },
+  "cSpell.words": [
+    "Dotfiles"
+  ]
 }

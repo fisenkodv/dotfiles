@@ -9,7 +9,7 @@
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
 
-## Intallation
+## Installation
 
 ```bash
 git clone https://github.com/fisenkodv/dotfiles.git
