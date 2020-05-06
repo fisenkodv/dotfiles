@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASH_MODULE_DIR='~/modules'
+BASH_MODULE_DIR='~/.dotfiles/modules'
 BASH_MODULES=(
   'prompt'
   'base'

@@ -1,4 +1,6 @@
 #!/bin/bash
 
-cp -r .zshrc modules ~/
+mkdir ~/.dotfiles
+cp -f .zshrc ~/
+cp -r modules ~/.dotfiles/
 source ~/.zshrc
