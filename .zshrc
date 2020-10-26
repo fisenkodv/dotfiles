@@ -9,6 +9,7 @@ BASH_MODULES=(
   'net'
   'utils'
   'docker'
+  'security'
 )
 
 core::load_modules() {
