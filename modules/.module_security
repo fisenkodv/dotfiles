@@ -1,0 +1,22 @@
+# Different utilities
+
+security::password() {
+  local length=8
+  if [ "$1" ]; then
+    length=$1
+  fi
+  export LC_CTYPE=C
+  cat /dev/urandom | tr -dc "a-zA-Z0-9" | fold -w $length | head -n 1
+}
+alias password=security::password
+
+# COMMAND LIST
+security::list_commands() {
+  printf "\n"
+  printf "${LIGHTRED}UTILS ALIAS COMMANDS${NC}"
+  printf "\n"
+  printf "\n${LIGHTCYAN} password [length]   ${NC} : get random password"
+  printf "\n"
+  printf "\n"
+}
+alias list_commands_security=security::list_commands
