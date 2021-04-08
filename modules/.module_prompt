@@ -12,6 +12,9 @@ plugins=(
   osx
   sudo
   docker
+  genpass
+  sdk
+  pipenv
 )
 source $(eval echo ${ZSH}"/oh-my-zsh.sh")
 
