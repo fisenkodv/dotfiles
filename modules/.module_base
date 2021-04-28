@@ -165,7 +165,7 @@ base::hr() {
 }
 
 # ZSH
-alias 'zsh-e'='nano ~/.zshrc'
+alias 'zsh-e'='vim ~/.zshrc'
 
 # COMMAND LIST
 base::list_commands() {
