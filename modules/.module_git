@@ -47,6 +47,9 @@ git::test() {
 git::merge() {
   git::samantic "merge" $1
 }
+git::clean() {
+  git clean -fdX
+}
 alias 'gchore'=git::chore
 alias 'gfeat'=git::feat
 alias 'gfix'=git::fix
@@ -55,6 +58,8 @@ alias 'gstyle'=git::style
 alias 'grefactor'=git::refactor
 alias 'gtest'=git::test
 alias 'gmerge'=git::merge
+
+alias 'gclean'=git::clean
 
 # COMMAND LIST
 git::list_commands() {
@@ -74,6 +79,7 @@ git::list_commands() {
   printf "\n${LIGHTCYAN} gp              ${NC} : git push"
   printf "\n${LIGHTCYAN} gls             ${NC} : count # of lines in repo"
   printf "\n${LIGHTCYAN} gt              ${NC} : show git tree"
+  printf "\n${LIGHTCYAN} gclean          ${NC} : remove all untracked/ignored files and directories"
   printf "\n"
   printf "\n"
 }
