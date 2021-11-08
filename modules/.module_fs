@@ -50,6 +50,8 @@ alias '~'='cd ~'
 alias 'dl'='cd ~/Downloads'
 alias 'dt'='cd ~/Desktop'
 alias 'p'='cd ~/Projects'
+alias 's'="fzf --height 50% --border --layout reverse  --info inline --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+alias 'se'='s | xargs -r -I {} code -g {}'
 
 # COMMAND LIST
 fs::list_commands() {
@@ -69,6 +71,8 @@ fs::list_commands() {
   printf "\n${LIGHTCYAN} dl        ${NC} : go to the Downloads directory"
   printf "\n${LIGHTCYAN} dt        ${NC} : go to the Desktop directory"
   printf "\n${LIGHTCYAN} p         ${NC} : go to the Projects directory"
+  printf "\n${LIGHTCYAN} s         ${NC} : fuzzy search in the curent directory"
+  printf "\n${LIGHTCYAN} se        ${NC} : fuzzy search and open in VS Code"
   printf "\n"
   printf "\n"
 }
