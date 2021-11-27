@@ -1,0 +1,13 @@
+brew "bat"
+brew "fzf"
+brew "htop"
+brew "neovim"
+brew "ncdu"
+brew "pidof"
+brew "tree"
+brew "tldr"
+brew "wget"
+
+brew "git-delta"
+brew "git-quick-stats"
+brew "git-standup"

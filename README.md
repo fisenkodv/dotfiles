@@ -1,20 +1,35 @@
 # Dotfiles
 
-![Dotfiles](https://github.com/fisenkodv/dotfiles/blob/master/assets/main.png)
+[![Actions Status](https://github.com/fisenkodv/dotfiles/workflows/Dotfiles%20Install/badge.svg)](https://github.com/fisenkodv/dotfiles/actions)
+[![Powered by dotbot][dbshield]][dblink]
 
-## Prerequisite
+[dblink]: https://github.com/anishathalye/dotbot
+[dbshield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat
 
-- [ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
-- [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
+> Personal dotfiles configuration for Zsh, Git, Vim, and more to rapidly bootstrap a new system.
 
-## Installation
+## Components
+
+- [Dotbot](https://github.com/anishathalye/dotbot) - Installation
+- Zsh Configuration
+  - [Zgen](https://github.com/tarjoilija/zgen) - Plugin Manager
+  - [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) - Zsh config framework
+  - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - Theme
+  - [asdf](https://github.com/asdf-vm/asdf) - Multi-language version manager
+  - [fzf](https://github.com/junegunn/fzf) - Fuzzy finder
+- [Karabiner](https://karabiner-elements.pqrs.org/) - Hyper key + global Vim-like binds
+- [Hammerspoon](https://www.hammerspoon.org/) - global application focus binds and window management
+- [neovim](https://github.com/neovim/neovim) and [vim-plug](https://github.com/junegunn/vim-plug)
+- [Makefile](./Makefile)
+  - Homebrew save/restore
+  - Install MacOS defaults
+
+### Installation
 
 ```bash
-$ git clone https://github.com/fisenkodv/dotfiles.git
-$ cd dotfiles
-$ sh ./install.sh
+git clone git@github.com:fisenkodv/dotfiles.git .dotfiles --recursive
+cd .dotfiles
+make install
 ```
 
 ## License

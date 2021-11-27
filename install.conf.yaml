@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+- clean: ['~', '~/bin']
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - command: ./git/set-gitconfig.sh
+      description: Configuring Git
+      stdout: true
+      quiet: false
+- link:
+    ~/.dotfiles: ''
+    ~/.config/nvim:
+      path: nvim
+      force: true
+    ~/.zshrc:
+      path: zsh/zshrc.zsh
+      force: true
+    ~/.oh-my-zsh: zsh/oh-my-zsh
+    ~/.zgen: zsh/zgen
+    ~/.asdf: zsh/asdf
+    ~/.asdfrc: zsh/asdfrc
