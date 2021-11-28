@@ -17,8 +17,6 @@
   - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - Theme
   - [asdf](https://github.com/asdf-vm/asdf) - Multi-language version manager
   - [fzf](https://github.com/junegunn/fzf) - Fuzzy finder
-- [Karabiner](https://karabiner-elements.pqrs.org/) - Hyper key + global Vim-like binds
-- [Hammerspoon](https://www.hammerspoon.org/) - global application focus binds and window management
 - [neovim](https://github.com/neovim/neovim) and [vim-plug](https://github.com/junegunn/vim-plug)
 - [Makefile](./Makefile)
   - Homebrew save/restore

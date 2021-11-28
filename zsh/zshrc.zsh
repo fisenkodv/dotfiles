@@ -36,7 +36,6 @@ if ! zgen saved; then
   zgen load caarlos0/zsh-mkc
   zgen load caarlos0/zsh-git-sync
   zgen load caarlos0/zsh-add-upstream
-  zgen load denolfe/zsh-travis
   zgen load denolfe/zsh-prepend
 
   zgen load agkozak/zsh-z
