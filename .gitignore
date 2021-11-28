@@ -1,0 +1,6 @@
+.vscode
+
+nvim/plugged
+cache
+
+.DS_Store
