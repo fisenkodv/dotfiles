@@ -4,10 +4,14 @@
 install:
 	./install
 
-# Save snapshot of all Homebrew packages to macos/Brewfile
+# Set MacOS defaults
+macos:
+	./macos/set-defaults.sh
+
+# Save snapshot of all Homebrew packages to macos/brewfile
 brew:
-	brew bundle dump -f --file=macos/Brewfile
-	brew bundle --force cleanup --file=macos/Brewfile
+	brew bundle dump -f --file=macos/brewfile
+	brew bundle --force cleanup --file=macos/brewfile
 
 # Restore Homebrew packages
 brew-restore:
@@ -15,9 +19,5 @@ brew-restore:
 	brew update
 	brew upgrade
 	brew install mas
-	brew bundle install --file=macos/Brewfile
+	brew bundle install --file=macos/brewfile
 	brew cleanup
-
-# Set MacOS defaults
-macos:
-	./macos/set-defaults.sh
