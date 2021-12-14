@@ -8,6 +8,7 @@ brew "tree"
 brew "tldr"
 brew "wget"
 brew "nmap"
+brew "pipenv"
 
 brew "git-delta"
 brew "git-quick-stats"
