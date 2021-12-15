@@ -16,7 +16,10 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set fileformat=unix
-filetype indent on      " load filetype-specific indent files
+set colorcolumn=120
+
+
+filetype indent on  " load filetype-specific indent files
 
 inoremap jk <esc>
 
@@ -28,7 +31,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
-
 
 " color schemas
 Plug 'morhetz/gruvbox'  " colorscheme gruvbox
@@ -60,10 +62,8 @@ endif
 "colorscheme ayu
 
 
-
 " turn off search highlight
 nnoremap ,<space> :nohlsearch<CR>
-
 
 
 lua << EOF
@@ -122,8 +122,6 @@ cmp.setup {
 EOF
 
 
-
-
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
@@ -161,6 +159,7 @@ local on_attach = function(client, bufnr)
 
 end
 
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'pyright', 'rust_analyzer' }
@@ -173,7 +172,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 EOF
-
 
 
 " Delete buffer while keeping window layout (don't close buffer's windows).
@@ -254,7 +252,6 @@ map gn :bn<cr>
 map gp :bp<cr>
 map gw :Bclose<cr>
 
-set colorcolumn=80
 
 " run current script with python3 by CTRL+R in command and insert mode
 autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
