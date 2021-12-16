@@ -1,6 +1,6 @@
 .vscode
 
-nvim/plugged
+config/nvim/plugged
 cache
 
 .DS_Store
