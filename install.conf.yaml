@@ -12,10 +12,10 @@
 - link:
     ~/.dotfiles: ''
     ~/.config/htop:
-      path: htop
+      path: config/htop
       force: true
     ~/.config/nvim:
-      path: nvim
+      path: config/nvim
       force: true
     ~/.zshrc:
       path: zsh/zshrc.zsh
