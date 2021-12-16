@@ -11,6 +11,9 @@
       quiet: false
 - link:
     ~/.dotfiles: ''
+    ~/.config/htop:
+      path: htop
+      force: true
     ~/.config/nvim:
       path: nvim
       force: true
