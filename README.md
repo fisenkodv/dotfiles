@@ -6,21 +6,21 @@
 [dblink]: https://github.com/anishathalye/dotbot
 [dbshield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat
 
-> Personal dotfiles configuration for Zsh, Git, Vim, and more to rapidly bootstrap a new system.
+> Personal dotfiles configuration for zsh, git, nvim, and more to rapidly bootstrap a new system.
 
 ## Components
 
-- [Dotbot](https://github.com/anishathalye/dotbot) - Installation
-- Zsh Configuration
-  - [Zgen](https://github.com/tarjoilija/zgen) - Plugin Manager
-  - [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) - Zsh config framework
-  - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - Theme
-  - [asdf](https://github.com/asdf-vm/asdf) - Multi-language version manager
-  - [fzf](https://github.com/junegunn/fzf) - Fuzzy finder
+- [Dotbot](https://github.com/anishathalye/dotbot) - a tool that bootstraps dotfiles
+- zsh Configuration
+  - [zgen](https://github.com/tarjoilija/zgen) - plugin manager
+  - [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) - framework for managing zsh configuration
+  - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - theme
+  - [asdf](https://github.com/asdf-vm/asdf) - multiple language runtime version manager
+  - [fzf](https://github.com/junegunn/fzf) - command-line fuzzy finder
 - [neovim](https://github.com/neovim/neovim) and [vim-plug](https://github.com/junegunn/vim-plug)
 - [Makefile](./Makefile)
   - Homebrew save/restore
-  - Install MacOS defaults
+  - Install macOS defaults
 
 ### Installation
 
