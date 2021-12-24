@@ -9,6 +9,7 @@ brew "tldr"
 brew "wget"
 brew "nmap"
 brew "pipenv"
+brew "pyenv"
 
 brew "git-delta"
 brew "git-quick-stats"
