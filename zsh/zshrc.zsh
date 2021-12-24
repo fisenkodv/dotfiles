@@ -115,6 +115,9 @@ for f in $DOTFILES/aliases/*.aliases.*sh; do source $f; done
 # Load all path files
 for f in $DOTFILES/path/*.path.sh; do source $f; done
 
+# Load all init files
+for f in $DOTFILES/init/*.init.sh; do source $f; done
+
 if type fd >/dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='fd --type f'
 fi
