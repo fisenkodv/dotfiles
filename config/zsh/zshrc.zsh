@@ -70,7 +70,7 @@ if ! zgen saved; then
   zgen save
 fi
 
-source $DOTFILES/zsh/p10k.zsh
+source $DOTFILES/config/zsh/p10k.zsh
 
 # History Options
 setopt append_history
@@ -107,16 +107,16 @@ if [[ -e ~/.secrets ]]; then
 fi
 
 # Load functions
-for f in $DOTFILES/functions/*; do source $f; done
+for f in $DOTFILES/bootstrap/functions/*; do source $f; done
 
 # Load aliases
-for f in $DOTFILES/aliases/*.aliases.*sh; do source $f; done
+for f in $DOTFILES/bootstrap/aliases/*.aliases.*sh; do source $f; done
 
 # Load all path files
-for f in $DOTFILES/path/*.path.sh; do source $f; done
+for f in $DOTFILES/bootstrap/path/*.path.sh; do source $f; done
 
 # Load all init files
-for f in $DOTFILES/init/*.init.sh; do source $f; done
+for f in $DOTFILES/bootstrap/init/*.init.sh; do source $f; done
 
 if type fd >/dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='fd --type f'

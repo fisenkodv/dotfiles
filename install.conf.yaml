@@ -5,10 +5,10 @@
 - clean: ['~', '~/bin']
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - command: ./git/set-gitconfig.sh
-      description: Configuring Git
-      stdout: true
-      quiet: false
+    # - command: ./config/git/set-gitconfig.sh
+    #   description: Configuring Git
+    #   stdout: true
+    #   quiet: false
 - link:
     ~/.dotfiles: ''
     ~/.config/htop:
@@ -18,9 +18,9 @@
       path: config/nvim
       force: true
     ~/.zshrc:
-      path: zsh/zshrc.zsh
+      path: config/zsh/zshrc.zsh
       force: true
-    ~/.oh-my-zsh: zsh/oh-my-zsh
-    ~/.zgen: zsh/zgen
-    ~/.asdf: zsh/asdf
-    ~/.asdfrc: zsh/asdfrc
+    ~/.oh-my-zsh: modules/oh-my-zsh
+    ~/.zgen: modules/zgen
+    ~/.asdf: modules/asdf
+    ~/.asdfrc: config/zsh/asdfrc

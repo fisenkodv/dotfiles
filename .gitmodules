@@ -1,16 +1,16 @@
-[submodule "dotbot"]
-path = dotbot
-url = https://github.com/anishathalye/dotbot
+[submodule "modules/dotbot"]
+path = modules/dotbot
+url = https://github.com/anishathalye/dotbot.git
 ignore = dirty
-[submodule "zsh/zgen"]
-path = zsh/zgen
+[submodule "modules/zgen"]
+path = modules/zgen
 url = https://github.com/tarjoilija/zgen.git
 ignore = dirty
-[submodule "zsh/asdf"]
-path = zsh/asdf
+[submodule "modules/asdf"]
+path = modules/asdf
 url = https://github.com/asdf-vm/asdf.git
 ignore = dirty
-[submodule "zsh/oh-my-zsh"]
-path = zsh/oh-my-zsh
+[submodule "modules/oh-my-zsh"]
+path = modules/oh-my-zsh
 url = https://github.com/ohmyzsh/ohmyzsh.git
 ignore = dirty
