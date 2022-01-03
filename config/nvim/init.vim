@@ -13,6 +13,7 @@ set scrolloff=7
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set smarttab
 set expandtab
 set autoindent
 set fileformat=unix
@@ -26,6 +27,8 @@ inoremap jk <esc>
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -64,7 +67,7 @@ endif
 
 " turn off search highlight
 nnoremap ,<space> :nohlsearch<CR>
-
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 lua << EOF
 -- Set completeopt to have a better completion experience
