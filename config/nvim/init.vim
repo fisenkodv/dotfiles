@@ -70,7 +70,7 @@ endif
 
 " turn off search highlight
 nnoremap ,<space> :nohlsearch<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
 
 lua << EOF
 -- Set completeopt to have a better completion experience
