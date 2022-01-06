@@ -4,6 +4,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"-----------------------------------------------------------------------------------------------------------------------
+
 set mouse=a         " enable mouse
 set encoding=utf-8
 set number
@@ -35,10 +37,6 @@ nmap <silent> <A-Right> :wincmd l<CR>
 nnoremap ,<space> :nohlsearch<CR>
 nnoremap <C-b> :NERDTreeToggle<CR>
 
-map gn :bn<cr>
-map gp :bp<cr>
-map gw :Bclose<cr>
-
 "-----------------------------------------------------------------------------------------------------------------------
 
 " run current script with python3 by CTRL+R in command and insert mode
@@ -68,6 +66,8 @@ call plug#begin('~/.config/nvim/plugged')
     " For JS/JSX
     Plug 'yuezk/vim-js'
     Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "-----------------------------------------------------------------------------------------------------------------------

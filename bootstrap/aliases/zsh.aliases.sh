@@ -37,6 +37,7 @@ alias mv='mv -i'
 hs() { history | grep -i "$1"; }
 alias .f='cd ~/.dotfiles'
 alias .fu='.f && git submodule update --recursive --remote'
+alias .fe='.f && vim .'
 
 # Detect the platform (similar to $OSTYPE)
 OS=$(uname)
