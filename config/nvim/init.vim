@@ -28,6 +28,7 @@ inoremap jk <esc>
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
