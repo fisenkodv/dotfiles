@@ -34,7 +34,14 @@ alias 'p'='cd ~/Projects'
 alias cp='cp -i'
 alias mv='mv -i'
 
-hs() { history | grep -i "$1"; }
+h() {
+  if type fzf >/dev/null 2>&1; then
+    print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --height "50%" | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+  else
+    history | grep -i "$1"
+  fi
+}
+
 alias .f='cd ~/.dotfiles'
 alias .fu='.f && git submodule update --recursive --remote'
 alias .fe='.f && vim .'
