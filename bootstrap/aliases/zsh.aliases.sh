@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-alias rl='source ~/.zshrc; echo ".zshrc reloaded"'
-alias regen='zgen reset;source ~/.zshrc'
+alias '.rl'='source ~/.zshrc; echo ".zshrc reloaded"'
+alias '.rgen'='zgen reset;source ~/.zshrc'
 
 alias ll='ls -la'
 alias llt='ls -lat'
