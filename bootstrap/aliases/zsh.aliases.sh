@@ -3,8 +3,7 @@
 alias '.rl'='source ~/.zshrc; echo ".zshrc reloaded"'
 alias '.rgen'='zgen reset;source ~/.zshrc'
 
-alias ll='ls -la'
-alias llt='ls -lat'
+alias ll='exa --long --header --git --group --all'
 
 if type systemctl >/dev/null 2>&1; then
   alias senable='sudo systemctl enable'
@@ -66,9 +65,12 @@ esac
 
 # Other bash stuff
 alias t="touch"
-alias tr1='tree -L 1 -C'
-alias tr2='tree -L 2 -C'
-alias tr3='tree -L 3 -C'
+#alias tr1='tree -L 1 -C'
+alias tr1='exa --long --header --git --group --all --tree --level=1'
+#alias tr2='tree -L 2 -C'
+alias tr2='exa --long --header --git --group --all --tree --level=2'
+#alias tr3='tree -L 3 -C'
+alias tr3='exa --long --header --git --group --all --tree --level=3'
 
 if type bat >/dev/null 2>&1; then
   alias cat="bat"

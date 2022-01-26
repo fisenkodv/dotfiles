@@ -12,6 +12,7 @@ brew "pipenv"
 brew "pyenv"
 brew "the_silver_searcher"
 brew "ripgrep"
+brew "exa"
 
 brew "git-delta"
 brew "git-quick-stats"
