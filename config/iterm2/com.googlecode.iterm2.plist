@@ -909,15 +909,15 @@
 			<key>Badge Top Margin</key>
 			<real>10</real>
 			<key>Blend</key>
-			<real>0.49348253180219237</real>
+			<real>0.50179870452637709</real>
 			<key>Blink Allowed</key>
 			<true/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>0.10000000000000001</real>
+			<real>9.8457192278922872</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1599,7 +1599,7 @@
 			<key>Title Components</key>
 			<integer>160</integer>
 			<key>Transparency</key>
-			<real>0.034776438625686454</real>
+			<real>0.05200435169084601</real>
 			<key>Underline Color</key>
 			<dict>
 				<key>Alpha Component</key>
