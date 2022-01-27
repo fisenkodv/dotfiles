@@ -8,10 +8,11 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
+set mouse=a
 set nocompatible
 set number
 syntax enable
-set fileencodings=utf-8,sjis,euc-jp,latin
+set fileencodings=utf-8
 set encoding=utf-8
 set title
 set autoindent
@@ -23,6 +24,7 @@ set cmdheight=1
 set laststatus=2
 set scrolloff=10
 set expandtab
+set colorcolumn=120
 "let loaded_matchparen = 1
 set backupskip=/tmp/*,/private/tmp/*
 
@@ -99,7 +101,6 @@ au BufNewFile,BufRead *.mdx set filetype=markdown
 
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
-autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
