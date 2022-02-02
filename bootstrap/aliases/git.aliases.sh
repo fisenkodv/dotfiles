@@ -29,16 +29,16 @@ alias guns="git reset HEAD --"
 
 alias gstl="git stash list --pretty=format:'%C(blue)%gd%C(reset): %<(100,trunc)%s %C(green)(%cr)%C(reset)'"
 
-git_samantic() {
+git_semantic() {
   git add --all
   git commit -am "$1: $2"
 }
 
-gchore() { git_samantic "chore" $1; }
-gfeat() { git_samantic "feat" $1; }
-gfix() { git_samantic "fix" $1; }
-gdocs() { git_samantic "docs" $1; }
-gstyle() { git_samantic "style" $1; }
-grefactor() { git_samantic "refactor" $1; }
-gtest() { git_samantic "test" $1; }
-gmerge() { git_samantic "merge" $1; }
+gchore() { git_semantic "chore" $1; }
+gfeat() { git_semantic "feat" $1; }
+gfix() { git_semantic "fix" $1; }
+gdocs() { git_semantic "docs" $1; }
+gstyle() { git_semantic "style" $1; }
+grefactor() { git_semantic "refactor" $1; }
+gtest() { git_semantic "test" $1; }
+gmerge() { git_semantic "merge" $1; }
