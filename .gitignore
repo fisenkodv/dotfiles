@@ -4,3 +4,5 @@ modules
 config/nvim/plugged
 
 .DS_Store
+*.lock.json
+

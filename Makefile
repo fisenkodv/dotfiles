@@ -10,8 +10,8 @@ macos:
 
 # Save snapshot of all Homebrew packages to macos/brewfile
 brew:
-	brew bundle dump -f --file=macos/brewfile
-	brew bundle --force cleanup --file=macos/brewfile
+	brew bundle dump -f --file=config/os/macos/brewfile
+	brew bundle --force cleanup --file=config/os/macos/brewfile
 
 # Restore Homebrew packages
 brew-restore:
@@ -19,5 +19,5 @@ brew-restore:
 	brew update
 	brew upgrade
 	brew install mas
-	brew bundle install --file=macos/brewfile
+	brew bundle install --file=config/os/macos/brewfile
 	brew cleanup

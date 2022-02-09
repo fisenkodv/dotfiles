@@ -42,31 +42,14 @@ echo "  › Set a really fast key repeat"
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-# echo "  › Disable transparency"
-# defaults write com.apple.universalaccess reduceTransparency -bool true
-
 echo "  › Enable text replacement almost everywhere"
 defaults write -g WebAutomaticTextReplacementEnabled -bool true
 
-echo "  › Turn off keyboard illumination when computer is not used for 5 minutes"
-defaults write com.apple.BezelServices kDimTime -int 300
-
-echo "  › Require password immediately after sleep or screen saver begins"
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-echo "  › Always show scrollbars"
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
-# Possible values: `WhenScrolling`, `Automatic` and `Always`
-
-echo "  › Disable Dashboard"
-defaults write com.apple.dashboard mcx-disabled -bool true
+echo "  › Automatic show scrollbars"
+defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 
 echo "  › Don't automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false
-
-echo "  › Increase the window resize speed for Cocoa applications"
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 echo "  › Disable smart quotes and smart dashes as they're annoying when typing code"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -79,10 +62,6 @@ echo "  › Disable auto-capitalization and double-space period"
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -int 0
 
-echo "  › Set up trackpad & mouse speed to a reasonable number"
-defaults write -g com.apple.trackpad.scaling 3
-defaults write -g com.apple.mouse.scaling 3
-
 echo "  › Avoid the creation of .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
@@ -92,14 +71,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 echo "  › Show battery percent"
 defaults write com.apple.menuextra.battery ShowPercent -bool true
 
-echo "  › Configure Menu Icons"
-defaults write com.apple.systemuiserver menuExtras -array \
-  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-  "/System/Library/CoreServices/Menu Extras/Clock.menu" \
-  "/System/Library/CoreServices/Menu Extras/Volume.menu"
-
 echo "  › Removing duplicates in the 'Open With' menu"
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
   -kill -r -domain local -domain system -domain user
@@ -108,8 +79,6 @@ echo "  › Removing duplicates in the 'Open With' menu"
 
 echo ""
 echo "› Finder:"
-echo "  › Always open everything in Finder's list view"
-defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
 echo "  › Set the Finder prefs for showing a few different volumes on the Desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -118,23 +87,14 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 echo "  › Expand save panel by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
-echo "  › Set sidebar icon size to small"
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+echo "  › Set sidebar icon size to medium"
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 echo "  › Show status bar"
 defaults write com.apple.finder ShowStatusBar -bool true
 
 echo "  › Show path bar"
 defaults write com.apple.finder ShowPathbar -bool true
-
-echo "  › Disable the warning before emptying the Trash"
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-echo "  › Save to disk by default, instead of iCloud"
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-
-echo "  › Display full POSIX path as Finder window title"
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 echo "  › Disable the warning when changing a file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -150,24 +110,6 @@ echo ""
 echo "› Dock"
 echo "  › Setting the icon size of Dock items to 48 pixels for optimal size/screen-realestate"
 defaults write com.apple.dock tilesize -int 48
-
-echo "  › Speeding up Mission Control animations and grouping windows by application"
-defaults write com.apple.dock expose-animation-duration -float 0.1
-defaults write com.apple.dock "expose-group-by-app" -bool true
-
-echo "  › Remove the auto-hiding Dock delay"
-defaults write com.apple.dock autohide-delay -float 0
-echo "  › Remove the animation when hiding/showing the Dock"
-defaults write com.apple.dock autohide-time-modifier -float 0
-
-echo "  › Automatically hide and show the Dock"
-defaults write com.apple.dock autohide -bool true
-
-echo "  › Don't animate opening applications from the Dock"
-defaults write com.apple.dock launchanim -bool false
-
-echo "  › Show App Switcher on all displays"
-defaults write com.apple.dock appswitcher-all-displays -bool true
 
 echo ""
 echo "› Kill related apps"
