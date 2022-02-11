@@ -6,6 +6,7 @@ git config --global user.name "Dmitry Fisenko"
 # Set git global settings
 git config --global push.default simple
 git config --global core.autocrlf false
+git config --global core.ignorecase false
 git config --global core.whitespace cr-at-eol
 git config --global pull.rebase true
 git config --global rebase.autoStash true
