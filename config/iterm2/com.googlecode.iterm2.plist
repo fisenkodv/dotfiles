@@ -917,7 +917,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>9.8457192278922872</real>
+			<real>11.845719227892287</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1621,7 +1621,7 @@
 			<key>Title Components</key>
 			<integer>160</integer>
 			<key>Transparency</key>
-			<real>0.05200435169084601</real>
+			<real>0.15504956445680343</real>
 			<key>Underline Color</key>
 			<dict>
 				<key>Alpha Component</key>
