@@ -20,6 +20,10 @@
     ~/.zshrc:
       path: config/zsh/zshrc.zsh
       force: true
+    ~/bin:
+      glob: true
+      path: config/scripts/*
+      force: true
     ~/.oh-my-zsh: modules/oh-my-zsh
     ~/.zgen: modules/zgen
     ~/.asdf: modules/asdf
