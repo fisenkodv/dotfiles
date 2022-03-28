@@ -2,7 +2,7 @@
     link:
       relink: true
       create: true
-- clean: ['~', '~/bin']
+- clean: ['~']
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     # - command: ./config/git/set-gitconfig.sh
@@ -19,10 +19,6 @@
       force: true
     ~/.zshrc:
       path: config/zsh/zshrc.zsh
-      force: true
-    ~/bin:
-      glob: true
-      path: config/scripts/*
       force: true
     ~/.oh-my-zsh: modules/oh-my-zsh
     ~/.zgen: modules/zgen
