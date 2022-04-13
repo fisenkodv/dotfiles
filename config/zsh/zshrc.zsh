@@ -26,7 +26,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/docker-compose
   zgen oh-my-zsh plugins/macos
   zgen oh-my-zsh plugins/genpass
-  zgen oh-my-zsh plugins/sdk
   zgen oh-my-zsh plugins/node
   zgen oh-my-zsh plugins/pipenv
 
@@ -39,7 +38,6 @@ if ! zgen saved; then
   zgen load denolfe/zsh-prepend
 
   zgen load agkozak/zsh-z
-  zgen load andrewferrier/fzf-z
 
   zgen oh-my-zsh plugins/asdf
   zgen load kiurchv/asdf.plugin.zsh
