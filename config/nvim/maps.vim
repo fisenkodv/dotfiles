@@ -15,6 +15,12 @@ nnoremap dw vb"_d
 " Select all
 nmap <C-a> gg<S-v>G
 
+
+" Search
+
+" Turn off search highlight
+nnoremap <silent> ,<space> :noh<CR> :call clearmatches()<CR>
+
 " Save with root permission
 command! W w !sudo tee > /dev/null %
 

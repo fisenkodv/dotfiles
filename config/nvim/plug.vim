@@ -35,6 +35,7 @@ if has("nvim")
   Plug 'nvim-telescope/telescope-file-browser.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
+  Plug 'airblade/vim-gitgutter'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }
