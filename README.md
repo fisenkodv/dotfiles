@@ -41,6 +41,10 @@ cd .dotfiles
 make install
 ```
 
+### Inspired By
+- https://github.com/denolfe/dotfiles
+- https://github.com/craftzdog/dotfiles-public
+
 ## License
 
 MIT
