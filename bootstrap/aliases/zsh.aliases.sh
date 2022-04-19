@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-alias '.rl'='source ~/.zshrc; echo ".zshrc reloaded"'
-alias '.rgen'='zgen reset;source ~/.zshrc'
+# dotfiles aliases
+alias .f='cd ~/.dotfiles'
+alias .fu='.f && git submodule update --recursive --remote'
+alias .fe='.f && vim .'
+alias .fr='source ~/.zshrc; echo ".zshrc reloaded"'
+alias .fgen='zgen reset;source ~/.zshrc'
 
 if type systemctl >/dev/null 2>&1; then
   alias senable='sudo systemctl enable'
@@ -38,10 +42,6 @@ h() {
     history | grep -i "$1"
   fi
 }
-
-alias .f='cd ~/.dotfiles'
-alias .fu='.f && git submodule update --recursive --remote'
-alias .fe='.f && vim .'
 
 # Detect the platform (similar to $OSTYPE)
 OS=$(uname)
