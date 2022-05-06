@@ -4,4 +4,4 @@ if type nvim >/dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-alias v='vim .'
+alias v=vim
