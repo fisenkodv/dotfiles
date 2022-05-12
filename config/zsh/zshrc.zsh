@@ -28,6 +28,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/genpass
   zgen oh-my-zsh plugins/node
   zgen oh-my-zsh plugins/pipenv
+  zgen oh-my-zsh plugins/kubectl
 
   zgen load michaelaquilina/zsh-autoswitch-virtualenv
   zgen load jocelynmallon/zshmarks
