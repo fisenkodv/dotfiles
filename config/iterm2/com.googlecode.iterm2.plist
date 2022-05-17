@@ -891,6 +891,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Background Image Mode</key>
+			<integer>0</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -917,13 +919,13 @@
 			<key>Badge Top Margin</key>
 			<real>10</real>
 			<key>Blend</key>
-			<real>0.5024844212383337</real>
+			<real>1</real>
 			<key>Blink Allowed</key>
 			<true/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<true/>
+			<false/>
 			<key>Blur Radius</key>
 			<real>14.633218188996011</real>
 			<key>Bold Color</key>
@@ -1545,7 +1547,7 @@
 			<key>Title Components</key>
 			<integer>160</integer>
 			<key>Transparency</key>
-			<real>0.10213233460771276</real>
+			<real>0.0</real>
 			<key>Underline Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1670,6 +1672,8 @@
 	</array>
 	<key>UseBorder</key>
 	<false/>
+	<key>UseMetal</key>
+	<true/>
 	<key>UseTmuxStatusBar</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>
@@ -14801,5 +14805,7 @@
 	<integer>3</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
+	<key>metalMaximizeThroughput</key>
+	<true/>
 </dict>
 </plist>
