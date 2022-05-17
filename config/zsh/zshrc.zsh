@@ -105,11 +105,11 @@ if [[ -e ~/.secrets ]]; then
   source ~/.secrets
 fi
 
-# Load functions
-for f in $DOTFILES/bootstrap/functions/*.functions.sh; do source $f; done
-
 # Load aliases
 for f in $DOTFILES/bootstrap/aliases/*.aliases.sh; do source $f; done
+
+# Load functions
+for f in $DOTFILES/bootstrap/functions/*.functions.sh; do source $f; done
 
 # Load all path files
 for f in $DOTFILES/bootstrap/path/*.path.sh; do source $f; done
