@@ -6,3 +6,5 @@ config/nvim/plugged
 .DS_Store
 *.lock.json
 
+# scripts need to be exluded from the repo
+**exclude**.sh
