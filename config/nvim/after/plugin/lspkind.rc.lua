@@ -3,7 +3,8 @@ if (not status) then return end
 
 lspkind.init({
   -- enables text annotations
-
+  --
+  -- default: true
   mode = 'symbol',
 
   -- default symbol map
