@@ -31,10 +31,6 @@ alias 'dl'='cd ~/Downloads'
 alias 'dt'='cd ~/Desktop'
 alias 'p'='cd ~/Projects'
 
-# Prompt if overwriting
-alias cp='cp -i'
-alias mv='mv -i'
-
 h() {
   if type fzf >/dev/null 2>&1; then
     print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --height "50%" | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
