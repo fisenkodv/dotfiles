@@ -23,6 +23,9 @@
     ~/.config/tmux:
       path: config/tmux
       force: true
+    ~/.config/iterm2:
+      path: config/iterm2
+      force: true
     ~/.oh-my-zsh: modules/oh-my-zsh
     ~/.zgen: modules/zgen
     ~/.asdf: modules/asdf
