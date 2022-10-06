@@ -16,6 +16,7 @@ brew "exa"
 brew "tig"
 brew "jq"
 brew "peco"
+brew "tmux"
 
 brew "git-delta"
 brew "git-quick-stats"
