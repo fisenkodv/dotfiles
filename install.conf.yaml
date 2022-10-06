@@ -20,6 +20,9 @@
     ~/.zshrc:
       path: config/zsh/zshrc.zsh
       force: true
+    ~/.config/tmux:
+      path: config/tmux
+      force: true
     ~/.oh-my-zsh: modules/oh-my-zsh
     ~/.zgen: modules/zgen
     ~/.asdf: modules/asdf
