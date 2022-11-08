@@ -10,7 +10,10 @@
     #   stdout: true
     #   quiet: false
 - link:
-    ~/.dotfiles: ''
+    ~/bin:
+      glob: true
+      path: config/scripts/*
+      relink: true
     ~/.config/htop:
       path: config/htop
       force: true
@@ -20,6 +23,7 @@
     ~/.zshrc:
       path: config/zsh/zshrc.zsh
       force: true
+    ~/.dotfiles: ''
     ~/.config/tmux:
       path: config/tmux
       force: true
