@@ -1,75 +1,75 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 #!/bin/bash
 
 # Get zgen
-source ~/.zgen/zgen.zsh
+# source ~/.zgen/zgen.zsh
 
 export DOTFILES="$HOME/.dotfiles"
 export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
 
 # Generate zgen init.sh if it doesn't exist
-if ! zgen saved; then
-  zgen oh-my-zsh
+# if ! zgen saved; then
+#   zgen oh-my-zsh
 
-  # Plugins
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/github
-  zgen oh-my-zsh plugins/sudo
-  zgen oh-my-zsh plugins/command-not-found
-  zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/docker-compose
-  zgen oh-my-zsh plugins/macos
-  zgen oh-my-zsh plugins/genpass
-  zgen oh-my-zsh plugins/node
-  zgen oh-my-zsh plugins/pipenv
-  zgen oh-my-zsh plugins/kubectl
+#   # Plugins
+#   zgen oh-my-zsh plugins/git
+#   zgen oh-my-zsh plugins/github
+#   zgen oh-my-zsh plugins/sudo
+#   zgen oh-my-zsh plugins/command-not-found
+#   zgen oh-my-zsh plugins/docker
+#   zgen oh-my-zsh plugins/docker-compose
+#   zgen oh-my-zsh plugins/macos
+#   zgen oh-my-zsh plugins/genpass
+#   zgen oh-my-zsh plugins/node
+#   zgen oh-my-zsh plugins/pipenv
+#   zgen oh-my-zsh plugins/kubectl
 
-  zgen load michaelaquilina/zsh-autoswitch-virtualenv
-  zgen load jocelynmallon/zshmarks
-  zgen load denolfe/git-it-on.zsh
-  zgen load caarlos0/zsh-mkc
-  zgen load caarlos0/zsh-git-sync
-  zgen load caarlos0/zsh-add-upstream
-  zgen load denolfe/zsh-prepend
+#   zgen load michaelaquilina/zsh-autoswitch-virtualenv
+#   zgen load jocelynmallon/zshmarks
+#   zgen load denolfe/git-it-on.zsh
+#   zgen load caarlos0/zsh-mkc
+#   zgen load caarlos0/zsh-git-sync
+#   zgen load caarlos0/zsh-add-upstream
+#   zgen load denolfe/zsh-prepend
 
-  zgen load agkozak/zsh-z
+#   zgen load agkozak/zsh-z
 
-  zgen oh-my-zsh plugins/asdf
-  zgen load kiurchv/asdf.plugin.zsh
+#   zgen oh-my-zsh plugins/asdf
+#   zgen load kiurchv/asdf.plugin.zsh
 
-  # These 2 must be in this order
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-history-substring-search
+#   # These 2 must be in this order
+#   zgen load zsh-users/zsh-syntax-highlighting
+#   zgen load zsh-users/zsh-history-substring-search
 
-  zgen load zsh-users/zsh-autosuggestions
+#   zgen load zsh-users/zsh-autosuggestions
 
-  # Set keystrokes for substring searching
-  zmodload zsh/terminfo
-  bindkey "$terminfo[kcuu1]" history-substring-search-up
-  bindkey "$terminfo[kcud1]" history-substring-search-down
-  bindkey "^k" history-substring-search-up
-  bindkey "^j" history-substring-search-down
+#   # Set keystrokes for substring searching
+#   zmodload zsh/terminfo
+#   bindkey "$terminfo[kcuu1]" history-substring-search-up
+#   bindkey "$terminfo[kcud1]" history-substring-search-down
+#   bindkey "^k" history-substring-search-up
+#   bindkey "^j" history-substring-search-down
 
-  # Warn you when you run a command that you've got an alias for
-  zgen load djui/alias-tips
+#   # Warn you when you run a command that you've got an alias for
+#   zgen load djui/alias-tips
 
-  # Completion-only repos
-  zgen load zsh-users/zsh-completions src
+#   # Completion-only repos
+#   zgen load zsh-users/zsh-completions src
 
-  # Theme
-  zgen load romkatv/powerlevel10k powerlevel10k
+#   # Theme
+#   zgen load romkatv/powerlevel10k powerlevel10k
 
-  # Generate init.sh
-  zgen save
-fi
+#   # Generate init.sh
+#   zgen save
+# fi
 
-source $DOTFILES/config/zsh/p10k.zsh
+# source $DOTFILES/config/zsh/p10k.zsh
 
 # History Options
 setopt append_history
@@ -135,8 +135,10 @@ if [ $(uname) = Darwin ]; then
 fi
 
 source ~/.asdf/asdf.sh
-source ~/.asdf/completions/asdf.bash
+# source ~/.asdf/completions/asdf.bash
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-ZLE_RPROMPT_INDENT=0
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# ZLE_RPROMPT_INDENT=0
+
+eval "$(starship init zsh)"
