@@ -1,11 +1,11 @@
+#!/bin/bash
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-#!/bin/bash
 
 # Get zgen
 source ~/.zgen/zgen.zsh
@@ -28,10 +28,8 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/genpass
   zgen oh-my-zsh plugins/node
   zgen oh-my-zsh plugins/pipenv
-  zgen oh-my-zsh plugins/kubectl
 
   zgen load michaelaquilina/zsh-autoswitch-virtualenv
-  zgen load jocelynmallon/zshmarks
   zgen load denolfe/git-it-on.zsh
   zgen load caarlos0/zsh-mkc
   zgen load caarlos0/zsh-git-sync
@@ -84,11 +82,11 @@ setopt hist_verify
 
 # Share history across all your terminal windows
 setopt share_history
-#setopt noclobber
+# setopt noclobber
 
 # set some more options
 setopt pushd_ignore_dups
-#setopt pushd_silent
+setopt pushd_silent
 
 # Increase history size
 HISTSIZE=100000
@@ -101,9 +99,7 @@ REPORTTIME=2
 TIMEFMT="%U user %S system %P cpu %*Es total"
 
 # Place to stash environment variables
-if [[ -e ~/.secrets ]]; then
-  source ~/.secrets
-fi
+if [[ -e ~/.secrets ]]; then source ~/.secrets; fi
 
 # Load aliases
 for f in $DOTFILES/bootstrap/aliases/*.aliases.sh; do source $f; done
@@ -126,13 +122,7 @@ export FZF_TMUX_HEIGHT=80%
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export BAT_THEME='Monokai Extended Bright'
-
 export AWS_PAGER='bat -p'
-
-# Needed for Crystal on mac - openss + pkg-config
-if [ $(uname) = Darwin ]; then
-  export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig
-fi
 
 source ~/.asdf/asdf.sh
 source ~/.asdf/completions/asdf.bash
