@@ -87,7 +87,7 @@ function conventional_commit() {
     if [ $breaking_change -eq 1 ]; then
       commit_message+='!'
     fi
-    commit_message+=":"
+    commit_message+=": "
   fi
   commit_message+="$message"
 
