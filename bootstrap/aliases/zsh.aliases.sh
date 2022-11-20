@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # dotfiles aliases
 alias .f='cd ~/.dotfiles'

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if type fzf >/dev/null 2>&1; then
   # (EXPERIMENTAL) Advanced customization of fzf options via _fzf_comprun function

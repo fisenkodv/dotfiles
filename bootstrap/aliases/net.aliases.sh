@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # IP addresses
 alias 'ip'="dig +short myip.opendns.com @resolver1.opendns.com"

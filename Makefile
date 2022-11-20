@@ -1,12 +1,8 @@
-.PHONY: install macos brew brew-restore
+.PHONY: install brew brew-restore
 
 # Run dotbot install script
 install:
 	./install
-
-# Set MacOS defaults
-macos:
-	./macos/set-defaults.sh
 
 # Save snapshot of all Homebrew packages to macos/brewfile
 brew:
