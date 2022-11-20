@@ -29,20 +29,6 @@ alias guns="git reset HEAD --"
 
 alias gstl="git stash list --pretty=format:'%C(blue)%gd%C(reset): %<(100,trunc)%s %C(green)(%cr)%C(reset)'"
 
-git_semantic() {
-  git add --all
-  git commit -am "$1: $2"
-}
-
-gchore() { git_semantic "chore" $1; }
-gfeat() { git_semantic "feat" $1; }
-gfix() { git_semantic "fix" $1; }
-gdocs() { git_semantic "docs" $1; }
-gstyle() { git_semantic "style" $1; }
-grefactor() { git_semantic "refactor" $1; }
-gtest() { git_semantic "test" $1; }
-gmerge() { git_semantic "merge" $1; }
-
 function conventional_commit_usage() {
   echo "Makes a conventional commit."
   echo
@@ -81,7 +67,7 @@ function conventional_commit() {
   if [ ! -z $type ]; then
     commit_message+="$type"
 
-    if [ ! -z "$scope" ]; then
+    if [ ! -z $scope ]; then
       commit_message+="($scope)"
     fi
     if [ $breaking_change -eq 1 ]; then
