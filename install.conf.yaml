@@ -16,6 +16,9 @@
     ~/.config/nvim:
       path: config/nvim
       force: true
+    ~/.config/fish:
+      path: config/fish
+      force: true
     ~/.zshrc:
       path: config/zsh/zshrc.zsh
       force: true
