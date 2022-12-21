@@ -8,6 +8,11 @@ M.treesitter = {
     "css",
     "typescript",
     "c",
+    "java",
+    "json",
+    "markdown",
+    "rust",
+    "python",
   },
 }
 
@@ -21,6 +26,15 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
+    "deno",
+
+    -- rust stuff
+    "rust-analyzer",
+    "rustfmt",
+
+    -- python stuff
+    "python-lsp-server",
+    "black",
   },
 }
 
