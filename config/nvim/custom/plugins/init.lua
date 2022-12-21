@@ -43,4 +43,9 @@ return {
 
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
+
+    -- overrde plugin configs
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope,
+  },
 }
