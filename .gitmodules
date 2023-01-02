@@ -14,3 +14,6 @@ ignore = dirty
 path = modules/oh-my-zsh
 url = https://github.com/ohmyzsh/ohmyzsh.git
 ignore = dirty
+[submodule "modules/nvchad"]
+	path = modules/nvchad
+	url = https://github.com/NvChad/NvChad.git

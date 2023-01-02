@@ -14,7 +14,10 @@
       path: config/htop
       force: true
     ~/.config/nvim:
-      path: config/nvim
+      path: modules/nvchad
+      force: true
+    ~/.config/nvim/lua/custom:
+      path: config/nvim/custom
       force: true
     ~/.zshrc:
       path: config/zsh/zshrc.zsh
