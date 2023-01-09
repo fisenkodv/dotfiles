@@ -1,4 +1,4 @@
-name: Dotfiles Install
+name: Test Install
 on: [push]
 jobs:
   tests:
