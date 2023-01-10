@@ -1,4 +1,4 @@
-![cover](./images/screenshot.png)
+![cover](./assets/screenshot.png)
 
 # Dotfiles
 
