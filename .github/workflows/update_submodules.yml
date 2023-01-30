@@ -1,7 +1,7 @@
 name: Update Submodules
-on: [push]
-#   schedule:
-#     - cron:  '0 0 * * *'    # once a day at midnight
+on:
+  schedule:
+    - cron:  '0 0 * * *'    # once a day at midnight
 jobs:
   update_submodules:
     runs-on: ubuntu-latest
