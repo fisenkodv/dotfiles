@@ -2,7 +2,7 @@
 
 # dotfiles aliases
 alias .f='cd ~/.dotfiles'
-alias .fu='.f && git submodule update --recursive --remote'
+alias .fu='.f && git submodule update --recursive'
 alias .fe='.f && vim .'
 alias .fr='source ~/.zshrc; echo ".zshrc reloaded"'
 alias .fgen='zgen reset;source ~/.zshrc'
