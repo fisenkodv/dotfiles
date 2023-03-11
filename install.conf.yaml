@@ -33,3 +33,5 @@
     ~/.zgen: modules/zgen
     ~/.asdf: modules/asdf
     ~/.asdfrc: config/zsh/asdfrc
+- brewfile:
+    - config/os/macos/brewfile
