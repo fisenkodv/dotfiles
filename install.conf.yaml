@@ -1,4 +1,8 @@
 - defaults:
+    brewfile:
+      stdout: true
+      stderr: true
+      include: ['tap', 'brew', 'cask', 'mas']
     link:
       relink: true
       create: true
@@ -33,3 +37,22 @@
     ~/.zgen: modules/zgen
     ~/.asdf: modules/asdf
     ~/.asdfrc: config/zsh/asdfrc
+- brewfile:
+    file: config/os/macos/brewfile
+- asdf:
+  - plugin: java
+    global: zulu-19.32.13
+    versions:
+      - zulu-17.40.19
+      - zulu-19.32.13s
+  - plugin: maven
+    global: 3.9.0
+    versions: 
+      - 3.9.0
+  - plugin: nodejs
+    global: 16.19.1
+    versions:
+      - 16.19.1
+  - plugin: deno
+    versions:
+      - 1.31.2

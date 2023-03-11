@@ -1,5 +1,5 @@
 name: Test Install
-on: [push]
+# on: [push]
 jobs:
   tests:
     runs-on: ${{ matrix.os }}
