@@ -17,6 +17,9 @@ ignore = dirty
 [submodule "modules/nvchad"]
 path = modules/nvchad
 url = https://github.com/NvChad/NvChad.git
-[submodule "modules/dotbot-brew"]
-path = modules/dotbot-brew
-url = https://github.com/d12frosted/dotbot-brew.git
+[submodule "modules/dotbot-asdf"]
+path = modules/dotbot-asdf
+url = https://github.com/sobolevn/dotbot-asdf.git
+[submodule "modules/dotbot-brewfile"]
+path = modules/dotbot-brewfile
+url = https://github.com/sobolevn/dotbot-brewfile.git
