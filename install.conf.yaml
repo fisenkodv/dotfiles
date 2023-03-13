@@ -41,10 +41,10 @@
     file: config/os/macos/brewfile
 - asdf:
   - plugin: java
-    global: zulu-19.32.13
+    global: correto-17.0.6.10.1
     versions:
-      - zulu-17.40.19
-      - zulu-19.32.13s
+      - correto-17.0.6.10.1
+      - correto-19.0.2.7.1
   - plugin: maven
     global: 3.9.0
     versions: 
