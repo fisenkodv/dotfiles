@@ -7,12 +7,20 @@ M.treesitter = {
     "html",
     "css",
     "typescript",
+    "javascript",
     "c",
     "java",
     "json",
     "markdown",
+    "markdown_inline",
     "rust",
     "python",
+  },
+  indent = {
+    enable = true,
+    disable = {
+      "python"
+    },
   },
 }
 
@@ -27,6 +35,7 @@ M.mason = {
     "html-lsp",
     "typescript-language-server",
     "deno",
+    "prettier",
 
     -- rust stuff
     "rust-analyzer",
@@ -56,7 +65,7 @@ M.nvimtree = {
 
 M.telescope = {
   defaults = {
-    prompt_prefix = " "
+    prompt_prefix = " ",
   }
 }
 

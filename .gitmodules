@@ -20,3 +20,7 @@ url = https://github.com/sobolevn/dotbot-asdf.git
 [submodule "modules/dotbot-brewfile"]
 path = modules/dotbot-brewfile
 url = https://github.com/sobolevn/dotbot-brewfile.git
+[submodule "modules/nvchad"]
+	path = modules/nvchad
+	url = https://github.com/NvChad/NvChad.git
+	branch = v2.0
