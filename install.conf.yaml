@@ -41,11 +41,13 @@
     file: config/os/macos/brewfile
 - asdf:
   - plugin: java
+    url: https://github.com/halcyon/asdf-java.git
     global: corretto-17.0.6.10.1
     versions:
       - corretto-17.0.6.10.1
       - corretto-19.0.2.7.1
   - plugin: maven
+    url: https://github.com/halcyon/asdf-maven.git
     global: 3.9.0
     versions: 
       - 3.9.0
@@ -54,5 +56,6 @@
     versions:
       - 16.19.1
   - plugin: deno
+    url: https://github.com/asdf-community/asdf-deno.git
     versions:
       - 1.31.2
