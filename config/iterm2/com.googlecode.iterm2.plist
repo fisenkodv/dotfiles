@@ -1546,6 +1546,19 @@
 			<integer>160</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Triggers</key>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>iTermUserNotificationTrigger</string>
+					<key>parameter</key>
+					<string>Have to authenticate in Midway</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>mwinit</string>
+				</dict>
+			</array>
 			<key>Underline Color</key>
 			<dict>
 				<key>Alpha Component</key>
