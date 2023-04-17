@@ -55,6 +55,7 @@ M.nvimtree = {
   },
 
   renderer = {
+    root_folder_label = ":~:s?$?/..?",
     highlight_git = true,
     icons = {
       show = {
