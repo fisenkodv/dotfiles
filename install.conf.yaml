@@ -59,4 +59,4 @@
   - plugin: deno
     url: https://github.com/asdf-community/asdf-deno.git
     versions:
-      - 1.31.2
+      - 1.33.1
