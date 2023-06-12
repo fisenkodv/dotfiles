@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Name
 git config --global user.name "Dmitry Fisenko"
@@ -29,8 +29,6 @@ git config --global alias.ba "branch -a"
 git config --global alias.bm "branch --merged"
 git config --global alias.bn "branch --no-merged"
 git config --global alias.df "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
-git config --global alias.type "cat-file -t"
-git config --global alias.dump "cat-file -p"
 git config --global alias.find "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"\$@\" | peco | awk '{print \$1}' | xargs -I {} git diff {}^ {}; }; f"
 
 # Fancy Logs

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 v() {
   if [ -n "$1" ]; then

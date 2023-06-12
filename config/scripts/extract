@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # credit: http://nparikh.org/notes/zshrc.txt
 # Usage: extract <file>

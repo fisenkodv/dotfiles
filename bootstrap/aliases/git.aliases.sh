@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 alias gst="git status"
 alias gau="git add -u"
@@ -29,16 +29,4 @@ alias guns="git reset HEAD --"
 
 alias gstl="git stash list --pretty=format:'%C(blue)%gd%C(reset): %<(100,trunc)%s %C(green)(%cr)%C(reset)'"
 
-git_semantic() {
-  git add --all
-  git commit -am "$1: $2"
-}
-
-gchore() { git_semantic "chore" $1; }
-gfeat() { git_semantic "feat" $1; }
-gfix() { git_semantic "fix" $1; }
-gdocs() { git_semantic "docs" $1; }
-gstyle() { git_semantic "style" $1; }
-grefactor() { git_semantic "refactor" $1; }
-gtest() { git_semantic "test" $1; }
-gmerge() { git_semantic "merge" $1; }
+alias ccmt="conventional_commit"
