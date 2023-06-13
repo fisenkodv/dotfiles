@@ -1,18 +1,44 @@
 #!/bin/bash
 
-#!/bin/bash
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Get zgen
 source ~/.zgen/zgen.zsh
 
 export DOTFILES="$HOME/.dotfiles"
+export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
+
+# Generate zgen init.sh if it doesn't exist
+if ! zgen saved; then
+  zgen oh-my-zsh
+
+  # Plugins
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/github
+  zgen oh-my-zsh plugins/sudo
+  zgen oh-my-zsh plugins/command-not-found
+  zgen oh-my-zsh plugins/docker
+  zgen oh-my-zsh plugins/docker-compose
+  zgen oh-my-zsh plugins/macos
+  zgen oh-my-zsh plugins/genpass
+
+  zgen load agkozak/zsh-z
+
+  zgen oh-my-zsh plugins/asdf
+
+  # These 2 must be in this order
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-history-substring-search
+
+  zgen load zsh-users/zsh-autosuggestions
+
+  # Warn you when you run a command that you've got an alias for
+  zgen load djui/alias-tips
+
+  # Completion-only repos
+  zgen load zsh-users/zsh-completions src
+
+  # Generate init.sh
+  zgen save
+fi
 
 # History Options
 setopt append_history
@@ -64,5 +90,3 @@ export AWS_PAGER='bat -p'
 source ~/.asdf/asdf.sh
 
 eval "$(starship init zsh)"
-
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh

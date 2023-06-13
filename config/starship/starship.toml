@@ -1,106 +1,42 @@
+# format = '$directory$character'
 format = """
-[](#9A348E)\
-$username\
-$sudo\
-[](bg:#DA627D fg:#9A348E)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#86BBD8)\
-$c\
-$golang\
 $java\
 $nodejs\
 $rust\
-$scala\
-[](fg:#86BBD8 bg:#06969A)\
-$docker_context\
-[](fg:#06969A bg:#33658A)\
-$time\
 $cmd_duration\
-[ ](fg:#33658A)\
+$character\
 """
 
 # Disable the blank line at the start of the prompt
-# add_newline = false
-
-# You can also replace your username with a neat symbol like  to save some space
-[username]
-show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
-format = '[ $user ]($style)'
-
-[sudo]
-symbol = " "
-disabled = false
-style = "bg:#9A348E fg:bold green"
-format = "[$symbol]($style)"
+add_newline = false
 
 [directory]
-style = "bg:#DA627D"
-format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
-
-[directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-
-[c]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[docker_context]
-symbol = " "
-style = "bg:#06969A"
-format = '[ $symbol $context ]($style) $path'
+truncate_to_repo = false
+truncation_symbol = '…/'
 
 [git_branch]
-symbol = ""
-style = "bg:#FCA17D"
-format = '[ $symbol $branch ]($style)'
+format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [git_status]
-style = "bg:#FCA17D"
-format = '[$all_status$ahead_behind ]($style)'
-
-[golang]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
 
 [java]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
+format = '[${symbol}(${version} )]($style)'
+version_format = 'v${raw}'
 
 [nodejs]
-symbol = ""
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
+format = '[$symbol($version )]($style)'
 
 [rust]
-symbol = ""
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[scala]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:#33658A"
-format = '[  $time ]($style)'
+format = '[$symbol($version )]($style)'
 
 [cmd_duration]
 min_time = 500
-style = "bg:#33658A"
-format = "[ $duration]($style)"
+format = 'took [$duration]($style) '
+
