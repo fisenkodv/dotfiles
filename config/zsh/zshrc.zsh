@@ -84,6 +84,14 @@ for f in $DOTFILES/bootstrap/path/*.path.sh; do source $f; done
 # Load all init files
 for f in $DOTFILES/bootstrap/init/*.init.sh; do source $f; done
 
+if type fd >/dev/null 2>&1; then
+  export FZF_DEFAULT_COMMAND='fd --type f'
+fi
+
+export FZF_DEFAULT_OPTS='--reverse --bind 'ctrl-l:cancel''
+export FZF_TMUX_HEIGHT=80%
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export BAT_THEME='Monokai Extended Bright'
 export AWS_PAGER='bat -p'
 
