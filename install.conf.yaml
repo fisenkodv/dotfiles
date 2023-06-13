@@ -40,6 +40,9 @@
       force: true
     ~/.asdf: modules/asdf
     ~/.asdfrc: config/zsh/asdfrc
+    ~/.config/fish:
+      path: config/fish
+      force: true
 - brewfile:
     file: config/os/macos/brewfile
 - asdf:
