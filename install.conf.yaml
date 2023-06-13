@@ -35,6 +35,9 @@
       force: true
     ~/.oh-my-zsh: modules/oh-my-zsh
     ~/.zgen: modules/zgen
+    ~/.config/starship.toml:
+      path: config/starship/starship.toml
+      force: true
     ~/.asdf: modules/asdf
     ~/.asdfrc: config/zsh/asdfrc
 - brewfile:

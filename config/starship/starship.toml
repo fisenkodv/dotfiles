@@ -1,0 +1,42 @@
+# format = '$directory$character'
+format = """
+$directory\
+$git_branch\
+$git_status\
+$java\
+$nodejs\
+$rust\
+$cmd_duration\
+$character\
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = '…/'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[java]
+format = '[${symbol}(${version} )]($style)'
+version_format = 'v${raw}'
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[rust]
+format = '[$symbol($version )]($style)'
+
+[cmd_duration]
+min_time = 500
+format = 'took [$duration]($style) '
+
