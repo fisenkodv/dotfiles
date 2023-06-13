@@ -9,3 +9,6 @@ config/nvim/plugged
 # scripts need to be exluded from the repo
 **exclude**.sh
 config/nvim/plugin/packer_compiled.lua
+
+# fish
+config/fish/fish_variables
