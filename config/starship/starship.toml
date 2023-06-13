@@ -14,12 +14,16 @@ $character\
 add_newline = false
 
 [directory]
-truncation_length = 3
+truncation_length = 7
 truncate_to_repo = false
 truncation_symbol = '…/'
+style = 'bold fg:39'
+repo_root_style = 'bold fg:31'
+before_repo_root_style = 'bold fg:39'
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'bold fg:76'
 
 [git_status]
 ahead = '⇡${count}'
@@ -39,4 +43,3 @@ format = '[$symbol($version )]($style)'
 [cmd_duration]
 min_time = 500
 format = 'took [$duration]($style) '
-
