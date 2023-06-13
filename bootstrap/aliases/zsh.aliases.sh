@@ -65,10 +65,10 @@ if type bat >/dev/null 2>&1; then
 fi
 
 if type exa >/dev/null 2>&1; then
-  alias ll='exa --long --header --git --group --all'
-  alias tr1='exa --long --header --git --group --all --tree --level=1'
-  alias tr2='exa --long --header --git --group --all --tree --level=2'
-  alias tr3='exa --long --header --git --group --all --tree --level=3'
+  alias ll='exa --long --header --git --group --all --icons'
+  alias tr1='exa --long --header --git --group --all --tree --level=1 --icons'
+  alias tr2='exa --long --header --git --group --all --tree --level=2 --icons'
+  alias tr3='exa --long --header --git --group --all --tree --level=3 --icons'
 else
   alias ll='ll -la'
   alias tr1='tree -L 1 -C'
