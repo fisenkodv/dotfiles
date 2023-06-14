@@ -61,9 +61,9 @@
       - 3.9.0
   - plugin: nodejs
     url: https://github.com/asdf-vm/asdf-nodejs.git
-    global: 16.19.1
+    global: 16.20.0
     versions:
-      - 16.19.1
+      - 16.20.0
   - plugin: deno
     url: https://github.com/asdf-community/asdf-deno.git
     versions:
