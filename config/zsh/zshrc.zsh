@@ -3,7 +3,7 @@
 # Get zgen
 source ~/.zgen/zgen.zsh
 
-export DOTFILES="$HOME/.dotfiles"
+export ZSH_CONFIG_HOME="$HOME/.config/zsh"
 export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
 
 # Generate zgen init.sh if it doesn't exist
@@ -73,16 +73,16 @@ TIMEFMT="%U user %S system %P cpu %*Es total"
 if [[ -e ~/.secrets ]]; then source ~/.secrets; fi
 
 # Load aliases
-for f in $DOTFILES/bootstrap/aliases/*.aliases.sh; do source $f; done
+for f in $ZSH_CONFIG_HOME/aliases/*.aliases.sh; do source $f; done
 
 # Load functions
-for f in $DOTFILES/bootstrap/functions/*.functions.sh; do source $f; done
+for f in $ZSH_CONFIG_HOME/functions/*.functions.sh; do source $f; done
 
 # Load all path files
-for f in $DOTFILES/bootstrap/path/*.path.sh; do source $f; done
+for f in $ZSH_CONFIG_HOME/path/*.path.sh; do source $f; done
 
 # Load all init files
-for f in $DOTFILES/bootstrap/init/*.init.sh; do source $f; done
+for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
 
 if type fd >/dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='fd --type f'

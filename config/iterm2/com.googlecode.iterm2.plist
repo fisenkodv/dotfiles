@@ -8,6 +8,8 @@
 	<real>0.20000000298023224</real>
 	<key>BadgeMaxWidthFraction</key>
 	<real>0.5</real>
+	<key>Command</key>
+	<string>/opt/homebrew/bin/fish</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Clovis</key>
