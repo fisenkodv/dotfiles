@@ -14,6 +14,20 @@
       glob: true
       path: config/scripts/*
       relink: true
+    ~/.config/starship.toml:
+      path: config/starship/starship.toml
+      force: true
+    ~/.zshrc:
+      path: config/zsh/zshrc.zsh
+      force: true
+    ~/.config/zsh:
+      path: config/zsh
+      force: true
+    ~/.oh-my-zsh: modules/oh-my-zsh
+    ~/.zgen: modules/zgen
+    ~/.config/fish:
+      path: config/fish
+      force: true
     ~/.config/htop:
       path: config/htop
       force: true
@@ -23,26 +37,14 @@
     ~/.config/nvim/lua/custom:
       path: config/nvim/custom
       force: true
-    ~/.zshrc:
-      path: config/zsh/zshrc.zsh
-      force: true
-    ~/.dotfiles: ''
     ~/.config/tmux:
       path: config/tmux
       force: true
     ~/.config/iterm2:
       path: config/iterm2
       force: true
-    ~/.oh-my-zsh: modules/oh-my-zsh
-    ~/.zgen: modules/zgen
-    ~/.config/starship.toml:
-      path: config/starship/starship.toml
-      force: true
     ~/.asdf: modules/asdf
     ~/.asdfrc: config/zsh/asdfrc
-    ~/.config/fish:
-      path: config/fish
-      force: true
 - brewfile:
     file: config/os/macos/brewfile
 - asdf:
