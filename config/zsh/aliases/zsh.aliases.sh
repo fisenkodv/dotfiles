@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # dotfiles aliases
-alias .f='cd ~/.dotfiles'
+alias .f='cd ~/.config/zsh && cd -P ../..'
 alias .fu='.f && git submodule update --init --recursive'
 alias .fe='.f && vim .'
 alias .fr='source ~/.zshrc; echo ".zshrc reloaded"'
