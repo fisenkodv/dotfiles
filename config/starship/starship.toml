@@ -4,7 +4,6 @@ $directory\
 $git_branch\
 $git_status\
 $java\
-$nodejs\
 $rust\
 $cmd_duration\
 $character\
