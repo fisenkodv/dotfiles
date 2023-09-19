@@ -28,11 +28,11 @@ if command -qv bat
   alias cat="bat"
 end
 
-if command -qv exa
-  alias ll 'exa --long --header --git --group --all --icons'
-  alias tr1 'exa --long --header --git --group --all --tree --level=1 --icons'
-  alias tr2 'exa --long --header --git --group --all --tree --level=2 --icons'
-  alias tr3 'exa --long --header --git --group --all --tree --level=3 --icons'
+if command -qv eza
+  alias ll 'eza --long --header --git --group --all --icons'
+  alias tr1 'eza --long --header --git --group --all --tree --level=1 --icons'
+  alias tr2 'eza --long --header --git --group --all --tree --level=2 --icons'
+  alias tr3 'eza --long --header --git --group --all --tree --level=3 --icons'
 else
   alias ll 'll -la'
   alias tr1 'tree -L 1 -C'
