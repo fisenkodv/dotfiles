@@ -8,32 +8,9 @@ export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
 
 # Generate zgen init.sh if it doesn't exist
 if ! zgen saved; then
-  zgen oh-my-zsh
-
-  # Plugins
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/github
-  zgen oh-my-zsh plugins/sudo
-  zgen oh-my-zsh plugins/command-not-found
-  zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/docker-compose
-  zgen oh-my-zsh plugins/macos
-  zgen oh-my-zsh plugins/genpass
-
   zgen load agkozak/zsh-z
-
-  zgen oh-my-zsh plugins/asdf
-
-  # These 2 must be in this order
   zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-history-substring-search
-
   zgen load zsh-users/zsh-autosuggestions
-
-  # Warn you when you run a command that you've got an alias for
-  zgen load djui/alias-tips
-
-  # Completion-only repos
   zgen load zsh-users/zsh-completions src
 
   # Generate init.sh
@@ -92,8 +69,8 @@ export FZF_DEFAULT_OPTS='--reverse --bind 'ctrl-l:cancel''
 export FZF_TMUX_HEIGHT=80%
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export BAT_THEME='Monokai Extended Bright'
-export AWS_PAGER='bat -p'
+# export BAT_THEME='Monokai Extended Bright'
+# export AWS_PAGER='bat -p'
 
 source ~/.asdf/asdf.sh
 

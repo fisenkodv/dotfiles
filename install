@@ -2,18 +2,27 @@
 
 set -e
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="modules/dotbot"
+CONFIG="$PWD/config"
+MODULES="$PWD/modules"
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+function link() {
+  local source=$1
+  local target=$2
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+  echo "Checking '${source}'..."
+  if [ ! -L ${target} ]; then
+    echo "=> Linking '${source}' to '${target}'..."
+    ln -s ${source} ${target}
+  fi
+}
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
-  -d "${BASEDIR}" \
-  --plugin-dir "${BASEDIR}/modules/dotbot-brewfile" \
-  --plugin-dir "${BASEDIR}/modules/dotbot-asdf" \
-  -c "${CONFIG}" "${@}"
+link $CONFIG/starship/starship.toml $HOME/.config/starship.toml
+link $CONFIG/zsh/zshrc.zsh $HOME/.zshrc
+link $CONFIG/zsh $HOME/.config/zsh
+link $MODULES/zgen $HOME/.zgen
+link $CONFIG/fish $HOME/.config/fish
+link $CONFIG/htop $HOME/.config/htop
+link $MODULES/nvchad $HOME/.config/nvim
+link $CONFIG/nvim/custom $HOME/.config/nvim/lua/custom
+link $CONFIG/tmux $HOME/.config/tmux
+link $CONFIG/iterm2 $HOME/.config/iterm2

@@ -1,6 +1,5 @@
 .PHONY: install brew brew-restore
 
-# Run dotbot install script
 install:
 	./install
 
