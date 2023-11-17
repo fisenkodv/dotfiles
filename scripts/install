@@ -30,7 +30,7 @@ link_config $SOURCE_CONFIG_DIR/fish $TARGET_CONFIG_DIR/fish
 
 # nvim
 link_config $SOURCE_MODULES_DIR/nvchad $TARGET_CONFIG_DIR/nvim
-link_config $SOURCE_CONFIG_DIR/nvim/custom $TARGET_CONFIG_DIR/nvim/lua/custom
+link_config $SOURCE_CONFIG_DIR/nvim $TARGET_CONFIG_DIR/nvim/lua/custom
 
 # tools
 link_config $SOURCE_CONFIG_DIR/htop $TARGET_CONFIG_DIR/htop

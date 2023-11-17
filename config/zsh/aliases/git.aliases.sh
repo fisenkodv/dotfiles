@@ -21,9 +21,7 @@ alias gpdel="git push --delete"
 alias gpl="git pull"
 alias groot='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
 alias gstu="git status -uno"
-
 alias gswm='git switch $(git_main_branch)'
-
 alias gundo="git reset HEAD~1"
 alias guns="git reset HEAD --"
 
