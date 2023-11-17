@@ -30,7 +30,6 @@ setopt hist_verify
 
 # Share history across all your terminal windows
 setopt share_history
-# setopt noclobber
 
 # set some more options
 setopt pushd_ignore_dups
@@ -40,7 +39,7 @@ setopt pushd_silent
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=~/.zsh_history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+export HISTIGNORE="&:ls:cd:pwd:exit:date:* --help"
 
 # Return time on long running processes
 REPORTTIME=2
@@ -64,14 +63,5 @@ for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
 if type fd >/dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='fd --type f'
 fi
-
-export FZF_DEFAULT_OPTS='--reverse --bind 'ctrl-l:cancel''
-export FZF_TMUX_HEIGHT=80%
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# export BAT_THEME='Monokai Extended Bright'
-# export AWS_PAGER='bat -p'
-
-source ~/.asdf/asdf.sh
 
 eval "$(starship init zsh)"
