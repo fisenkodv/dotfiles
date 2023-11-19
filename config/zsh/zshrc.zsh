@@ -8,10 +8,14 @@ export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
 
 # Generate zgen init.sh if it doesn't exist
 if ! zgen saved; then
+  zgen load lukechilds/zsh-nvm
   zgen load agkozak/zsh-z
   zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-history-substring-search
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-completions src
+  zgen oh-my-zsh plugins/sudo
+  zgen oh-my-zsh plugins/command-not-found
 
   # Generate init.sh
   zgen save
@@ -64,7 +68,4 @@ if type fd >/dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='fd --type f'
 fi
 
-export ASDF_DIR=$HOME/.asdf
 eval "$(starship init zsh)"
-
-. "$HOME/.asdf/asdf.sh"

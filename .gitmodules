@@ -2,7 +2,3 @@
 path = modules/zgen
 url = https://github.com/tarjoilija/zgen.git
 ignore = dirty
-[submodule "modules/nvchad"]
-path = modules/nvchad
-url = https://github.com/NvChad/NvChad.git
-branch = v2.0

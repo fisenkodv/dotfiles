@@ -1,1 +1,0 @@
-/Users/dfisenko/.asdf/completions/asdf.fish
