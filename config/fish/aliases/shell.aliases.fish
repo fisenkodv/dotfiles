@@ -39,6 +39,3 @@ else
   alias tr2 'tree -L 2 -C'
   alias tr3 'tree -L 3 -C'
 end
-
-alias to_lower="tr '[:upper:]' '[:lower:]'"
-alias to_upper="tr '[:lower:]' '[:upper:]'"

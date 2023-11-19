@@ -9,31 +9,14 @@ export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
 # Generate zgen init.sh if it doesn't exist
 if ! zgen saved; then
   zgen oh-my-zsh
-
-  # Plugins
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/github
-  zgen oh-my-zsh plugins/sudo
-  zgen oh-my-zsh plugins/command-not-found
-  zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/docker-compose
-  zgen oh-my-zsh plugins/macos
   zgen oh-my-zsh plugins/genpass
 
   zgen load agkozak/zsh-z
+  zgen load lukechilds/zsh-nvm
 
-  zgen oh-my-zsh plugins/asdf
-
-  # These 2 must be in this order
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-history-substring-search
-
   zgen load zsh-users/zsh-autosuggestions
-
-  # Warn you when you run a command that you've got an alias for
-  zgen load djui/alias-tips
-
-  # Completion-only repos
   zgen load zsh-users/zsh-completions src
 
   # Generate init.sh
@@ -53,7 +36,6 @@ setopt hist_verify
 
 # Share history across all your terminal windows
 setopt share_history
-# setopt noclobber
 
 # set some more options
 setopt pushd_ignore_dups
@@ -63,7 +45,7 @@ setopt pushd_silent
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=~/.zsh_history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+export HISTIGNORE="&:ls:cd:pwd:exit:date:* --help"
 
 # Return time on long running processes
 REPORTTIME=2
@@ -83,18 +65,5 @@ for f in $ZSH_CONFIG_HOME/path/*.path.sh; do source $f; done
 
 # Load all init files
 for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
-
-if type fd >/dev/null 2>&1; then
-  export FZF_DEFAULT_COMMAND='fd --type f'
-fi
-
-export FZF_DEFAULT_OPTS='--reverse --bind 'ctrl-l:cancel''
-export FZF_TMUX_HEIGHT=80%
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export BAT_THEME='Monokai Extended Bright'
-export AWS_PAGER='bat -p'
-
-source ~/.asdf/asdf.sh
 
 eval "$(starship init zsh)"
