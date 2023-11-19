@@ -1,4 +1,4 @@
-.PHONY: install brew brew-restore
+.PHONY: install brew
 
 install:
 	./scripts/install

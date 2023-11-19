@@ -899,9 +899,9 @@
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>10.409748742935506</real>
+			<real>10.158369088680189</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1509,7 +1509,7 @@
 			<key>Title Components</key>
 			<integer>160</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.050590093085106383</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>

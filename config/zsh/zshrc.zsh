@@ -64,4 +64,7 @@ if type fd >/dev/null 2>&1; then
   export FZF_DEFAULT_COMMAND='fd --type f'
 fi
 
+export ASDF_DIR=$HOME/.asdf
 eval "$(starship init zsh)"
+
+. "$HOME/.asdf/asdf.sh"
