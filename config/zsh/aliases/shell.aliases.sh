@@ -5,7 +5,6 @@ alias .f='cd ~/.config/zsh && cd -P ../..'
 alias .fu='.f && git submodule update --init --recursive'
 alias .fe='.f && vim .'
 alias .fr='source ~/.zshrc; echo ".zshrc reloaded"'
-alias .fgen='zgen reset;source ~/.zshrc'
 
 # Easier navigation
 alias ..='cd ..'
