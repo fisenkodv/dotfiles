@@ -6,21 +6,25 @@
 
 **Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-## Vim setup
+## Neovim setup
 
-Requires [Neovim](https://neovim.io/) (>= 0.8)
+### Requirements
 
-- [NvChad](https://github.com/NvChad/NvChad) - Blazing fast Neovim config providing solid defaults and a beautiful UI
+- Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
+- Git >= **2.19.0** (for partial clones support)
+- [LazyVim](https://www.lazyvim.org/)
+- a [Nerd Font](https://www.nerdfonts.com/)(v3.0 or greater) **_(optional, but needed to display some icons)_**
   - [JetBrains Nerd Font](https://www.nerdfonts.com/font-downloads)
+- [lazygit](https://github.com/jesseduffield/lazygit) **_(optional)_**
+  - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
+  - **find files**: [fd](https://github.com/sharkdp/fd)
+- [Solarized Osaka](https://github.com/craftzdog/solarized-osaka.nvim)
 
 ## Shell setup (macOS)
 
-- [Dotbot](https://github.com/anishathalye/dotbot) - a tool that bootstraps dotfiles
-- [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) - framework for managing `zsh` configuration
-- [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - theme
-  - [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) Meslo Nerd Font patched for Powerlevel10k
+- [Homebrew](https://brew.sh)
 
-### Installation
+## Installation
 
 ```bash
 git clone git@github.com:fisenkodv/dotfiles.git .dotfiles --recursive
@@ -28,11 +32,11 @@ cd .dotfiles
 make install
 ```
 
-### Inspired By
+## Inspired By
 
 - https://github.com/denolfe/dotfiles
 - https://github.com/craftzdog/dotfiles-public
 
 ## License
 
-MIT
+[MIT](LICENSE)

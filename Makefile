@@ -1,7 +1,7 @@
 .PHONY: install brew
 
 install:
-	./scripts/install
+	./scripts/install.sh
 
 brew:
 	brew update

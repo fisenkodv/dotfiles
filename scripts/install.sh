@@ -6,7 +6,7 @@ SOURCE_CONFIG_DIR="$PWD/config"
 SOURCE_MODULES_DIR="$PWD/modules"
 TARGET_CONFIG_DIR="$HOME/.config"
 
-function link_config() {
+link_config() {
   local source=$1
   local target=$2
 
@@ -29,8 +29,6 @@ link_config $SOURCE_CONFIG_DIR/zsh $TARGET_CONFIG_DIR/zsh
 link_config $SOURCE_CONFIG_DIR/fish $TARGET_CONFIG_DIR/fish
 
 # nvim
-# link_config $SOURCE_MODULES_DIR/nvchad $TARGET_CONFIG_DIR/nvim
-# link_config $SOURCE_CONFIG_DIR/nvim $TARGET_CONFIG_DIR/nvim/lua/custom
 link_config $SOURCE_CONFIG_DIR/nvim $TARGET_CONFIG_DIR/nvim
 
 # tools
