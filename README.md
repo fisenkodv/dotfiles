@@ -23,6 +23,7 @@
 ## Shell setup (macOS)
 
 - [Homebrew](https://brew.sh)
+- [asdf](https://asdf-vm.com/)
 
 ## Installation
 

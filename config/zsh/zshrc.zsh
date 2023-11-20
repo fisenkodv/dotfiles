@@ -10,6 +10,7 @@ export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
 if ! zgen saved; then
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/genpass
+  zgen oh-my-zsh plugins/asdf
 
   zgen load agkozak/zsh-z
   zgen load lukechilds/zsh-nvm
@@ -65,5 +66,7 @@ for f in $ZSH_CONFIG_HOME/path/*.path.sh; do source $f; done
 
 # Load all init files
 for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
+
+source ~/.asdf/asdf.sh
 
 eval "$(starship init zsh)"
