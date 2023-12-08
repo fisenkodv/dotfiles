@@ -1,3 +1,4 @@
 #!/bin/bash
 
-export PATH=$PATH:$HOME/bin
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
