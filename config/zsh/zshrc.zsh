@@ -67,6 +67,4 @@ for f in $ZSH_CONFIG_HOME/path/*.path.sh; do source $f; done
 # Load all init files
 for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
 
-source ~/.asdf/asdf.sh
-
 eval "$(starship init zsh)"
