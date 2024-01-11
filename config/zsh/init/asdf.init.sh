@@ -1,3 +1,4 @@
 #!/bin/bash
 
-[ -f ~/.asdf/asdf.zsh ] && source ~/.asdf/asdf.zsh
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+
