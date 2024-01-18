@@ -5,6 +5,7 @@ alias gbd="git branch -D"
 alias gbv="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))'"
 alias gbvv="git branch -vv"
 alias gcb="git checkout -b"
+alias gcm="git commit -m"
 alias gd='git diff'
 alias gdc="git diff --cached"
 alias gh="git hist"
