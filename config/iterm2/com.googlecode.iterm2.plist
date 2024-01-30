@@ -1625,6 +1625,8 @@
 	<integer>0</integer>
 	<key>TabsHaveCloseButton</key>
 	<true/>
+	<key>TmuxUnpauseAutomatically</key>
+	<true/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Command History</string>
