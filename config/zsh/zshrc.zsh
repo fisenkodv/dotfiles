@@ -11,8 +11,8 @@ if ! zgen saved; then
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/genpass
   zgen oh-my-zsh plugins/asdf
+  zgen oh-my-zsh zgen
 
-  zgen load agkozak/zsh-z
   zgen load lukechilds/zsh-nvm
 
   zgen load zsh-users/zsh-syntax-highlighting
