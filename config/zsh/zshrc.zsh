@@ -5,6 +5,7 @@ source ~/.zgen/zgen.zsh
 
 export ZSH_CONFIG_HOME="$HOME/.config/zsh"
 export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
+export ZOXIDE_CMD_OVERRIDE=true
 
 # Generate zgen init.sh if it doesn't exist
 if ! zgen saved; then
