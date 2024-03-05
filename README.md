@@ -18,6 +18,8 @@
 - [lazygit](https://github.com/jesseduffield/lazygit) **_(optional)_**
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - **find files**: [fd](https://github.com/sharkdp/fd)
+- **tmux** (optional)
+  - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 - [Solarized Osaka](https://github.com/craftzdog/solarized-osaka.nvim)
 
 ## Shell setup (macOS)
