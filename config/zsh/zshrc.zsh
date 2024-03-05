@@ -13,6 +13,8 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/genpass
   zgen oh-my-zsh plugins/asdf
   zgen oh-my-zsh plugins/zoxide
+  zgen oh-my-zsh plugins/tmux
+  zgen oh-my-zsh plugins/rust
 
   zgen load lukechilds/zsh-nvm
 
@@ -69,3 +71,4 @@ for f in $ZSH_CONFIG_HOME/path/*.path.sh; do source $f; done
 for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
 
 eval "$(starship init zsh)"
+
