@@ -2,7 +2,7 @@
 
 # Dotfiles
 
-[![Actions Status](https://github.com/fisenkodv/dotfiles/workflows/Test%20Install/badge.svg)](https://github.com/fisenkodv/dotfiles/actions)
+[![Actions Status](https://github.com/fisenkodv/dotfiles/actions/workflows/test_install.yaml/badge.svg)](https://github.com/fisenkodv/dotfiles/actions)
 
 **Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
