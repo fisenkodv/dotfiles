@@ -18,7 +18,6 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.rust" },
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-		{ import = "lazyvim.plugins.extras.ui.edgy" },
 		-- import/override with your plugins
 		{ import = "plugins" },
 	},
@@ -31,7 +30,7 @@ require("lazy").setup({
 		version = false, -- always use the latest git commit
 		-- version = "*", -- try installing the latest stable version for plugins that support semver
 	},
-	install = { colorscheme = { "catppuccin", "tokyonight", "habamax" } },
+	-- install = { colorscheme = { "solarized-osaka", "catppuccin", "tokyonight", "habamax" } },
 	checker = { enabled = true }, -- automatically check for plugin updates
 	performance = {
 		cache = { enabled = true },
