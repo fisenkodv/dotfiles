@@ -19,6 +19,7 @@ function M.setup(cfg)
 		{ key = "d", mods = "CMD", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 		{ key = "d", mods = "CMD|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 
+		{ key = "Enter", mods = "SHIFT|CMD", action = act.TogglePaneZoomState },
 		{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 		{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 		{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
