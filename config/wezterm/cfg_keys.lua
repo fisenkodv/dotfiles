@@ -42,6 +42,9 @@ function M.setup(cfg)
 
 		{ key = "LeftArrow", mods = "OPT", action = act.SendString("\x1bb") },
 		{ key = "RightArrow", mods = "OPT", action = act.SendString("\x1bf") },
+		{ key = "LeftArrow", mods = "CMD", action = act.SendString("\x01") },
+		{ key = "RightArrow", mods = "CMD", action = act.SendString("\x05") },
+		{ key = "Backspace", mods = "CMD", action = act.SendString("\x15") },
 	}
 
 	cfg.key_tables = {
