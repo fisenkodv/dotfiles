@@ -21,8 +21,8 @@ function M.setup(cfg)
 		},
 	})
 
-	cfg.macos_window_background_blur = 15
-	cfg.window_background_opacity = 1.0
+	cfg.macos_window_background_blur = 10
+	cfg.window_background_opacity = 0.95
 	cfg.window_decorations = "RESIZE"
 	cfg.window_padding = {
 		left = 0,
@@ -36,7 +36,7 @@ function M.setup(cfg)
 	}
 
 	cfg.initial_rows = 50
-	cfg.initial_cols = 160
+	cfg.initial_cols = 180
 end
 
 return M
