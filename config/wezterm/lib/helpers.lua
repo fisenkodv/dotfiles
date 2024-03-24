@@ -21,6 +21,7 @@ local process_icons = {
 	["gh"] = wezterm.nerdfonts.dev_github_badge,
 	["ruby"] = wezterm.nerdfonts.cod_ruby,
 	["node"] = wezterm.nerdfonts.dev_nodejs_small,
+	["ssh"] = wezterm.nerdfonts.md_ssh,
 	["tmux"] = wezterm.nerdfonts.cod_terminal_tmux,
 }
 
