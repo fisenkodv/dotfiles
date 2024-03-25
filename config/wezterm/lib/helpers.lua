@@ -10,6 +10,7 @@ local process_icons = {
 	["make"] = wezterm.nerdfonts.seti_makefile,
 	["vim"] = wezterm.nerdfonts.dev_vim,
 	["zsh"] = wezterm.nerdfonts.dev_terminal,
+	["fish"] = wezterm.nerdfonts.dev_terminal,
 	["bash"] = wezterm.nerdfonts.cod_terminal_bash,
 	["htop"] = wezterm.nerdfonts.mdi_chart_donut_variant,
 	["cargo"] = wezterm.nerdfonts.dev_rust,
