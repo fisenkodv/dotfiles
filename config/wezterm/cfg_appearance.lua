@@ -34,7 +34,7 @@ function M.setup(cfg)
 	}
 	cfg.inactive_pane_hsb = {
 		saturation = 0.9,
-		brightness = 0.6,
+		brightness = 0.8,
 	}
 
 	cfg.initial_rows = 50
