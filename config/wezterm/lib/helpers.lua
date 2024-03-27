@@ -28,7 +28,7 @@ local process_icons = {
 
 function M.get_process(tab)
 	local process_name = tab.active_pane.foreground_process_name:match("([^/\\]+)$")
-	local icon = process_icons[process_name] or wezterm.nerdfonts.seti_checkbox_unchecked
+	local icon = process_icons[process_name] or process_name
 
 	return icon
 end
