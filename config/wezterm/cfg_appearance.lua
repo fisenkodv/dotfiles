@@ -53,7 +53,7 @@ function M.setup(cfg)
 	end)
 
 	wezterm.on("update-right-status", function(window, pane)
-		local date = wezterm.strftime("%a %b %-d %H:%M")
+		local date = wezterm.strftime("%a %b %-d %I:%M %p")
 
 		window:set_right_status(wezterm.format({
 			{ Text = wezterm.nerdfonts.md_calendar_clock .. " " .. date },
