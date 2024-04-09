@@ -60,6 +60,15 @@ function M.setup(cfg)
 				end),
 			}),
 		},
+		-- Clears the scrollback and viewport, and then sends CTRL-L to ask the shell to redraw its prompt
+		{
+			key = "k",
+			mods = "CMD",
+			action = act.Multiple({
+				act.ClearScrollback("ScrollbackAndViewport"),
+				act.SendKey({ key = "L", mods = "CTRL" }),
+			}),
+		},
 	}
 
 	cfg.key_tables = {
