@@ -14,14 +14,25 @@ function M.setup(cfg)
 	cfg.status_update_interval = 100
 
 	cfg.font_size = 16.0
+	cfg.freetype_load_target = "HorizontalLcd"
+
+	local fontFamily = "JetBrainsMonoNL Nerd Font"
+	-- local fontFamily = "JetBrains Mono"
+
 	cfg.font = wezterm.font({
-		family = "JetBrains Mono",
+		family = fontFamily,
 		harfbuzz_features = {
 			"calt=0",
 			"clig=0",
 			"liga=0",
 		},
 	})
+	cfg.font_rules = {
+		{
+			intensity = "Bold",
+			font = wezterm.font({ family = fontFamily, weight = "Bold" }),
+		},
+	}
 
 	cfg.macos_window_background_blur = 10
 	cfg.window_background_opacity = 0.95
