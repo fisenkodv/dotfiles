@@ -1,5 +1,6 @@
 # format = '$directory$character'
 format = """
+$shell\
 $directory\
 $git_branch\
 $git_status\
@@ -42,3 +43,8 @@ format = '[$symbol($version )]($style)'
 [cmd_duration]
 min_time = 500
 format = 'took [$duration]($style) '
+
+[shell]
+disabled = false
+style = 'cyan bold'
+format = '\[[$indicator]($style)\]:'
