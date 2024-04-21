@@ -1,3 +1,6 @@
 #!/bin/bash
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if type fzf >/dev/null 2>&1; then
+	eval "$(fzf --zsh)"
+fi
+
