@@ -37,3 +37,4 @@ link_config $SOURCE_CONFIG_DIR/tmux $TARGET_CONFIG_DIR/tmux
 link_config $SOURCE_CONFIG_DIR/iterm2 $TARGET_CONFIG_DIR/iterm2
 link_config $SOURCE_CONFIG_DIR/wezterm $TARGET_CONFIG_DIR/wezterm
 link_config $SOURCE_CONFIG_DIR/zed $TARGET_CONFIG_DIR/zed
+link_config $SOURCE_CONFIG_DIR/helix $TARGET_CONFIG_DIR/helix
