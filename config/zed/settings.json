@@ -25,7 +25,7 @@
     "button": false
   },
 
-  "theme": "Atelier Forest Light",
+  "theme": "Sandcastle",
   "base_keymap": "VSCode",
   "buffer_font_family": "Monaspace Neon",
   "buffer_font_features": {
