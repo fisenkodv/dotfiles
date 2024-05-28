@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local utils = require("lib.utils")
 local act = wezterm.action
 
 local M = {}
@@ -7,9 +8,13 @@ function M.setup(cfg)
 	cfg.leader = { key = "a", mods = "ALT" }
 
 	cfg.keys = {
+		{ key = "Escape", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+		{ key = "t", mods = "ALT", action = wezterm.action_callback(utils.theme_cycler) },
+
 		{ key = "[", mods = "LEADER", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "LEADER", action = act.ActivateTabRelative(1) },
 		{ key = "n", mods = "LEADER", action = act.ShowTabNavigator },
+
 		{
 			key = "m",
 			mods = "LEADER",
@@ -18,9 +23,9 @@ function M.setup(cfg)
 
 		{ key = "d", mods = "CMD", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 		{ key = "d", mods = "CMD|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+		{ key = "f", mods = "CTRL", action = act.ToggleFullScreen },
 
 		{ key = "Enter", mods = "SHIFT|CMD", action = act.TogglePaneZoomState },
-		{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 		{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 		{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 		{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
@@ -34,17 +39,15 @@ function M.setup(cfg)
 			mods = "LEADER",
 			action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 		},
-
-		{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-		{ key = "d", mods = "LEADER", action = act.ShowLauncher },
-
-		{ key = "f", mods = "CTRL", action = act.ToggleFullScreen },
-
-		{ key = "LeftArrow", mods = "OPT", action = act.SendString("\x1bb") },
-		{ key = "RightArrow", mods = "OPT", action = act.SendString("\x1bf") },
-		{ key = "LeftArrow", mods = "CMD", action = act.SendString("\x01") },
-		{ key = "RightArrow", mods = "CMD", action = act.SendString("\x05") },
-		{ key = "Backspace", mods = "CMD", action = act.SendString("\x15") },
+		-- Clears the scrollback and viewport, and then sends CTRL-L to ask the shell to redraw its prompt
+		{
+			key = "k",
+			mods = "CMD",
+			action = act.Multiple({
+				act.ClearScrollback("ScrollbackAndViewport"),
+				act.SendKey({ key = "L", mods = "CTRL" }),
+			}),
+		},
 		{
 			key = "E",
 			mods = "CTRL|SHIFT",
@@ -60,15 +63,17 @@ function M.setup(cfg)
 				end),
 			}),
 		},
-		-- Clears the scrollback and viewport, and then sends CTRL-L to ask the shell to redraw its prompt
-		{
-			key = "k",
-			mods = "CMD",
-			action = act.Multiple({
-				act.ClearScrollback("ScrollbackAndViewport"),
-				act.SendKey({ key = "L", mods = "CTRL" }),
-			}),
-		},
+
+		{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
+
+		{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+		{ key = "d", mods = "LEADER", action = act.ShowLauncher },
+
+		{ key = "LeftArrow", mods = "OPT", action = act.SendString("\x1bb") },
+		{ key = "RightArrow", mods = "OPT", action = act.SendString("\x1bf") },
+		{ key = "LeftArrow", mods = "CMD", action = act.SendString("\x01") },
+		{ key = "RightArrow", mods = "CMD", action = act.SendString("\x05") },
+		{ key = "Backspace", mods = "CMD", action = act.SendString("\x15") },
 	}
 
 	cfg.key_tables = {

@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "current_line_highlight": "all",
   "features": {
     "copilot": false
   },
@@ -25,7 +26,7 @@
     "button": false
   },
 
-  "theme": "Sandcastle",
+  "theme": "Ayu Mirage",
   "base_keymap": "VSCode",
   "buffer_font_family": "Monaspace Neon",
   "buffer_font_features": {
@@ -71,6 +72,8 @@
     "typescript-language-server": {
       "initialization_options": {
         "preferences": {
+          "referencesCodeLens.enabled": true,
+          "referencesCodeLens.showOnAllFunctions": true,
           "includeInlayEnumMemberValueHints": true,
           "includeInlayFunctionLikeReturnTypeHints": true,
           "includeInlayFunctionParameterTypeHints": true,

@@ -1,10 +1,12 @@
 local wezterm = require("wezterm")
-local helpers = require("lib.helpers")
+local utils = require("lib.utils")
 
 local M = {}
 
 function M.setup(cfg)
 	cfg.color_scheme = "Catppuccin Frappe"
+	cfg.color_scheme = "Breeze"
+	cfg.color_scheme = "Google Dark (Gogh)"
 
 	cfg.enable_tab_bar = true
 	cfg.use_fancy_tab_bar = false
@@ -53,9 +55,9 @@ function M.setup(cfg)
 
 	wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 		local position = tab.tab_index + 1
-		local process_icon = helpers.get_process(tab)
+		local process_icon = utils.get_process(tab)
 		-- ensure that the titles fit in the available space
-		local tab_text = wezterm.truncate_right(helpers.tab_title(tab), max_width - 2)
+		local tab_text = wezterm.truncate_right(utils.tab_title(tab), max_width - 2)
 		local tab_title = string.format(" ⌘%d %s %s ", position, process_icon, tab_text)
 
 		return {
