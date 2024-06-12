@@ -21,7 +21,7 @@ git config --global diff.indentHeuristic true
 git config --global alias.cb '!git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \\(.*\\)/\\1/"'
 git config --global alias.a  '!git add . && git s'
 git config --global alias.ch 'checkout'
-git config --global alias.c  'commit -S -m'
+git config --global alias.c  'commit -m'
 git config --global alias.s  'status --short --branch'
 git config --global alias.d  'diff'
 git config --global alias.pl  '!git pull origin $(git cb) --rebase'
