@@ -1,7 +1,7 @@
 return {
 	{
 		"echasnovski/mini.hipatterns",
-		event = "bufreadpre",
+		event = "BufReadPre",
 		opts = {
 			highlighters = {
 				-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
