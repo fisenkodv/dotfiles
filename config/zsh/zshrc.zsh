@@ -69,4 +69,5 @@ for f in $ZSH_CONFIG_HOME/path/*.path.sh; do source $f; done
 for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
 
 eval "$(starship init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
