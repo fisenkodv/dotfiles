@@ -16,13 +16,3 @@ git config --global branch.autoSetupMerge true
 git config --global init.defaultBranch main
 git config --global diff.algorithm histogram
 git config --global diff.indentHeuristic true
-
-# Setup aliases
-git config --global alias.cb '!git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \\(.*\\)/\\1/"'
-git config --global alias.a  '!git add . && git s'
-git config --global alias.ch 'checkout'
-git config --global alias.c  'commit -m'
-git config --global alias.s  'status --short --branch'
-git config --global alias.d  'diff'
-git config --global alias.pl  '!git pull origin $(git cb) --rebase'
-git config --global alias.ph  '!git push origin $(git cb)'
