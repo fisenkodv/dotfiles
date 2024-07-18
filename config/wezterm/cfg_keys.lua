@@ -9,6 +9,8 @@ function M.setup(cfg)
 
 	cfg.keys = {
 		{ key = "Escape", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+
+		{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = true }) },
 		{ key = "t", mods = "ALT", action = wezterm.action_callback(utils.theme_cycler) },
 
 		{ key = "[", mods = "LEADER", action = act.ActivateTabRelative(-1) },
