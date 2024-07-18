@@ -1836,7 +1836,7 @@
 			<key>Shortcut</key>
 			<string>D</string>
 			<key>Show Mark Indicators</key>
-			<true/>
+			<false/>
 			<key>Show Status Bar</key>
 			<true/>
 			<key>Silence Bell</key>

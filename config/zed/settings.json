@@ -9,6 +9,7 @@
 {
   "current_line_highlight": "all",
   "features": {
+    "inline_completion_provider": "none",
     "copilot": false
   },
   "telemetry": {
@@ -25,8 +26,7 @@
   "chat_panel": {
     "button": false
   },
-
-  "theme": "Ayu Mirage",
+  "theme": "One Light",
   "base_keymap": "VSCode",
   "buffer_font_family": "Monaspace Neon",
   "buffer_font_features": {
@@ -34,7 +34,6 @@
   },
   "buffer_font_size": 16,
   "buffer_line_height": "comfortable",
-
   "inlay_hints": {
     "enabled": true,
     "show_other_hints": true,
@@ -83,6 +82,11 @@
           "includeInlayVariableTypeHints": true,
           "includeInlayVariableTypeHintsWhenTypeMatchesName": false
         }
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "ngClass", "styles"]
       }
     }
   },

@@ -5,8 +5,8 @@ local M = {}
 
 function M.setup(cfg)
 	cfg.color_scheme = "Catppuccin Frappe"
-	cfg.color_scheme = "Breeze"
-	cfg.color_scheme = "Google Dark (Gogh)"
+	-- cfg.color_scheme = "Breeze"
+	-- cfg.color_scheme = "Google Dark (Gogh)"
 
 	cfg.enable_tab_bar = true
 	cfg.use_fancy_tab_bar = false
