@@ -17,7 +17,7 @@
     "diagnostics": false
   },
   "assistant": {
-    "version": "1",
+    "version": "2",
     "enabled": false
   },
   "collaboration_panel": {
@@ -26,7 +26,8 @@
   "chat_panel": {
     "button": false
   },
-  "theme": "One Light",
+  "format_on_save": "on",
+  "theme": "Atelier Forest Light",
   "base_keymap": "VSCode",
   "buffer_font_family": "Monaspace Neon",
   "buffer_font_features": {
