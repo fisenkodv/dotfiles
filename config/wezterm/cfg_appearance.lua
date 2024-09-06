@@ -23,6 +23,7 @@ function M.setup(cfg)
 
 	cfg.font = wezterm.font({
 		family = fontFamily,
+		weight = "DemiBold",
 		harfbuzz_features = {
 			"calt=0",
 			"clig=0",
@@ -32,7 +33,7 @@ function M.setup(cfg)
 	cfg.font_rules = {
 		{
 			intensity = "Bold",
-			font = wezterm.font({ family = fontFamily, weight = "Bold" }),
+			font = wezterm.font({ family = fontFamily, weight = "DemiBold" }),
 		},
 	}
 
