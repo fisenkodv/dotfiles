@@ -15,13 +15,6 @@ function M.setup(cfg)
 
 		{ key = "[", mods = "LEADER", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "LEADER", action = act.ActivateTabRelative(1) },
-		{ key = "n", mods = "LEADER", action = act.ShowTabNavigator },
-
-		{
-			key = "m",
-			mods = "LEADER",
-			action = act.ActivateKeyTable({ name = "move_tab", one_shot = false }),
-		},
 
 		{ key = "d", mods = "CMD", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 		{ key = "d", mods = "CMD|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
@@ -36,11 +29,6 @@ function M.setup(cfg)
 		{ key = "RightArrow", mods = "ALT|CMD", action = act.ActivatePaneDirection("Right") },
 		{ key = "UpArrow", mods = "ALT|CMD", action = act.ActivatePaneDirection("Up") },
 		{ key = "DownArrow", mods = "ALT|CMD", action = act.ActivatePaneDirection("Down") },
-		{
-			key = "r",
-			mods = "LEADER",
-			action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
-		},
 		-- Clears the scrollback and viewport, and then sends CTRL-L to ask the shell to redraw its prompt
 		{
 			key = "k",
@@ -66,10 +54,24 @@ function M.setup(cfg)
 			}),
 		},
 
+		{ key = "l", mods = "LEADER", action = act.ShowLauncher },
 		{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 
-		{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-		{ key = "d", mods = "LEADER", action = act.ShowLauncher },
+		{
+			key = "t",
+			mods = "LEADER",
+			action = act.ActivateKeyTable({ name = "tabs", one_shot = false }),
+		},
+		{
+			key = "w",
+			mods = "LEADER",
+			action = act.ActivateKeyTable({ name = "workspaces", one_shot = false }),
+		},
+		{
+			key = "p",
+			mods = "LEADER",
+			action = act.ActivateKeyTable({ name = "panes", one_shot = false }),
+		},
 
 		{ key = "LeftArrow", mods = "OPT", action = act.SendString("\x1bb") },
 		{ key = "RightArrow", mods = "OPT", action = act.SendString("\x1bf") },
@@ -79,7 +81,7 @@ function M.setup(cfg)
 	}
 
 	cfg.key_tables = {
-		resize_pane = {
+		panes = {
 			{ key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
 			{ key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
 			{ key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
@@ -87,13 +89,46 @@ function M.setup(cfg)
 			{ key = "Escape", action = "PopKeyTable" },
 			{ key = "Enter", action = "PopKeyTable" },
 		},
-		move_tab = {
+		tabs = {
+			{ key = "t", action = act.ShowTabNavigator },
 			{ key = "h", action = act.MoveTabRelative(-1) },
 			{ key = "j", action = act.MoveTabRelative(-1) },
 			{ key = "k", action = act.MoveTabRelative(1) },
 			{ key = "l", action = act.MoveTabRelative(1) },
 			{ key = "Escape", action = "PopKeyTable" },
 			{ key = "Enter", action = "PopKeyTable" },
+		},
+		workspaces = {
+			-- Switch to default workspace
+			{
+				key = "d",
+				action = act.SwitchToWorkspace({ name = "default" }),
+			},
+			{ key = "l", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+			-- Prompt for a name to use for a new workspace and switch to it.
+			{
+				key = "n",
+				action = act.PromptInputLine({
+					description = wezterm.format({
+						{ Attribute = { Intensity = "Bold" } },
+						{ Foreground = { AnsiColor = "Fuchsia" } },
+						{ Text = "Enter name for new workspace" },
+					}),
+					action = wezterm.action_callback(function(window, pane, line)
+						-- line will be `nil` if they hit escape without entering anything
+						-- An empty string if they just hit enter
+						-- Or the actual line of text they wrote
+						if line then
+							window:perform_action(
+								act.SwitchToWorkspace({
+									name = line,
+								}),
+								pane
+							)
+						end
+					end),
+				}),
+			},
 		},
 	}
 
