@@ -54,7 +54,7 @@ function M.setup(cfg)
 			}),
 		},
 
-		{ key = "l", mods = "LEADER", action = act.ShowLauncher },
+		{ key = "d", mods = "LEADER", action = act.ShowLauncher },
 		{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 
 		{
