@@ -48,38 +48,36 @@ function M.tab_title(tab_info)
 	return tab_info.active_pane.title
 end
 
----cycle through builtin dark schemes in dark mode,
----and through light schemes in light mode
-function M.theme_cycler(window, _)
-	local allSchemes = wezterm.color.get_builtin_schemes()
-	local currentAppearance = wezterm.gui.get_appearance()
-	local currentScheme = window:effective_config().color_scheme
-	local darkSchemes = {}
-	local lightSchemes = {}
+M.theme_switcher = function(window, pane)
+	-- get builting color schemes
+	local schemes = wezterm.get_builtin_color_schemes()
+	local choices = {}
 
-	for name, scheme in pairs(allSchemes) do
-		if scheme.background then
-			local bg = wezterm.color.parse(scheme.background) -- parse into a color object
-			---@diagnostic disable-next-line: unused-local
-			local h, s, l, a = bg:hsla() -- and extract HSLA information
-			if l < 0.4 then
-				table.insert(darkSchemes, name)
-			else
-				table.insert(lightSchemes, name)
-			end
-		end
+	-- populate theme names in choices list
+	for key, _ in pairs(schemes) do
+		table.insert(choices, { label = tostring(key) })
 	end
-	local schemesToSearch = darkSchemes -- currentAppearance:find("Dark") and darkSchemes or lightSchemes
 
-	for i = 1, #schemesToSearch, 1 do
-		if schemesToSearch[i] == currentScheme then
-			local overrides = window:get_config_overrides() or {}
-			overrides.color_scheme = schemesToSearch[i + 1]
-			wezterm.log_info("Switched to: " .. schemesToSearch[i + 1])
-			window:set_config_overrides(overrides)
-			return
-		end
-	end
+	-- sort choices list
+	table.sort(choices, function(c1, c2)
+		return c1.label < c2.label
+	end)
+
+	window:perform_action(
+		act.InputSelector({
+			title = "🎨 Pick a Theme!",
+			choices = choices,
+			fuzzy = true,
+
+			action = wezterm.action_callback(function(_, _, _, label)
+				local overrides = window:get_config_overrides() or {}
+				overrides.color_scheme = label
+				wezterm.log_info("Switched to: " .. label)
+				window:set_config_overrides(overrides)
+			end),
+		}),
+		pane
+	)
 end
 
 return M
