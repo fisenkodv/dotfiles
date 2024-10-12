@@ -4,14 +4,15 @@ local utils = require("lib.utils")
 local M = {}
 
 function M.setup(cfg)
-	cfg.color_scheme = "Catppuccin Frappe"
+	cfg.color_scheme = "Tokyo Night Storm"
+	-- cfg.color_scheme = "Catppuccin Frappe"
 	-- cfg.color_scheme = "Breeze"
 	-- cfg.color_scheme = "Google Dark (Gogh)"
 
 	cfg.enable_tab_bar = true
 	cfg.use_fancy_tab_bar = false
 	cfg.tab_bar_at_bottom = false
-	cfg.tab_max_width = 30
+	-- cfg.tab_max_width = 30
 	cfg.hide_tab_bar_if_only_one_tab = true
 	cfg.status_update_interval = 100
 
