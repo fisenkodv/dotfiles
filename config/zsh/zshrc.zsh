@@ -70,3 +70,11 @@ for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
 
 eval "$(starship init zsh)"
 
+
+# pnpm
+export PNPM_HOME="/Users/dfisenko/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
