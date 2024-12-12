@@ -10,5 +10,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.editing-support.vim-visual-multi" },
   -- import/override with your plugins folder
 }
