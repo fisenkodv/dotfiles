@@ -2,7 +2,7 @@
 
 set -e
 
-SOURCE_CONFIG_DIR="$PWD/config"
+SOURCE_CONFIG_DIR="$PWD/.config"
 SOURCE_MODULES_DIR="$PWD/modules"
 TARGET_CONFIG_DIR="$HOME/.config"
 
@@ -34,8 +34,6 @@ link_config $SOURCE_CONFIG_DIR/nvim $TARGET_CONFIG_DIR/nvim
 # tools
 link_config $SOURCE_CONFIG_DIR/htop $TARGET_CONFIG_DIR/htop
 link_config $SOURCE_CONFIG_DIR/tmux $TARGET_CONFIG_DIR/tmux
-link_config $SOURCE_CONFIG_DIR/iterm2 $TARGET_CONFIG_DIR/iterm2
 link_config $SOURCE_CONFIG_DIR/wezterm $TARGET_CONFIG_DIR/wezterm
 link_config $SOURCE_CONFIG_DIR/zed $TARGET_CONFIG_DIR/zed
-link_config $SOURCE_CONFIG_DIR/helix $TARGET_CONFIG_DIR/helix
 link_config $SOURCE_CONFIG_DIR/yazi $TARGET_CONFIG_DIR/yazi
