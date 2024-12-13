@@ -1,13 +1,5 @@
 return {
   {
-    "ellisonleao/gruvbox.nvim",
-    lazy = true,
-  },
-  {
-    "craftzdog/solarized-osaka.nvim",
-    lazy = true,
-  },
-  {
     "folke/tokyonight.nvim",
     lazy = true,
   },
@@ -20,8 +12,6 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin-frappe",
-      -- colorscheme = "solarized-osaka",
-      -- colorscheme = "gruvbox",
     },
   },
 }
