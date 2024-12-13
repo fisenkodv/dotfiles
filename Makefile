@@ -6,5 +6,5 @@ install:
 brew:
 	brew update
 	brew upgrade
-	brew bundle install --file=os/macos/brew/brewfile
+	brew bundle install --file=os/macos/brewfile
 	brew cleanup
