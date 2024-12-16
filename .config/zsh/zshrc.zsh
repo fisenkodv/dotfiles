@@ -12,9 +12,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/genpass
   zgen oh-my-zsh plugins/asdf
   zgen oh-my-zsh plugins/tmux
-  zgen oh-my-zsh plugins/rust
-
-  zgen load lukechilds/zsh-nvm
 
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-history-substring-search
