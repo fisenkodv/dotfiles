@@ -14,14 +14,25 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/tmux
 
   zgen load agkozak/zsh-z
+  zgen load Aloxaf/fzf-tab
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-history-substring-search
   zgen load zsh-users/zsh-autosuggestions
-  zgen load zsh-users/zsh-completions src
+  zgen load zsh-users/zsh-completions
 
   # Generate init.sh
   zgen save
 fi
+
+# load completions
+autoload -U compinit && compinit
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # History Options
 setopt append_history
