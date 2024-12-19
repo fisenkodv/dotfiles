@@ -1,4 +1,0 @@
-[submodule "modules/zgen"]
-path = modules/zgen
-url = https://github.com/tarjoilija/zgen.git
-ignore = dirty
