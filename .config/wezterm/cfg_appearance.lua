@@ -16,6 +16,8 @@ function M.setup(cfg)
 	cfg.hide_tab_bar_if_only_one_tab = true
 	cfg.status_update_interval = 100
 
+	cfg.default_cursor_style = "SteadyBlock"
+
 	cfg.font_size = 16.0
 	cfg.freetype_load_target = "HorizontalLcd"
 
