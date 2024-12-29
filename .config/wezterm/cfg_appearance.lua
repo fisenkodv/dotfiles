@@ -55,7 +55,7 @@ function M.setup(cfg)
 	cfg.initial_rows = 50
 	cfg.initial_cols = 180
 
-	wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	wezterm.on("format-tab-title", function(tab, _tabs, _panes, _config, _hover, max_width)
 		local position = tab.tab_index + 1
 		local process_icon = utils.get_process(tab)
 		-- ensure that the titles fit in the available space
@@ -67,7 +67,7 @@ function M.setup(cfg)
 		}
 	end)
 
-	wezterm.on("update-right-status", function(window, pane)
+	wezterm.on("update-right-status", function(window, _pane)
 		local date = wezterm.strftime("%a %b %-d %I:%M %p")
 
 		window:set_right_status(wezterm.format({

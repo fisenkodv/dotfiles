@@ -1,0 +1,8 @@
+font-size=16
+font-style-bold=true
+theme=tokyonight-storm
+cursor-style=block
+background-opacity=1
+unfocused-split-opacity=0.8
+working-directory=inherit
+window-save-state=always
