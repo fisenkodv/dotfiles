@@ -33,7 +33,7 @@
 ## Installation
 
 ```bash
-git clone git@github.com:fisenkodv/dotfiles.git .dotfiles --recursive
+git clone git@github.com:fisenkodv/dotfiles.git .dotfiles
 cd .dotfiles
 make install
 ```
