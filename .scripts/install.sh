@@ -35,5 +35,6 @@ link_config $SOURCE_CONFIG_DIR/nvim $TARGET_CONFIG_DIR/nvim
 link_config $SOURCE_CONFIG_DIR/htop $TARGET_CONFIG_DIR/htop
 link_config $SOURCE_CONFIG_DIR/tmux $TARGET_CONFIG_DIR/tmux
 link_config $SOURCE_CONFIG_DIR/wezterm $TARGET_CONFIG_DIR/wezterm
+link_config $SOURCE_CONFIG_DIR/ghostty $TARGET_CONFIG_DIR/ghostty
 link_config $SOURCE_CONFIG_DIR/zed $TARGET_CONFIG_DIR/zed
 link_config $SOURCE_CONFIG_DIR/yazi $TARGET_CONFIG_DIR/yazi
