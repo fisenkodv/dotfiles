@@ -17,7 +17,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
-# zinit light agkozak/zsh-z
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -34,7 +33,6 @@ zinit cdreplay -q
 zstyle ':completion:*' menu select
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
-zstyle ':completion:*' file-list all
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
@@ -77,6 +75,4 @@ for f in $ZSH_CONFIG_HOME/path/*.path.sh; do source $f; done
 
 # Load all init files
 for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
-
-eval "$(starship init zsh)"
 
