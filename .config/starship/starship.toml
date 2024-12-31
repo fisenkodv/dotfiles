@@ -1,17 +1,13 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# format = '$directory$character'
 format = """
-$shell\
 $directory\
 $git_branch\
 $git_status\
-$rust\
-$cmd_duration\
 $character\
 """
+right_format = """$shell$cmd_duration"""
 
-# Disable the blank line at the start of the prompt
 add_newline = false
 
 [directory]
@@ -23,10 +19,11 @@ repo_root_style = 'bold fg:31'
 before_repo_root_style = 'bold fg:39'
 
 [git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style) '
+format = '[$branch(:$remote_branch)]($style)'
 style = 'bold fg:76'
 
 [git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
 ahead = '⇡$count'
 diverged = '⇕⇡$ahead_count⇣$behind_count'
 behind = '⇣$count'
@@ -36,9 +33,4 @@ format = '[$symbol($version )]($style)'
 
 [cmd_duration]
 min_time = 500
-format = 'took [$duration]($style) '
-
-[shell]
-disabled = false
-style = 'cyan bold'
-format = '\[[$indicator]($style)\]:'
+format = ' [$duration]($style)'
