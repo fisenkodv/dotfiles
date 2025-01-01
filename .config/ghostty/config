@@ -6,6 +6,7 @@ copy-on-select=clipboard
 cursor-style=block
 font-size=16
 font-style-bold=true
+font-feature=-calt
 macos-icon-frame=beige
 macos-icon=custom-style
 macos-option-as-alt=true
