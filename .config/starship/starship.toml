@@ -33,4 +33,5 @@ format = '[$symbol($version )]($style)'
 
 [cmd_duration]
 min_time = 500
+show_milliseconds = true
 format = ' [$duration]($style)'
