@@ -11,14 +11,13 @@ function M.setup(cfg)
 
 	cfg.enable_tab_bar = true
 	cfg.use_fancy_tab_bar = false
-	cfg.tab_bar_at_bottom = false
-	-- cfg.tab_max_width = 30
-	cfg.hide_tab_bar_if_only_one_tab = true
+	cfg.tab_bar_at_bottom = true
+	cfg.hide_tab_bar_if_only_one_tab = false
 	cfg.status_update_interval = 100
-
 	cfg.default_cursor_style = "SteadyBlock"
-
-	cfg.font_size = 16.0
+	cfg.command_palette_font_size = 16
+	cfg.window_frame = { font_size = 16 }
+	cfg.font_size = 16
 	cfg.freetype_load_target = "HorizontalLcd"
 
 	local fontFamily = "JetBrainsMonoNL Nerd Font"
@@ -68,16 +67,31 @@ function M.setup(cfg)
 			{ Text = tab_title },
 		}
 	end)
+	--
+	-- wezterm.on("update-right-status", function(window, _pane)
+	-- 	local date = wezterm.strftime("%a %b %-d %I:%M %p")
+	--
+	-- 	window:set_right_status(wezterm.format({
+	-- 		{ Text = wezterm.nerdfonts.md_calendar_clock .. " " .. date },
+	-- 		{ Text = " | " },
+	-- 		{ Text = wezterm.nerdfonts.oct_person .. " " .. wezterm.hostname() },
+	-- 	}))
+	-- end)
+	--
+	local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+	bar.apply_to_config(cfg, {
+		separator = {
+			left_icon = "",
+			right_icon = "",
+			field_icon = "",
+		},
 
-	wezterm.on("update-right-status", function(window, _pane)
-		local date = wezterm.strftime("%a %b %-d %I:%M %p")
-
-		window:set_right_status(wezterm.format({
-			{ Text = wezterm.nerdfonts.md_calendar_clock .. " " .. date },
-			{ Text = " | " },
-			{ Text = wezterm.nerdfonts.oct_person .. " " .. wezterm.hostname() },
-		}))
-	end)
+		modules = {
+			cwd = {
+				enabled = false,
+			},
+		},
+	})
 end
 
 return M
