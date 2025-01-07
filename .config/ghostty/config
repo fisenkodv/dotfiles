@@ -4,6 +4,7 @@ clipboard-read=allow
 clipboard-write=allow
 copy-on-select=clipboard
 cursor-style=block
+cursor-opacity=0.8
 font-size=16
 font-style-bold=true
 font-feature=-calt
@@ -21,4 +22,3 @@ window-save-state=always
 working-directory=inherit
 
 config-file=keys
-
