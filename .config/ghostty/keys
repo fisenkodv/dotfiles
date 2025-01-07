@@ -4,7 +4,7 @@ keybind = cmd+s>x=close_surface
 
 keybind = cmd+s>n=new_window
 
-# tabs 
+# tabs
 keybind = cmd+s>c=new_tab
 keybind = cmd+s>shift+l=next_tab
 keybind = cmd+s>shift+h=previous_tab
@@ -34,3 +34,4 @@ keybind = cmd+s>l=goto_split:right
 keybind = cmd+s>z=toggle_split_zoom
 
 keybind = cmd+s>e=equalize_splits
+keybind = cmd+backspace=text:\x15
