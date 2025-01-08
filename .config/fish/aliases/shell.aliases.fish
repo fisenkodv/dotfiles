@@ -1,6 +1,6 @@
 # dotfiles aliases
 alias .f 'cd (path resolve ~/.config/fish/) && cd ../..'
-alias .fu '.f && git submodule update --init --recursive'
+alias .fu '.f && git pull'
 alias .fe '.f && v .'
 
 # Easier navigation
