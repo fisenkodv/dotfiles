@@ -1,0 +1,7 @@
+{
+  "TODO": {
+    "prefix": "todo",
+    "body": ["// TODO(dfisenko): $1", "$0"],
+    "description": "Adds TODO with name"
+  }
+}
