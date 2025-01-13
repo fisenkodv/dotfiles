@@ -13,6 +13,7 @@ macos-icon=custom-style
 macos-option-as-alt=true
 mouse-hide-while-typing=true
 mouse-scroll-multiplier=2
+mouse-shift-capture=never
 shell-integration-features=no-cursor,sudo,title
 theme=tokyonight-storm
 theme=Ayu Mirage
