@@ -26,6 +26,9 @@
   "collaboration_panel": { "button": false },
   "current_line_highlight": "all",
   "cursor_shape": "bar",
+  "diagnostics": {
+    "include_warnings": true
+  },
   "features": { "copilot": false, "inline_completion_provider": "none" },
   "format_on_save": "on",
   "formatter": "auto",
@@ -108,7 +111,7 @@
     "indent_size": 20,
     "scrollbar": { "show": "auto" }
   },
-  "relative_line_numbers": false,
+  "relative_line_numbers": true,
   "scrollbar": {
     "axes": {
       "horizontal": true,
