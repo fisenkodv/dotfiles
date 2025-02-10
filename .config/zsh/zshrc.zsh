@@ -21,12 +21,11 @@ zinit light zsh-users/zsh-history-substring-search
 # Add in snippets
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::asdf
 zinit snippet OMZP::tmux
 zinit snippet OMZP::command-not-found
 
 # load completions
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # Completion styling

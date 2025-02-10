@@ -29,7 +29,7 @@
   "diagnostics": {
     "include_warnings": true
   },
-  "features": { "copilot": false, "inline_completion_provider": "none" },
+  "features": { "copilot": false, "inline_completion_provider": "zed" },
   "format_on_save": "on",
   "formatter": "auto",
   "git": {
