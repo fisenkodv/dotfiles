@@ -1,5 +1,5 @@
 auto-update=check
-background-opacity=1
+background-opacity=0.98
 clipboard-read=allow
 clipboard-write=allow
 copy-on-select=clipboard
