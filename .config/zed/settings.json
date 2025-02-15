@@ -7,9 +7,17 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "edit_predictions": {
+    "disabled_globs": [],
+    "mode": "eager_preview"
+  },
   "always_treat_brackets_as_autoclosed": true,
   "assistant": {
-    "enabled": false,
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "enabled": true,
     "version": "2"
   },
   "autosave": "on_focus_change",
@@ -29,7 +37,7 @@
   "diagnostics": {
     "include_warnings": true
   },
-  "features": { "copilot": false, "inline_completion_provider": "zed" },
+  "features": { "copilot": true, "edit_prediction_provider": "zed" },
   "format_on_save": "on",
   "formatter": "auto",
   "git": {
