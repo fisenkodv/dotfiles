@@ -31,10 +31,7 @@ if type eza >/dev/null 2>&1; then
   alias tr2='eza --long --header --git --group --all --tree --level=2 --icons'
   alias tr3='eza --long --header --git --group --all --tree --level=3 --icons'
 else
-  alias ll='ll -la'
-  alias tr1='tree -L 1 -C'
-  alias tr2='tree -L 2 -C'
-  alias tr3='tree -L 3 -C'
+  alias ll='ls -la'
 fi
 
 if type nvim >/dev/null 2>&1; then
