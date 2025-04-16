@@ -1,9 +1,11 @@
 auto-update=check
-background-opacity=0.98
+background-opacity = 0.9
+background-blur-radius = 20
 clipboard-read=allow
 clipboard-write=allow
 copy-on-select=clipboard
 cursor-style=block
+cursor-style-blink=true
 cursor-opacity=0.8
 font-size=16
 font-style-bold=true

@@ -1,0 +1,7 @@
+[tools]
+bun = "latest"
+deno = "latest"
+node = "latest"
+go = "latest"
+python = "latest"
+rust = "latest"
