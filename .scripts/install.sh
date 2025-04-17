@@ -36,5 +36,4 @@ link_config $SOURCE_CONFIG_DIR/htop $TARGET_CONFIG_DIR/htop
 link_config $SOURCE_CONFIG_DIR/tmux $TARGET_CONFIG_DIR/tmux
 link_config $SOURCE_CONFIG_DIR/ghostty $TARGET_CONFIG_DIR/ghostty
 link_config $SOURCE_CONFIG_DIR/zed $TARGET_CONFIG_DIR/zed
-link_config $SOURCE_CONFIG_DIR/yazi $TARGET_CONFIG_DIR/yazi
 link_config $SOURCE_CONFIG_DIR/mise $TARGET_CONFIG_DIR/mise
