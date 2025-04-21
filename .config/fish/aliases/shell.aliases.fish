@@ -2,6 +2,7 @@
 alias .f 'cd (path resolve ~/.config/fish/) && cd ../..'
 alias .fu '.f && git pull'
 alias .fe '.f && v .'
+alias .fr='source ~/.config/fish/config.fish; echo "Reloaded"'
 
 # Easier navigation
 alias '..' 'cd ..'
@@ -10,12 +11,12 @@ alias '....' 'cd ../../..'
 alias '.....' 'cd ../../../..'
 
 # macOS directories
-alias dl 'cd ~/Downloads'
-alias dt 'cd ~/Desktop'
-alias p 'cd ~/Projects'
-
-# Other bash stuff
-alias t touch
+switch (uname)
+  case Darwin
+    alias dl 'cd ~/Downloads'
+    alias dt 'cd ~/Desktop'
+    alias p 'cd ~/Projects'
+end
 
 if type -q bat
     alias cat bat
@@ -28,7 +29,6 @@ if type -q eza
     alias tr3 'eza --long --header --git --group --all --tree --level=3 --icons'
 else
     alias ll 'll -la'
-    alias tr1 'tree -L 1 -C'
-    alias tr2 'tree -L 2 -C'
-    alias tr3 'tree -L 3 -C'
 end
+
+command -qv nvim && alias v nvim

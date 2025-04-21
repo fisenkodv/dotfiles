@@ -18,9 +18,6 @@ alias 'dl'='cd ~/Downloads'
 alias 'dt'='cd ~/Desktop'
 alias 'p'='cd ~/Projects'
 
-# Other bash stuff
-alias t="touch"
-
 if type bat >/dev/null 2>&1; then
   alias cat="bat"
 fi
