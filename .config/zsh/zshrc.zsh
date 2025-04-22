@@ -63,14 +63,14 @@ TIMEFMT="%U user %S system %P cpu %*Es total"
 # Place to stash environment variables
 if [[ -e ~/.secrets ]]; then source ~/.secrets; fi
 
-# Load aliases
-for f in $ZSH_CONFIG_HOME/aliases/*.aliases.sh; do source $f; done
-
-# Load functions
-for f in $ZSH_CONFIG_HOME/functions/*.functions.sh; do source $f; done
-
 # Load all path files
 for f in $ZSH_CONFIG_HOME/path/*.path.sh; do source $f; done
 
 # Load all init files
 for f in $ZSH_CONFIG_HOME/init/*.init.sh; do source $f; done
+
+# Load aliases
+for f in $ZSH_CONFIG_HOME/aliases/*.aliases.sh; do source $f; done
+
+# Load functions
+for f in $ZSH_CONFIG_HOME/functions/*.functions.sh; do source $f; done
