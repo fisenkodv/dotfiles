@@ -1,6 +1,5 @@
 return {
-  "fisenkodv/nvim-sharegitlink",
-  -- "Le0Michine/nvim-sharegitlink",
+  "Le0Michine/nvim-sharegitlink",
   branch = "main",
   keys = {
     {
