@@ -20,6 +20,7 @@ shell-integration-features=no-cursor,sudo,title
 theme=tokyonight-storm
 theme=Mirage
 theme=Ayu Mirage
+macos-titlebar-style=tabs
 unfocused-split-opacity=0.8
 window-colorspace="display-p3"
 window-padding-balance=true
