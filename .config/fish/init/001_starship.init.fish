@@ -1,3 +1,3 @@
 if type -q starship
-  eval "$(starship init fish)"
+  starship init fish | source
 end
