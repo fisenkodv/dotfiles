@@ -1,7 +1,6 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$shell\
 $directory\
 $git_branch\
 $git_status\
@@ -11,17 +10,13 @@ right_format = """$cmd_duration"""
 
 add_newline = false
 
-[shell]
-format = '[$indicator]($style):'
-disabled = false
-
 [directory]
 truncation_length = 7
 truncate_to_repo = false
 truncation_symbol = '…/'
-style = 'bold fg:39'
-repo_root_style = 'bold fg:31'
-before_repo_root_style = 'bold fg:39'
+# style = 'bold fg:39'
+repo_root_style = 'bold fg:39'
+# before_repo_root_style = 'bold fg:39'
 
 [git_branch]
 format = '[$branch(:$remote_branch)]($style)'
