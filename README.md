@@ -3,7 +3,6 @@
 # Dotfiles
 
 [![Actions Status](https://github.com/fisenkodv/dotfiles/actions/workflows/test_install.yaml/badge.svg)](https://github.com/fisenkodv/dotfiles/actions/workflows/test_install.yaml)
-[![Actions Status](https://github.com/fisenkodv/dotfiles/actions/workflows/update_submodules.yml/badge.svg)](https://github.com/fisenkodv/dotfiles/actions/workflows/update_submodules.yml)
 
 **Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
