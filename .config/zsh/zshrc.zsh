@@ -74,3 +74,4 @@ for f in $ZSH_CONFIG_HOME/aliases/*.aliases.sh; do source $f; done
 
 # Load functions
 for f in $ZSH_CONFIG_HOME/functions/*.functions.sh; do source $f; done
+
