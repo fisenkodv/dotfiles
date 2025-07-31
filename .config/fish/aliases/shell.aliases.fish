@@ -1,7 +1,7 @@
 # dotfiles aliases
 alias .f 'cd (path resolve ~/.config/fish/) && cd ../..'
 alias .fu '.f && git pull'
-alias .fe '.f && v .'
+alias .fe '.f && n .'
 alias .fr='source ~/.config/fish/config.fish; echo "Reloaded"'
 
 # Easier navigation
@@ -12,10 +12,10 @@ alias '.....' 'cd ../../../..'
 
 # macOS directories
 switch (uname)
-  case Darwin
-    alias dl 'cd ~/Downloads'
-    alias dt 'cd ~/Desktop'
-    alias p 'cd ~/Projects'
+    case Darwin
+        alias dl 'cd ~/Downloads'
+        alias dt 'cd ~/Desktop'
+        alias p 'cd ~/Projects'
 end
 
 if type -q bat
@@ -31,4 +31,8 @@ else
     alias ll 'll -la'
 end
 
-command -qv nvim && alias v nvim
+command -qv nvim && alias n nvim
+
+if type -q lazygit
+    alias lg lazygit
+end

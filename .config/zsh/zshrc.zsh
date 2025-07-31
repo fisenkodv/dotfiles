@@ -19,7 +19,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
 
 # Add in snippets
-zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::tmux
 zinit snippet OMZP::command-not-found

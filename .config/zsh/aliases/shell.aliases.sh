@@ -3,7 +3,7 @@
 # dotfiles aliases
 alias .f='p && cd dotfiles'
 alias .fu='.f && git pull'
-alias .fe='.f && vim .'
+alias .fe='.f && n .'
 alias .fr='source ~/.zshrc; echo ".zshrc reloaded"'
 
 # Easier navigation
@@ -32,5 +32,9 @@ else
 fi
 
 if type nvim >/dev/null 2>&1; then
-  alias vim='nvim'
+  alias n='nvim'
+fi
+
+if type lazygit >/dev/null 2>&1; then
+  alias lg='lazygit'
 fi
