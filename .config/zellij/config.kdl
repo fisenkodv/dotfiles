@@ -1,6 +1,6 @@
 keybinds clear-defaults=true {
     locked {
-        bind "Super g" { SwitchToMode "normal"; }
+        bind "Ctrl g" { SwitchToMode "normal"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -18,7 +18,7 @@ keybinds clear-defaults=true {
         bind "l" { MoveFocus "right"; }
         bind "n" { NewPane; SwitchToMode "normal"; }
         bind "p" { SwitchFocus; }
-        bind "Super p" { SwitchToMode "normal"; }
+        bind "Ctrl p" { SwitchToMode "normal"; }
         bind "r" { NewPane "right"; SwitchToMode "normal"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "normal"; }
         bind "z" { TogglePaneFrames; SwitchToMode "normal"; }
@@ -47,7 +47,7 @@ keybinds clear-defaults=true {
         bind "n" { NewTab; SwitchToMode "normal"; }
         bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "normal"; }
-        bind "Super t" { SwitchToMode "normal"; }
+        bind "Ctrl t" { SwitchToMode "normal"; }
         bind "x" { CloseTab; SwitchToMode "normal"; }
         bind "tab" { ToggleTab; }
     }
@@ -67,7 +67,7 @@ keybinds clear-defaults=true {
         bind "j" { Resize "Increase down"; }
         bind "k" { Resize "Increase up"; }
         bind "l" { Resize "Increase right"; }
-        bind "Super r" { SwitchToMode "normal"; }
+        bind "Ctrl n" { SwitchToMode "normal"; }
     }
     move {
         bind "left" { MovePane "left"; }
@@ -75,7 +75,7 @@ keybinds clear-defaults=true {
         bind "up" { MovePane "up"; }
         bind "right" { MovePane "right"; }
         bind "h" { MovePane "left"; }
-        bind "Super h" { SwitchToMode "normal"; }
+        bind "Ctrl h" { SwitchToMode "normal"; }
         bind "j" { MovePane "down"; }
         bind "k" { MovePane "up"; }
         bind "l" { MovePane "right"; }
@@ -86,14 +86,13 @@ keybinds clear-defaults=true {
     scroll {
         bind "e" { EditScrollback; SwitchToMode "normal"; }
         bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
-        bind "Super s" { SwitchToMode "normal"; }
+        bind "Ctrl s" { SwitchToMode "normal"; }
     }
     search {
         bind "c" { SearchToggleOption "CaseSensitivity"; }
         bind "n" { Search "down"; }
         bind "o" { SearchToggleOption "WholeWord"; }
         bind "p" { Search "up"; }
-        bind "Ctrl s" { SwitchToMode "normal"; }
         bind "w" { SearchToggleOption "Wrap"; }
     }
     session {
@@ -111,7 +110,7 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
-        bind "Super o" { SwitchToMode "normal"; }
+        bind "Ctrl o" { SwitchToMode "normal"; }
         bind "p" {
             LaunchOrFocusPlugin "plugin-manager" {
                 floating true
@@ -147,30 +146,30 @@ keybinds clear-defaults=true {
         bind "Alt o" { MoveTab "right"; }
     }
     shared_except "locked" {
-        bind "Super g" { SwitchToMode "locked"; }
-        bind "Super q" { Quit; }
+        bind "Ctrl g" { SwitchToMode "locked"; }
+        bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "move" {
-        bind "Super h" { SwitchToMode "move"; }
+        bind "Ctrl h" { SwitchToMode "move"; }
     }
     shared_except "locked" "session" {
-        bind "Super o" { SwitchToMode "session"; }
+        bind "Ctrl o" { SwitchToMode "session"; }
     }
     shared_except "locked" "scroll" {
-        bind "Super s" { SwitchToMode "scroll"; }
+        bind "Ctrl s" { SwitchToMode "scroll"; }
     }
     shared_except "locked" "scroll" "search" "tmux" {
         bind "Ctrl b" { SwitchToMode "tmux"; }
         bind "Super b" { SwitchToMode "tmux"; }
     }
     shared_except "locked" "tab" {
-        bind "Super t" { SwitchToMode "tab"; }
+        bind "Ctrl t" { SwitchToMode "tab"; }
     }
     shared_except "locked" "pane" {
-        bind "Super p" { SwitchToMode "pane"; }
+        bind "Ctrl p" { SwitchToMode "pane"; }
     }
     shared_except "locked" "resize" {
-        bind "Super r" { SwitchToMode "resize"; }
+        bind "Ctrl n" { SwitchToMode "resize"; }
     }
     shared_except "normal" "locked" "entersearch" {
         bind "enter" { SwitchToMode "normal"; }
@@ -208,14 +207,14 @@ keybinds clear-defaults=true {
         bind "enter" { SwitchToMode "search"; }
     }
     shared_among "entersearch" "renametab" "renamepane" "prompt" "tmux" {
-        bind "Ctrl g" { SwitchToMode "locked"; }
-        bind "Ctrl h" { SwitchToMode "move"; }
-        bind "Ctrl n" { SwitchToMode "resize"; }
-        bind "Ctrl o" { SwitchToMode "session"; }
-        bind "Ctrl p" { SwitchToMode "pane"; }
-        bind "Ctrl q" { Quit; }
-        bind "Ctrl s" { SwitchToMode "scroll"; }
-        bind "Ctrl t" { SwitchToMode "tab"; }
+        bind "Super g" { SwitchToMode "locked"; }
+        bind "Super h" { SwitchToMode "move"; }
+        bind "Super o" { SwitchToMode "session"; }
+        bind "Super p" { SwitchToMode "pane"; }
+        bind "Super q" { Quit; }
+        bind "Super r" { SwitchToMode "resize"; }
+        bind "Super s" { SwitchToMode "scroll"; }
+        bind "Super t" { SwitchToMode "tab"; }
     }
     renametab {
         bind "esc" { UndoRenameTab; SwitchToMode "tab"; }
@@ -363,7 +362,7 @@ default_shell "fish"
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "tokyo-night"
+// theme "default"
 
 // The name of the default layout to load on startup
 // Default: "default"
