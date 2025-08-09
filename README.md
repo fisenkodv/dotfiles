@@ -4,32 +4,61 @@
 
 [![Actions Status](https://github.com/fisenkodv/dotfiles/actions/workflows/test_install.yaml/badge.svg)](https://github.com/fisenkodv/dotfiles/actions/workflows/test_install.yaml)
 
-**Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+**Warning**: Don't blindly use my settings unless you know what that entails. Use at your own risk!
 
-## Neovim setup
+Personal macOS development environment configuration files. This repository contains my carefully crafted dotfiles for a productive development workflow.
+
+## 🚀 What's Included
+
+### 📝 Editors & IDEs
+
+- **[Neovim](https://neovim.io/)** - Modern Vim-based editor powered by [LazyVim](https://lazyvim.github.io/)
+- **[Zed](https://zed.dev/)** - High-performance code editor with custom settings and themes
+
+### 🐚 Shell & Terminal
+
+- **[Fish Shell](https://fishshell.com/)** - Friendly interactive shell with custom functions and aliases
+- **[Zsh](https://www.zsh.org/)** - Alternative shell configuration
+- **[Starship](https://starship.rs/)** - Cross-shell prompt with custom styling
+- **[Tmux](https://github.com/tmux/tmux)** - Terminal multiplexer with custom key bindings and themes
+- **[Zellij](https://zellij.dev/)** - Modern terminal workspace manager
+- **[Ghostty](https://ghostty.org/)** - Fast GPU-accelerated terminal emulator
+
+### 🛠️ Development Tools
+
+- **[Mise](https://mise.jdx.dev/)** - Runtime version manager (successor to asdf)
+- **[Atuin](https://atuin.sh/)** - Magical shell history with sync and search
+- **[Yazi](https://yazi-rs.github.io/)** - Blazing fast terminal file manager
+
+### 📊 System Monitoring
+
+- **[htop](https://htop.dev/)** - Interactive process viewer with custom configuration
 
 ## ⚡️ Requirements
 
+### Neovim Setup
+
 - Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
 - Git >= **2.19.0** (for partial clones support)
-- a [Nerd Font](https://www.nerdfonts.com/)(v3.0 or greater) **_(optional, but needed to display some icons)_**
-- [lazygit](https://github.com/jesseduffield/lazygit) **_(optional)_**
-- a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
-- for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) **_(optional)_**
-  - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
-  - **find files**: [fd](https://github.com/sharkdp/fd)
-- a terminal that support true color and _undercurl_:
-  - [kitty](https://github.com/kovidgoyal/kitty) **_(Linux & Macos)_**
-  - [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
-  - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
-  - [iterm2](https://iterm2.com/) **_(Macos)_**
+- A [Nerd Font](https://www.nerdfonts.com/) (v3.0 or greater) **_(required for icons)_**
 
-## Shell setup (macOS)
+### Terminal Requirements
 
-- [Homebrew](https://brew.sh)
-- [asdf](https://asdf-vm.com/)
+A terminal that supports true color and _undercurl_:
 
-## Installation
+- [ghostty](https://ghostty.org/) **_(macOS, Linux & Windows)_** - Recommended
+- [kitty](https://github.com/kovidgoyal/kitty) **_(Linux & macOS)_**
+- [wezterm](https://github.com/wez/wezterm) **_(Linux, macOS & Windows)_**
+- [alacritty](https://github.com/alacritty/alacritty) **_(Linux, macOS & Windows)_**
+- [iterm2](https://iterm2.com/) **_(macOS)_**
+
+### System Requirements (macOS)
+
+- [Homebrew](https://brew.sh) - Package manager
+- [Fish Shell](https://fishshell.com/) or [Zsh](https://www.zsh.org/)
+- [Mise](https://mise.jdx.dev/) - Runtime version manager
+
+## 📦 Installation
 
 ```bash
 git clone git@github.com:fisenkodv/dotfiles.git .dotfiles
@@ -37,6 +66,38 @@ cd .dotfiles
 make install
 ```
 
-## License
+The installation process will:
+
+1. Install Homebrew packages defined in `brew/`
+2. Set up shell configurations (Fish/Zsh)
+3. Configure all applications in `.config/`
+
+## 🗂️ Directory Structure
+
+```
+.config/
+├── atuin/          # Shell history configuration
+├── fish/           # Fish shell configuration
+├── ghostty/        # Ghostty terminal configuration
+├── htop/           # Process viewer configuration
+├── mise/           # Runtime version manager
+├── nvim/           # LazyVim configuration with extras
+├── starship/       # Cross-shell prompt configuration
+├── tmux/           # Terminal multiplexer configuration
+├── yazi/           # File manager configuration
+├── zed/            # Zed editor configuration
+├── zellij/         # Terminal workspace manager
+└── zsh/            # Zsh shell configuration
+```
+
+## 📝 Customization
+
+Each tool's configuration can be found in its respective `.config/` directory. Feel free to modify settings to match your preferences.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/fisenkodv/dotfiles/issues).
+
+## 📄 License
 
 [MIT](LICENSE)
