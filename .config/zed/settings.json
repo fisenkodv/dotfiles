@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent": {
+    "play_sound_when_agent_done": true
+  },
   "always_treat_brackets_as_autoclosed": true,
   "autosave": "on_focus_change",
   "base_keymap": "VSCode",
