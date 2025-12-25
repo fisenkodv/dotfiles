@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 killport() {
   if [ $# -eq 0 ]; then
@@ -9,5 +9,3 @@ killport() {
 
   kill -9 $(lsof -ti tcp:$1)
 }
-
-

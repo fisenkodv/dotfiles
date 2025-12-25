@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export ZSH_CONFIG_HOME="$HOME/.config/zsh"
 export GPG_TTY=$TTY # https://unix.stackexchange.com/a/608921
@@ -73,4 +73,3 @@ for f in $ZSH_CONFIG_HOME/aliases/*.aliases.sh; do source $f; done
 
 # Load functions
 for f in $ZSH_CONFIG_HOME/functions/*.functions.sh; do source $f; done
-

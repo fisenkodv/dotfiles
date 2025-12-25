@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 alias gaa="git add --all"
 alias gbd="git branch -D"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # credit: http://nparikh.org/notes/zshrc.txt
 # Usage: extract <file>
@@ -29,4 +29,3 @@ extract() {
     echo "'$1' is not a valid file"
   fi
 }
-

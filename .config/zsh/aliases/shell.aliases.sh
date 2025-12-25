@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # dotfiles aliases
 alias .f='p && cd dotfiles'
@@ -7,34 +7,16 @@ alias .fe='.f && n .'
 alias .fr='source ~/.zshrc; echo ".zshrc reloaded"'
 
 # Easier navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ~='cd ~/'
+alias up='cd ..'
+alias up2='cd ../..'
+alias up3='cd ../../..'
+alias up4='cd ../../../..'
+alias up5='cd ../../../../..'
+alias up6='cd ../../../../../..'
+alias up7='cd ../../../../../../..'
+alias up8='cd ../../../../../../../..'
 
 # macOS directories
 alias 'dl'='cd ~/Downloads'
 alias 'dt'='cd ~/Desktop'
 alias 'p'='cd ~/Projects'
-
-if type bat >/dev/null 2>&1; then
-  alias cat="bat"
-fi
-
-if type eza >/dev/null 2>&1; then
-  alias ll='eza --long --header --git --group --all --icons'
-  alias tr1='eza --long --header --git --group --all --tree --level=1 --icons'
-  alias tr2='eza --long --header --git --group --all --tree --level=2 --icons'
-  alias tr3='eza --long --header --git --group --all --tree --level=3 --icons'
-else
-  alias ll='ls -la'
-fi
-
-if type nvim >/dev/null 2>&1; then
-  alias n='nvim'
-fi
-
-if type lazygit >/dev/null 2>&1; then
-  alias lg='lazygit'
-fi

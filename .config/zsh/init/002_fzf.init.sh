@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if type fzf >/dev/null 2>&1; then
   source <(fzf --zsh)
