@@ -7,7 +7,17 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
   "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-thinking-latest"
+    },
     "play_sound_when_agent_done": true
   },
   "always_treat_brackets_as_autoclosed": true,
@@ -56,7 +66,7 @@
         "source.fixAll.eslint": true,
         "source.organizeImports": true
       },
-      "format_on_save": "prettier",
+      "format_on_save": "on",
       "use_autoclose": true
     },
     "TypeScript": {
@@ -64,16 +74,17 @@
         "source.fixAll.eslint": true,
         "source.organizeImports": true
       },
-      "format_on_save": "prettier",
+      "format_on_save": "on",
       "use_autoclose": true
     }
-  },
-  "lsp": {
-    "tailwindcss-language-server": {
-      "settings": {
-        "classAttributes": ["class", "className", "ngClass", "styles"]
-      }
-    }
+    // "Python": {
+    //   "language_servers": [
+    //     // Disable basedpyright and enable Ty, and otherwise
+    //     // use the default configuration.
+    //     "ty",
+    //     "!basedpyright"
+    //   ]
+    // }
   },
   "preferred_line_length": 120,
   "show_whitespaces": "all",
@@ -92,11 +103,7 @@
     "copy_on_select": true,
     "font_family": "JetBrainsMonoNL Nerd Font"
   },
-  "theme": {
-    "dark": "Ayu Mirage",
-    "light": "Ayu Light",
-    "mode": "system"
-  },
+  "theme": "Ayu Mirage",
   "vim_mode": false,
   "wrap_guides": [80, 120]
 }
