@@ -21,7 +21,6 @@ link_config() {
 link_config $SOURCE_CONFIG_DIR/starship/starship.toml $TARGET_CONFIG_DIR/starship.toml
 
 # zsh
-link_config $SOURCE_MODULES_DIR/zgen $HOME/.zgen
 link_config $SOURCE_CONFIG_DIR/zsh/zshrc.zsh $HOME/.zshrc
 link_config $SOURCE_CONFIG_DIR/zsh $TARGET_CONFIG_DIR/zsh
 
