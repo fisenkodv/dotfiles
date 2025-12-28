@@ -32,6 +32,7 @@ link_config $SOURCE_CONFIG_DIR/fish $TARGET_CONFIG_DIR/fish
 link_config $SOURCE_CONFIG_DIR/nvim $TARGET_CONFIG_DIR/nvim
 
 # tools
+link_config $SOURCE_CONFIG_DIR/git $TARGET_CONFIG_DIR/git
 link_config $SOURCE_CONFIG_DIR/htop $TARGET_CONFIG_DIR/htop
 link_config $SOURCE_CONFIG_DIR/tmux $TARGET_CONFIG_DIR/tmux
 link_config $SOURCE_CONFIG_DIR/ghostty $TARGET_CONFIG_DIR/ghostty
