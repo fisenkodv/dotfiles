@@ -1,0 +1,43 @@
+name: Daily Submodule Update
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "daily-submodule-update"
+  cancel-in-progress: true
+
+jobs:
+  update-submodules:
+    name: Update Submodules
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'Dmitry Fisenko'
+          git config --global user.email 'fisenkodv@gmail.com'
+
+      - name: Update Submodules
+        run: |
+          git submodule update --init --remote --recursive
+
+          if [[ -n $(git status --porcelain) ]]; then
+            git add .
+            git commit -m "Update submodules."
+            git push origin main
+            echo "Submodules updated and pushed to main"
+          else
+            echo "No submodule updates detected"
+          fi
