@@ -1,0 +1,38 @@
+- defaults:
+    link:
+      relink: true
+      force: false
+    shell:
+      stdout: true
+      stderr: true
+
+- clean: ["~"]
+
+- shell:
+    - command: git submodule update --init dotbot
+      description: 📦 Installing dotbot
+    - command: mise install
+      description: 🛠️ Installing mise tools
+    - command: >-
+        brew update
+        brew upgrade
+        brew bundle install --file=os/macos/brewfile
+        brew cleanup
+      description: 📥 Updating Brew packages
+
+- link:
+    ~/.config/nvim: config/nvim
+    ~/.config/git: config/git
+    ~/.config/htop: config/htop
+    ~/.config/tmux: config/tmux
+    ~/.config/ghostty: config/ghostty
+    ~/.config/kitty: config/kitty
+    ~/.config/zed: config/zed
+    ~/.config/mise: config/mise
+    ~/.config/yazi: config/yazi
+    ~/.config/atuin: config/atuin
+    ~/.config/zellij: config/zellij
+    ~/.config/fish: config/fish
+    ~/.config/starship.toml: config/starship/starship.toml
+    ~/.config/zsh: config/zsh
+    ~/.zshrc/: config/zsh/zshrc.zsh
