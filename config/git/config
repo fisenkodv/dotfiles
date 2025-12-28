@@ -1,0 +1,304 @@
+# 🔧 vim: set filetype=dosini:
+
+[user]
+	# 🔒 Instruct Git to avoid trying to guess defaults for user.email and user.name, and instead retrieve the values only from the configuration.
+	# For example, if you have multiple email addresses and would like to use a different one for each repository, then with this configuration option set to true in the global config along with a name, Git will prompt you to set up an email before making new commits in a newly cloned repository.
+	# Defaults to false.
+	# https://blog.github.com/2016-03-28-git-2-8-has-been-released/#dont-guess-my-identity
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-useruseConfigOnly
+	useConfigOnly = true
+[alias]
+	# 📖 Aliases from the git-scm book https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
+	co = checkout
+	br = branch
+	ci = commit
+	st = --paginate status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	# 🚀 Aliases of my own that seem to be pretty common
+	cp = cherry-pick
+	oops = commit --amend --no-edit
+
+	# 📚 Aliases for plurals. Otherwise, git has inconsistent commands to list all branches, tags, stashes, workrees, remotes, aliases.
+	# Plurals from http://gggritso.com/human-git-aliases
+	branches = branch --all
+	tags = tag --list
+	stashes = stash list
+	# https://stackoverflow.com/a/22183573/
+	aliases = config --get-regexp ^alias\\.
+	# ➕ More plurals
+	worktrees = worktree list
+	remotes = remote --verbose
+	configs = config --list --show-origin
+
+	# ⚠️ there is no configuration available to tell git to always use `force-with-lease` instead of `force`
+	# https://stackoverflow.com/a/30567394/
+	pushf = push --force-with-lease
+
+	# 📋 Git log --graph aliases
+	# Several aliases for git log --decorate --graph --oneline, with nicer formatting
+		# `l` for specified branches or HEAD, as in `git l main`
+		# `la` for almost all branches and refs
+		# `laa` for all refs. The difference is `la` filters refs/notes, refs/stash, dependabot stuff, and pull requests
+		# decorate is like `la`, but with `--simplify-by-decoration`
+	# Common formatting
+		# %C(auto)%(decorate:prefix=👇 ,suffix=%n,tag=,separator= )%C(reset) ref names, like the --decorate option on its own line, like `* upstream/pr/123`
+		# %C(dim)%h%C(reset)                                                 abbreviated commit hash, like `63978b049`
+		# %N%-C()                                                            git notes with trailing newline stripped https://stackoverflow.com/a/76133983/
+		# %C(normal)%<|(-50,trunc)%s%C(reset)                                subject (commit message) truncated 50 characters away from the right edge of the screen
+		# %C(brightmagenta)%<(15,trunc)%an%C(reset)                          author name truncated to 15
+		# %C(brightblue)%ad%C(reset)                                         author date, like `2000-12-31`
+		# %C(brightcyan)%ar%C(reset)                                         author date, relative, like `10 days ago`
+	l = log \
+		--graph \
+		--decorate \
+		--date=short \
+		--format=format:'%C(auto)%(decorate:prefix=👇 ,suffix=%n,tag=,separator= )%C(reset)%C(dim)%h%C(reset) %N%-C()%C(normal)%<|(-50,trunc)%s%C(reset) %C(brightmagenta)%<(15,trunc)%an%C(reset) %C(brightblue)%ad%C(reset) %C(brightcyan)%ar%C(reset)'
+	laa = l --all
+	la  = l \
+		--exclude=refs/prefetch/* \
+		--exclude=refs/remotes/origin/pr/* \
+		--exclude=refs/remotes/upstream/pr/* \
+		--exclude=refs/remotes/origin/dependabot/* \
+		--exclude=refs/notes/tests/* \
+		--exclude=refs/notes/commits \
+		--exclude=refs/stash \
+		--exclude=refs/remotes/origin/retype \
+		--all
+	decorate = la --simplify-by-decoration
+
+	# 🕙 reflog
+	# Some people alias 'rl' to just 'reflog' without all these options
+	# https://stackoverflow.com/a/17369548/
+	rl = reflog @{now} --date=relative --format=format:'%C(brightyellow)%h%C(reset) %C(brightblue)%gd%C(reset) %C(brightcyan)%cr%C(reset)%C(auto)%d%C(reset) %C(brightmagenta)%gs%C(reset) %C(normal)%s%C(reset)'
+
+	# 👥 https://gist.github.com/DuaelFr/5663854
+	who = shortlog --summary --numbered --email --no-merges
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep '^h'
+
+	# 🏭 repository root directory
+	# https://stackoverflow.com/a/957978/
+	root = rev-parse --show-toplevel
+
+	# 🌱 initial commit(s) that are ancestors of HEAD
+	# https://stackoverflow.com/a/1007545/
+	first = rev-list --max-parents=0 HEAD
+
+	# 🚀 Aggressive optimizations to save disk and time
+	# https://github.com/GitAlias/gitalias/blob/master/gitalias.txt
+	pruner = !git prune --expire=now && git reflog expire --expire-unreachable=now --rewrite --all
+	repacker = repack -a -d -f --depth=300 --window=300 --window-memory=1g
+	optimize = !git gc --aggressive && git pruner && git repacker && git prune-packed
+
+	# 📤 Show most recent commit on each branch that isn't pushed
+	# https://stackoverflow.com/a/3338774/
+	unpushed = log --branches --not --remotes --simplify-by-decoration --decorate --oneline
+
+	# 🔍 Find when commit has been merged into branch
+	# git find-merge <sha> <branch:-HEAD>
+	# https://stackoverflow.com/a/30998048
+	find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+	show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
+
+	find-merged = "!git branch --merge upstream/main --remote --list 'origin/*' | sed 's#origin/##'"
+	delete-merged = "!git branch --merge upstream/main --remote --list 'origin/*' | sed 's#origin/##' | xargs git push --delete origin"
+
+	# 🔗 https://www.colinodell.com/blog/201803/four-useful-git-aliases
+	children = "!bash -c 'c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1' -"
+	today = !git commit --message \"Update $(date +%Y-%m-%d).\"
+[core]
+	editor = vim
+	# 📡 Use file system monitor and untracked cache
+	# https://github.blog/2022-06-29-improve-git-monorepo-performance-with-a-file-system-monitor/
+	# added in Git version 2.37.0
+	fsmonitor = true
+	untrackedCache = true
+[diff]
+	# 🔍 Git should detect both renames and copies. Theoretically slows down git.
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffrenames
+	# Change from 'true' to 'copies'
+	renames = copies
+	# 📋 Diffs of submodules should show the changed contents rather than a list of commits.
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffsubmodule
+	# Change from 'short' to 'diff'
+	submodule = diff
+	# 🏷️ git diff should use a prefix pair that is different from the standard "a/" and "b/" depending on what is being compared. Only relevant when not piping through a pager/formatter like diff-so-fancy.
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#better-diff
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffmnemonicPrefix
+	mnemonicPrefix = true
+
+	# 🔤 When runing git diff --color-words, git uses this regex to determinate word boundaries.
+	# https://git-scm.com/docs/git-config#git-config-diffwordRegex
+	# https://medium.com/@porteneuve/30-git-cli-options-you-should-know-about-15423e8771df
+	# wordRegex = .
+	# 📊 https://blog.gitbutler.com/how-git-core-devs-configure-git#better-diff
+	algorithm = histogram
+
+	# 🎨 https://blog.gitbutler.com/how-git-core-devs-configure-git#better-diff
+	colorMoved = plain
+[rerere]
+	# 🧞 The git rerere functionality is a bit of a hidden feature. The name stands for "reuse recorded resolution" and, as the name implies, it allows you to ask Git to remember how you've resolved a hunk conflict so that the next time it sees the same conflict, Git can resolve it for you automatically.
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#reuse-recorded-resolutions
+	# https://stackoverflow.com/questions/5519244/are-there-any-downsides-to-enabling-git-rerere
+	# https://git-scm.com/book/en/v2/Git-Tools-Rerere
+	enabled = true
+
+	# 🔄 rerere should update the index, not just the worktree.
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#reuse-recorded-resolutions
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-rerereautoUpdate
+	autoUpdate = true
+[branch]
+	# 🌿 When a new branch is created with git branch or git checkout that tracks another branch, git should set up pull to rebase instead of merge.
+	# Change from 'never' to 'always'
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-branchautoSetupRebase
+	autoSetupRebase = always
+	# 🔗 git should always set up tracking for new branches, not just for remote branches.
+	# Change from 'true' to 'always'
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-branchautoSetupMerge
+	# autoSetupMerge = always
+
+	# 💡 Sort branches by most recent commit date
+	# https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#listing-branches
+	sort = -committerdate
+[column]
+	# 💡 Display output in columns when terminal is wide enough
+	# https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#listing-branches
+	ui = auto
+[merge]
+	# 📦 Auto-stash before merge
+	# https://stackoverflow.com/a/30209750/
+	autoStash = true
+	# 🚫 Never create merge commits
+	# When set to only, only fast-forward merges are allowed (equivalent to giving the --ff-only option from the command line).
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-mergeff
+	ff = only
+
+	# 🔀 https://blog.gitbutler.com/how-git-core-devs-configure-git#better-merge-conflicts
+	conflictStyle = zdiff3
+	keepBackup = false
+[log]
+	# 🏷️ Print out the ref names of any commits that are shown by the log command.
+	# If short is specified, the ref name prefixes refs/heads/, refs/tags/ and refs/remotes/ will not be printed.
+	# If full is specified, the full ref name (including prefix) will be printed.
+	# If auto is specified, then if the output is going to a terminal, the ref names are shown as if short were given, otherwise no ref names are shown.
+	# This is the same as the --decorate option of the git log.
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-logdecorate
+	decorate = short
+	# 👥 git log should act as if the --follow option was used when a single <path> is given
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-logfollow
+	follow = true
+[mergetool]
+	# 🗑️ git should delete the .orig file after merge conflicts are resolved.
+	# It seems safer to keep the backup files, but git has so many other ways to recover work.
+	# After performing a merge, the original file with conflict markers can be saved as a file with a .orig extension.
+	# If this variable is set to false then this file is not preserved.
+	# Defaults to true (i.e. keep the backup files).
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-mergetoolkeepBackup
+	keepBackup = false
+
+	trustExitCode = true
+[help]
+	# 🧠 Prompt before executing autocorrected commands
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#autocorrect-prompting
+	# Example:
+	# git helo
+	# WARNING: You called a Git command named 'helo', which does not exist.
+	# Run 'help' instead [y/N]?
+	autocorrect = prompt
+[status]
+	# 📋 git status should show a summary of commits for modified submodules.
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-statussubmoduleSummary
+	submoduleSummary = true
+[rebase]
+	# 📦 Auto-stash before rebase
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#slightly-nicer-rebase
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-rebaseautoStash
+	autoStash = true
+
+	# ⚠️ During `git rebase --interactive`, prevent (accidental) deletion of lines
+	# If set to "warn", git rebase -i will print a warning if some commits are removed (e.g. a line was deleted), however the rebase will still proceed.
+	# If set to "error", it will print the previous warning and stop the rebase, git rebase --edit-todo can then be used to correct the error.
+	# If set to "ignore", no checking is done.
+	# To drop a commit without warning or error, use the drop command in the todo list.
+	# Defaults to "ignore".
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-rebasemissingCommitsCheck
+	missingCommitsCheck = error
+	# 🌳 https://github.blog/2022-10-03-highlights-from-git-2-38/#rebase-dependent-branches-with-update-refs
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#slightly-nicer-rebase
+	updateRefs = true
+
+	instructionFormat = %<|(-58,trunc)%s | %<(15,trunc)%an | %ar
+
+	# 🔧 https://blog.gitbutler.com/how-git-core-devs-configure-git#slightly-nicer-rebase
+	autoSquash = true
+[stash]
+	# 📁 git stash show (without an option) should show the stash entry in patch form.
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-stashshowPatch
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-stashshowStat
+	showPatch = true
+[push]
+	# 🚀 https://blog.gitbutler.com/how-git-core-devs-configure-git#better-pushing
+	# The default changed from 'matching' to 'simple' in Git 2.0
+	default = current
+
+	autoSetupRemote = true
+[init]
+	# 🌱 Allows overriding the default branch name e.g. when initializing a new repository.
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#default-branch
+	# https://git-scm.com/docs/git-config/#Documentation/git-config.txt-codeinitdefaultBranchcode
+	defaultBranch = main
+[remote]
+	# 🌐 https://git-scm.com/docs/git-config/#Documentation/git-config.txt-remotepushDefault
+	# The remote to push to by default. Overrides branch.<name>.remote for all branches, and is overridden by branch.<name>.pushRemote for specific branches.
+	# pushDefault = origin
+[pull]
+	# 🔀 https://github.blog/2021-08-16-highlights-from-git-2-33/#merge-ort-a-new-merge-strategy
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pulltwohead
+	twohead = ort
+	# 🔁 `git pull` should imply --rebase
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pullrebase
+	rebase = true
+[advice]
+	# 🍒 > git rebase upstream/main
+	# warning: skipped previously applied commit abc123
+	# suggestion: use --reapply-cherry-picks to include skipped commits
+	# suggestion: Disable this message with "git config advice.skippedCherryPicks false"
+	# Rebase and update of refs/heads/main executed with success.
+	skippedCherryPicks = false
+	# 🚨 Working with a detached head is advanced. Don't copy this setting unless you know what it means and are comfortable with it.
+	detachedHead = false
+[commit]
+	# 📝 Show unified diff between the HEAD commit and what would be committed at the bottom of the commit message template to help the user describe the commit by reminding what changes the commit has. Note that this diff output doesn't have its lines prefixed with #. This diff will not be a part of the commit message.
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#commit-with-diffs
+	# https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---verbose
+	verbose = true
+# [url "git@github.com:"]
+	# pushInsteadOf = "https://github.com/"
+# 🧽 https://github.com/tummychow/git-absorb
+[absorb]
+	# 🔍 When run without --base, git-absorb will only search for candidate commits to fixup within a certain range (by default 10)
+	maxStack=50
+	# 📦 By default, git-absorb will generate separate fixup commits for every absorbable hunk. Instead, can use the -F flag to create only 1 fixup commit for all hunks that absorb into the same commit.
+	oneFixupPerCommit = true
+	# 🤖 By default, git-absorb will only consider files that you've staged to the index via git add. However, sometimes one wants to try and absorb from all changes, which would require to stage them first via `git add .`
+	autoStageIfNothingStaged = true
+	# 🏷️ By default, git-absorb will create fixup commits with their messages pointing to the target commit's summary, and if there are duplicate summaries, will fallback to pointing to the target's SHA.
+	fixupTargetAlwaysSHA = false
+
+# 🔗 https://git-scm.com/docs/git-config#_includes
+[include]
+	path = ~/.config/git/config.local
+[pager]
+	# 📋 https://stackoverflow.com/a/8883248/
+	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pagerltcmdgt
+	status = true
+[feature]
+	git3 = true
+[tag]
+	# 🏷️ Sort tags as version numbers instead of alphabetically
+	# https://blog.gitbutler.com/how-git-core-devs-configure-git#listing-tags
+	sort = version:refname

@@ -14,9 +14,9 @@
     - command: mise install
       description: 🛠️ Installing mise tools
     - command: >-
-        brew update
-        brew upgrade
-        brew bundle install --file=os/macos/brewfile
+        brew update &&
+        brew upgrade &&
+        brew bundle install --file=os/macos/brewfile &&
         brew cleanup
       description: 📥 Updating Brew packages
 
