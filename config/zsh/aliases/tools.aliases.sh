@@ -23,3 +23,7 @@ if type lazygit >/dev/null 2>&1; then
 fi
 
 alias rsync="rsync --archive --verbose --info=progress2 --human-readable --partial --exclude='._*' --exclude=.Trashes --exclude=.Spotlight-V100"
+
+if type just >/dev/null 2>&1; then
+  alias j='just'
+fi

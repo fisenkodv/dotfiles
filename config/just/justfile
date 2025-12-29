@@ -1,0 +1,9 @@
+set dotenv-filename := ".envrc"
+
+import "configs/console.just"
+import "configs/git.just"
+
+# `just --list --unsorted --global-justfile`
+[group('default')]
+default:
+    @just --list --unsorted --global-justfile

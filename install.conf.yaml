@@ -38,6 +38,7 @@
     ~/.config/atuin: config/atuin
     ~/.config/zellij: config/zellij
     ~/.config/fish: config/fish
+    ~/.config/just: config/just
     ~/.config/starship.toml: config/starship/starship.toml
     ~/.config/zsh: config/zsh
     ~/.zshrc/: config/zsh/zshrc.zsh
