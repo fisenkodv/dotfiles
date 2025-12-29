@@ -2,3 +2,4 @@ functions/**
 conf.d/**
 completions/**
 fish_variables
+work.*.fish
