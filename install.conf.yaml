@@ -9,28 +9,22 @@
 
 - clean: ["~"]
 
-- plugins:
-    - modules/dotbot-brew/
-
-- brewfile:
-    - os/macos/brewfile
-
 - shell:
-    - command: git submodule update --init dotbot
-      description: 📦 Installing dotbot
+    - command: git submodule update --init modules/dotbot
+      description: 📦 Installing/updating dotbot
     - command: mise install
       description: 🛠️ Installing mise tools
-    # - command: >-
-    #     brew update &&
-    #     brew upgrade &&
-    #     brew bundle install --file=os/macos/brewfile &&
-    #     brew cleanup
-    #   description: 📥 Updating Brew packages
-    # - command: >-
-    #     if [ "$SHELL" != "$(which fish)" ]; then
-    #       chsh -s "$(which fish)"
-    #     fi
-    #   description: 🐚 Setting default shell to fish
+
+    - command: brew bundle install --file=os/macos/brewfile
+      description: 📦 Installing brew packages
+    - command: brew update
+      description: 📦 Updating brew packages
+    - command: brew upgrade
+      description: 📦 Upgrading brew packages
+    - command: brew cleanup
+      description: 🧹 Cleaning up brew packages
+    - command: ./scripts/change-shell.sh
+      description: 🐚 Setting default shell to fish
 
 - link:
     ~/.config/nvim: config/nvim
