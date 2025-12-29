@@ -5,20 +5,32 @@
     shell:
       stdout: true
       stderr: true
+      quiet: true
 
 - clean: ["~"]
+
+- plugins:
+    - modules/dotbot-brew/
+
+- brewfile:
+    - os/macos/brewfile
 
 - shell:
     - command: git submodule update --init dotbot
       description: 📦 Installing dotbot
     - command: mise install
       description: 🛠️ Installing mise tools
-    - command: >-
-        brew update &&
-        brew upgrade &&
-        brew bundle install --file=os/macos/brewfile &&
-        brew cleanup
-      description: 📥 Updating Brew packages
+    # - command: >-
+    #     brew update &&
+    #     brew upgrade &&
+    #     brew bundle install --file=os/macos/brewfile &&
+    #     brew cleanup
+    #   description: 📥 Updating Brew packages
+    # - command: >-
+    #     if [ "$SHELL" != "$(which fish)" ]; then
+    #       chsh -s "$(which fish)"
+    #     fi
+    #   description: 🐚 Setting default shell to fish
 
 - link:
     ~/.config/nvim: config/nvim
