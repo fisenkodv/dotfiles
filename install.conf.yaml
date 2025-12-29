@@ -14,7 +14,6 @@
       description: 📦 Installing/updating dotbot
     - command: mise install
       description: 🛠️ Installing mise tools
-
     - command: brew bundle install --file=os/macos/brewfile
       description: 📦 Installing brew packages
     - command: brew update
