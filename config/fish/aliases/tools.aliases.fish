@@ -13,7 +13,7 @@ else
 end
 
 if type -q nvim
-    alias n nvim
+    alias vim nvim
 end
 
 if type -q lazygit

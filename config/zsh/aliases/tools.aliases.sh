@@ -15,7 +15,7 @@ else
 fi
 
 if type nvim >/dev/null 2>&1; then
-  alias n='nvim'
+  alias vim='nvim'
 fi
 
 if type lazygit >/dev/null 2>&1; then
