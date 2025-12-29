@@ -29,6 +29,7 @@
     "button": false
   },
   "current_line_highlight": "all",
+  "colorize_brackets": true,
   "diagnostics": {
     "inline": {
       "enabled": true
