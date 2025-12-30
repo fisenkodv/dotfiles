@@ -3,7 +3,7 @@
 # dotfiles aliases
 alias .f='p && cd dotfiles'
 alias .fu='.f && git pull'
-alias .fe='.f && n .'
+alias .fe='.f && vim .'
 alias .fr='source ~/.zshrc; echo ".zshrc reloaded"'
 
 # Easier navigation
