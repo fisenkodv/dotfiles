@@ -4,14 +4,14 @@ return {
     lazy = true,
   },
   {
-    "catppuccin/nvim",
+    "Shatur/neovim-ayu",
     lazy = true,
     priority = 1000,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-frappe",
+      colorscheme = "ayu-mirage",
       -- colorscheme = "folke/tokyonight.nvim",
     },
   },
