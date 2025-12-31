@@ -10,8 +10,8 @@
   "agent": {
     "default_profile": "ask",
     "default_model": {
-      "provider": "amazon-bedrock",
-      "model": "claude-opus-4-5"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest"
     },
     "play_sound_when_agent_done": true
   },
