@@ -21,3 +21,5 @@ brew "tree"
 brew "wget"
 brew "yazi"
 cask "ghostty"
+cask "claude-code"
+
