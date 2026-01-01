@@ -20,6 +20,6 @@ brew "tmux"
 brew "tree"
 brew "wget"
 brew "yazi"
+brew "zoxide"
 cask "ghostty"
 cask "claude-code"
-
