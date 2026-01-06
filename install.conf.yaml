@@ -26,6 +26,7 @@
       description: 🐚 Setting default shell to fish
 
 - link:
+    ~/.claude: config/claude
     ~/.config/nvim: config/nvim
     ~/.config/git: config/git
     ~/.config/htop: config/htop
