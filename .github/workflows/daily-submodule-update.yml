@@ -36,8 +36,8 @@ jobs:
           if [[ -n $(git status --porcelain) ]]; then
             git add .
             git commit -m "Update submodules."
-            git push origin main
-            echo "Submodules updated and pushed to main"
+            git push origin master
+            echo "Submodules updated and pushed to master"
           else
             echo "No submodule updates detected"
           fi
