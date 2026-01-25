@@ -150,7 +150,8 @@
     "git@fisenko-claude-code-plugins": true,
     "justfile@fisenko-claude-code-plugins": true,
     "orchestration@fisenko-claude-code-plugins": true,
-    "tasks@fisenko-claude-code-plugins": true
+    "tasks@fisenko-claude-code-plugins": true,
+    "markdown-tasks@fisenko-claude-code-plugins": true
   },
   "sandbox": {
     "enabled": false,
