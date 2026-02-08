@@ -124,34 +124,19 @@
     "defaultMode": "acceptEdits"
   },
   "model": "opus",
-  "enabledMcpjsonServers": [
-    "brave-search"
-  ],
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline-command.sh",
     "padding": 0
   },
   "enabledPlugins": {
-    "agent-sdk-dev@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "explanatory-output-style@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "github@claude-plugins-official": true,
-    "hookify@claude-plugins-official": true,
-    "plugin-dev@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "build@fisenko-claude-code-plugins": true,
-    "cli@fisenko-claude-code-plugins": true,
-    "code@fisenko-claude-code-plugins": true,
-    "comment@fisenko-claude-code-plugins": true,
-    "emoji@fisenko-claude-code-plugins": true,
-    "git@fisenko-claude-code-plugins": true,
-    "justfile@fisenko-claude-code-plugins": true,
-    "orchestration@fisenko-claude-code-plugins": true,
-    "tasks@fisenko-claude-code-plugins": true,
-    "markdown-tasks@fisenko-claude-code-plugins": true
+    "rust-analyzer-lsp@claude-plugins-official": true
   },
   "sandbox": {
     "enabled": false,

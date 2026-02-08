@@ -7,57 +7,76 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent_servers": {
+    "claude": {
+      "favorite_models": [
+        "default",
+        "sonnet",
+        "haiku"
+      ]
+    }
+  },
   "agent": {
-    "default_profile": "ask",
-    "default_model": {
+    "commit_message_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest"
+      "model": "haiku"
     },
-    "play_sound_when_agent_done": true
+    "favorite_models": [
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-5-latest"
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-5-thinking-latest"
+      }
+    ],
+    "default_profile": "ask",
+    "play_sound_when_agent_done": true,
   },
   "always_treat_brackets_as_autoclosed": true,
   "autosave": "on_focus_change",
   "base_keymap": "VSCode",
   "buffer_font_family": "Monaspace Neon",
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
   },
   "buffer_font_size": 16,
   "buffer_font_weight": 500,
   "buffer_line_height": "comfortable",
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "current_line_highlight": "all",
   "colorize_brackets": true,
   "diagnostics": {
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "edit_predictions": {
     "mode": "subtle",
     "copilot": {
       "proxy": null,
-      "proxy_no_verify": null
+      "proxy_no_verify": null,
     },
-    "enabled_in_text_threads": false
+    "enabled_in_text_threads": false,
   },
   "format_on_save": "on",
   "formatter": "language_server",
   "git": {
     "inline_blame": {
-      "show_commit_summary": true
-    }
+      "show_commit_summary": true,
+    },
   },
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)"
+    "dark": "Zed (Default)",
   },
   "indent_guides": {
     "enabled": true,
-    "active_line_width": 2
+    "active_line_width": 2,
   },
   "inlay_hints": {
     "enabled": true,
@@ -68,8 +87,8 @@
       "shift": true,
       "alt": true,
       "platform": true,
-      "function": true
-    }
+      "function": true,
+    },
   },
   "languages": {
     "TSX": {
@@ -77,63 +96,66 @@
         "eslint",
         "vtsls",
         "typescript-language-server",
-        "typos"
+        "typos",
       ],
       "code_actions_on_format": {
         "source.organizeImports": true,
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
       },
       "format_on_save": "on",
-      "use_autoclose": true
+      "use_autoclose": true,
     },
     "TypeScript": {
       "language_servers": [
         "eslint",
         "vtsls",
         "typescript-language-server",
-        "typos"
+        "typos",
       ],
       "code_actions_on_format": {
         "source.organizeImports": true,
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
       },
       "format_on_save": "on",
-      "use_autoclose": true
-    }
+      "use_autoclose": true,
+    },
   },
   "lsp": {
     "eslint": {},
-    "typescript-language-server": {}
+    "typescript-language-server": {},
   },
   "minimap": {
     "current_line_highlight": "all",
     "display_in": "active_editor",
-    "show": "always"
+    "show": "always",
   },
   "preferred_line_length": 120,
   "preview_tabs": {
-    "enable_keep_preview_on_code_navigation": true
+    "enable_keep_preview_on_code_navigation": true,
   },
   "show_whitespaces": "all",
   "tab_size": 2,
   "tabs": {
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "terminal": {
     "button": true,
     "blinking": "on",
     "copy_on_select": true,
-    "font_family": "JetBrainsMonoNL Nerd Font"
+    "font_family": "JetBrainsMonoNL Nerd Font",
   },
   "theme": "Ayu Mirage",
   "vim_mode": false,
   "wrap_guides": [
     80,
     120
-  ]
+  ],
+  "which_key": {
+    "enabled": true
+  }
 }

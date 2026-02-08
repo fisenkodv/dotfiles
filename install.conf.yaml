@@ -47,13 +47,10 @@
 - shell:
     - claude plugin marketplace remove claude-plugins-official || true
     - claude plugin marketplace add anthropics/claude-plugins-official
-    - claude plugin install agent-sdk-dev@claude-plugins-official
+    - claude plugin install commit-commands@claude-plugins-official
     - claude plugin install context7@claude-plugins-official
     - claude plugin install explanatory-output-style@claude-plugins-official
     - claude plugin install frontend-design@claude-plugins-official
     - claude plugin install github@claude-plugins-official
-    - claude plugin install hookify@claude-plugins-official
-    - claude plugin install plugin-dev@claude-plugins-official
     - claude plugin install typescript-lsp@claude-plugins-official
     - claude plugin install rust-analyzer-lsp@claude-plugins-official
-    # - claude plugin install learning-output-style@claude-plugins-official
