@@ -123,7 +123,6 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline-command.sh",
@@ -143,5 +142,6 @@
     "autoAllowBashIfSandboxed": true
   },
   "spinnerTipsEnabled": false,
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "medium"
 }

@@ -27,6 +27,7 @@ The file format:
 ---
 
 Description of the change.
+```
 
 ## GitHub
 - Primary method for interacting with GitHub: GitHub CLI.
