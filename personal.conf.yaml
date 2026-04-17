@@ -1,0 +1,20 @@
+- defaults:
+    shell:
+      stdout: true
+      stderr: true
+      quiet: true
+
+- link:
+    ~/.config/git/config.local: config/git/config.personal
+
+- shell:
+    - command: brew bundle install --file=os/macos/brewfile
+      description: 📦 Installing brew packages
+    - command: brew update
+      description: 📦 Updating brew
+    - command: brew upgrade
+      description: 📦 Upgrading brew packages
+    - command: brew cleanup
+      description: 🧹 Cleaning up brew
+    - command: mise install
+      description: 🛠️ Installing mise tools

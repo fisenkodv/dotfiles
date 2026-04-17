@@ -10,6 +10,9 @@
 # misc
 modules
 
+# git - local identity, symlinked by profile
+config/git/config.local
+
 # fish
 config/fish/fish_variables
 
