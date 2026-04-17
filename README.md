@@ -32,9 +32,10 @@ Git identity lives in `config/git/config.personal` / `config/git/config.work` / 
 ```
 install               # entry point: ./install <profile>
 install.conf.yaml     # base — links + shell setup (all machines)
-personal.conf.yaml    # personal macOS — brew + git identity
-work.conf.yaml        # work macOS — brew + git identity
-linux.conf.yaml       # debian/ubuntu — apt + git identity
+profiles/
+  personal.conf.yaml  # personal macOS — brew + git identity
+  work.conf.yaml      # work macOS — brew + git identity
+  linux.conf.yaml     # debian/ubuntu — apt + git identity
 
 config/
   git/
