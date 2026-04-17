@@ -7,32 +7,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "agent_servers": {
-    "claude": {
-      "favorite_models": [
-        "default",
-        "sonnet",
-        "haiku"
-      ]
-    }
-  },
   "agent": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest"
+    },
     "commit_message_model": {
       "provider": "anthropic",
-      "model": "haiku"
+      "model": "claude-sonnet-4-5-latest"
     },
     "favorite_models": [
       {
         "provider": "anthropic",
-        "model": "claude-sonnet-4-5-latest"
-      },
-      {
-        "provider": "anthropic",
-        "model": "claude-sonnet-4-5-thinking-latest"
+        "model": "claude-sonnet-4-6-latest",
+        "enable_thinking": false
       }
     ],
-    "default_profile": "ask",
-    "play_sound_when_agent_done": true,
+    "model_parameters": []
   },
   "always_treat_brackets_as_autoclosed": true,
   "autosave": "on_focus_change",
@@ -60,7 +51,6 @@
       "proxy": null,
       "proxy_no_verify": null,
     },
-    "enabled_in_text_threads": false,
   },
   "format_on_save": "on",
   "formatter": "language_server",
@@ -91,6 +81,11 @@
     },
   },
   "languages": {
+    "Git Commit": {
+      "inlay_hints": {
+        "show_type_hints": true
+      }
+    },
     "TSX": {
       "language_servers": [
         "eslint",
