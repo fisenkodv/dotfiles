@@ -2,7 +2,6 @@
 
 set -e
 
-DEFAULT_CONFIG="install.conf.yaml"
 DOTBOT_DIR="modules/dotbot"
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -17,8 +16,11 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${DEFAULT_CONFIG}"
+run() {
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "profiles/${1}.conf.yaml"
+}
 
+run base
 for profile in "${@}"; do
-  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "profiles/${profile}.conf.yaml"
+  run "${profile}"
 done
