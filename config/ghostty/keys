@@ -1,3 +1,6 @@
+keybind = super+r=reload_config
+keybind = super+enter=unbind
+
 # keybindings
 keybind = cmd+s>r=reload_config
 keybind = cmd+s>x=close_surface
