@@ -1,45 +1,70 @@
 # 🏠 Dotfiles
 
-Personal macOS development environment configuration files managed by [Dotbot](https://github.com/anishathalye/dotbot).
+Personal development environment managed by [Dotbot](https://github.com/anishathalye/dotbot). Supports macOS (personal + work) and Debian/Ubuntu.
 
 ## 🚀 Installation
-
-Clone this repository into `~/.dotfiles` and run the installer:
 
 ```bash
 git clone https://github.com/fisenkodv/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./install
+./install <profile>
 ```
 
-This runs Dotbot with `install.conf.yaml` to link the configs into your home directory and run setup tasks.
+Profiles:
 
-## ⚙️ How It Works
+| Profile | Machine |
+|---|---|
+| `personal` | Personal macOS |
+| `work` | Work macOS |
+| `linux` | Debian/Ubuntu |
 
-Dotbot creates symlinks from this repo into your home directory:
+## ⚙️ How it works
 
-- `~/.config/*` -> `config/*`
-- `~/.zshrc` -> `config/zsh/zshrc.zsh`
+`install` runs Dotbot twice — first with the shared `install.conf.yaml`, then with `<profile>.conf.yaml`:
 
-The link behavior and shell tasks live in `install.conf.yaml`. If you do not already have `~/.config`, create it before running the installer.
+1. **Base** (`install.conf.yaml`) — symlinks all configs, sets fish as default shell, installs Claude plugins
+2. **Profile** (e.g. `personal.conf.yaml`) — installs packages, symlinks git identity
 
-## 📁 Configuration Overview
+Git identity lives in `config/git/config.personal` / `config/git/config.work` / `config/git/config.linux`. The profile YAML symlinks the right one to `~/.config/git/config.local`, which is picked up by the `[include]` in `config/git/config`.
 
-Configs live under `config/` and are linked to `~/.config/`:
+## 📁 Structure
 
-- 🐚 Shells: `fish/`, `zsh/`, `starship/`
-- 🧰 Editors: `nvim/`, `zed/`
-- 🖥️ Terminals: `ghostty/`, `kitty/`, `tmux/`, `zellij/`
-- 🔧 Dev tools: `git/`, `mise/`, `atuin/`, `yazi/`
-- 📊 Monitoring: `htop/`
+```
+install               # entry point: ./install <profile>
+profiles/
+  base.conf.yaml      # all machines — links + shell setup
+  personal.conf.yaml  # personal macOS — brew + git identity
+  work.conf.yaml      # work macOS — brew + git identity
+  linux.conf.yaml     # debian/ubuntu — apt + git identity
 
-## 🍺 Homebrew
+config/
+  git/
+    config            # shared git config
+    config.personal   # personal identity
+    config.work       # work identity
+    config.linux      # linux identity
+    config.local      # gitignored, symlinked by profile
+  fish/               # primary shell
+  nvim/
+  zed/
+  tmux/
+  ...
 
-Dotbot runs `brew bundle install --file=os/macos/brewfile` as part of the install. Add or update that Brewfile for your setup.
+os/macos/brewfile
+scripts/
+  change-shell.sh
+  install-linux-packages.sh
+```
 
-## 🤝 Contributing
+## ⚠️ Migrating from previous setup
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/fisenkodv/dotfiles/issues).
+If `~/.config/git` is currently a symlink (old setup), unlink it first:
+
+```bash
+unlink ~/.config/git
+```
+
+Then run `./install <profile>` as normal.
 
 ## 📄 License
 
