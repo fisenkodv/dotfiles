@@ -14,7 +14,6 @@
       description: 📦 Installing/updating dotbot
 
 - link:
-    ~/.claude: config/claude
     ~/.config/nvim: config/nvim
     ~/.config/git/config: config/git/config
     ~/.config/git/ignore: config/git/ignore
@@ -36,13 +35,3 @@
 - shell:
     - command: ./scripts/change-shell.sh
       description: 🐚 Setting default shell to fish
-    - command: claude plugin marketplace remove claude-plugins-official || true
-      description: 🔌 Refreshing Claude plugins
-    - command: claude plugin marketplace add anthropics/claude-plugins-official
-    - command: claude plugin install commit-commands@claude-plugins-official
-    - command: claude plugin install context7@claude-plugins-official
-    - command: claude plugin install explanatory-output-style@claude-plugins-official
-    - command: claude plugin install frontend-design@claude-plugins-official
-    - command: claude plugin install github@claude-plugins-official
-    - command: claude plugin install typescript-lsp@claude-plugins-official
-    - command: claude plugin install rust-analyzer-lsp@claude-plugins-official
