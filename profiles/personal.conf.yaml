@@ -1,31 +1,61 @@
-- defaults:
-    shell:
-      stdout: true
-      stderr: true
-      quiet: true
+defaults:
+  link:
+    relink: true
+    force: false
+  shell:
+    stdout: true
+    stderr: true
+    quiet: true
 
-- link:
-    ~/.config/git/config.local: config/git/config.personal
-    ~/.claude: config/claude
+clean:
+  - "~"
 
-- shell:
-    - command: brew bundle install --file=os/macos/brewfile
-      description: 📦 Installing brew packages
-    - command: brew update
-      description: 📦 Updating brew
-    - command: brew upgrade
-      description: 📦 Upgrading brew packages
-    - command: brew cleanup
-      description: 🧹 Cleaning up brew
-    - command: mise install
-      description: 🛠️ Installing mise tools
-    - command: claude plugin marketplace remove claude-plugins-official || true
-      description: 🔌 Refreshing Claude plugins
-    - command: claude plugin marketplace add anthropics/claude-plugins-official
-    - command: claude plugin install commit-commands@claude-plugins-official
-    - command: claude plugin install context7@claude-plugins-official
-    - command: claude plugin install explanatory-output-style@claude-plugins-official
-    - command: claude plugin install frontend-design@claude-plugins-official
-    - command: claude plugin install github@claude-plugins-official
-    - command: claude plugin install typescript-lsp@claude-plugins-official
-    - command: claude plugin install rust-analyzer-lsp@claude-plugins-official
+create:
+  - ~/.config/git/
+
+link:
+  ~/.config/nvim: config/nvim
+  ~/.config/git/config: config/git/config.personal
+  ~/.config/git/ignore: config/git/ignore
+  ~/.config/htop: config/htop
+  ~/.config/tmux: config/tmux
+  ~/.config/ghostty: config/ghostty
+  ~/.config/kitty: config/kitty
+  ~/.config/zed: config/zed
+  ~/.config/mise: config/mise
+  ~/.config/yazi: config/yazi
+  ~/.config/atuin: config/atuin
+  ~/.config/zellij: config/zellij
+  ~/.config/fish: config/fish
+  ~/.config/just: config/just
+  ~/.config/starship.toml: config/starship/starship.toml
+  ~/.config/zsh: config/zsh
+  ~/.zshrc: config/zsh/zshrc.zsh
+  ~/.claude: config/claude
+
+shell:
+  - name: Setting default shell to fish
+    script: ./scripts/change-shell.sh
+  - name: Installing brew packages
+    script: brew bundle install --file=os/macos/brewfile
+    quiet: true
+  - name: Updating brew
+    script: brew update
+  - name: Upgrading brew packages
+    script: brew upgrade
+  - name: Cleaning up brew
+    script: brew cleanup
+  - name: Installing mise tools
+    script: mise install
+  - name: Refreshing Claude plugins
+    quiet: true
+    script: |
+      claude plugin marketplace remove claude-plugins-official || true
+      claude plugin marketplace add anthropics/claude-plugins-official
+      claude plugin install commit-commands@claude-plugins-official
+      claude plugin install context7@claude-plugins-official
+      claude plugin install explanatory-output-style@claude-plugins-official
+      claude plugin install frontend-design@claude-plugins-official
+      claude plugin install github@claude-plugins-official
+      claude plugin install typescript-lsp@claude-plugins-official
+      claude plugin install rust-analyzer-lsp@claude-plugins-official
