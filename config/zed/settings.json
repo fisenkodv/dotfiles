@@ -7,22 +7,27 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "ui_font_size": 16.0,
+  "ui_font_family": ".ZedSans",
+  "project_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
   "agent": {
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-6-latest"
-    },
-    "commit_message_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest"
-    },
-    "favorite_models": [
-      {
-        "provider": "anthropic",
-        "model": "claude-sonnet-4-6-latest",
-        "enable_thinking": false
-      }
-    ],
+    "dock": "left",
     "model_parameters": []
   },
   "always_treat_brackets_as_autoclosed": true,
@@ -36,6 +41,7 @@
   "buffer_font_weight": 500,
   "buffer_line_height": "comfortable",
   "collaboration_panel": {
+    "dock": "right",
     "button": false,
   },
   "current_line_highlight": "all",
